@@ -1,0 +1,2 @@
+TAG;CHARACTER;DIALOGS;CHOICES
+NPC_000_000;Squily;[0,0]You got a sword ! Fantastic, time to explain this...|[0,1]To use the sword, press the FIRE button when you slide. It's pretty efficace against the enemies.|[0,2][0]Do you want more informations ?|[1,0][0,2]No I can't. Sorry, maybe later...|[2,0]Ok, continue the exploration.;[2,0]No I don't want.*[1,0]Yes of course !;
