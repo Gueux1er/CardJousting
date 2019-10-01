@@ -1,173 +1,66 @@
 fileFormatVersion: 2
 guid: 00bb6a0da341e6d4b85d6b9a3048bd4c
 ModelImporter:
-  serializedVersion: 25
-  internalIDToNameTable:
-  - first:
-      1: 100000
-    second: Box_Hole
-  - first:
-      1: 100002
-    second: Cone
-  - first:
-      1: 100004
-    second: Cylinder_Hole
-  - first:
-      1: 100006
-    second: Form_02
-  - first:
-      1: 100008
-    second: half_cylinder
-  - first:
-      1: 100010
-    second: prism
-  - first:
-      1: 100012
-    second: Pyramid
-  - first:
-      1: 100014
-    second: ramp
-  - first:
-      1: 100016
-    second: //RootNode
-  - first:
-      1: 100018
-    second: Sphere001
-  - first:
-      1: 100020
-    second: Triangle
-  - first:
-      4: 400000
-    second: Box_Hole
-  - first:
-      4: 400002
-    second: Cone
-  - first:
-      4: 400004
-    second: Cylinder_Hole
-  - first:
-      4: 400006
-    second: Form_02
-  - first:
-      4: 400008
-    second: half_cylinder
-  - first:
-      4: 400010
-    second: prism
-  - first:
-      4: 400012
-    second: Pyramid
-  - first:
-      4: 400014
-    second: ramp
-  - first:
-      4: 400016
-    second: //RootNode
-  - first:
-      4: 400018
-    second: Sphere001
-  - first:
-      4: 400020
-    second: Triangle
-  - first:
-      23: 2300000
-    second: Box_Hole
-  - first:
-      23: 2300002
-    second: Cone
-  - first:
-      23: 2300004
-    second: Cylinder_Hole
-  - first:
-      23: 2300006
-    second: Form_02
-  - first:
-      23: 2300008
-    second: half_cylinder
-  - first:
-      23: 2300010
-    second: prism
-  - first:
-      23: 2300012
-    second: Pyramid
-  - first:
-      23: 2300014
-    second: ramp
-  - first:
-      23: 2300016
-    second: Sphere001
-  - first:
-      23: 2300018
-    second: Triangle
-  - first:
-      33: 3300000
-    second: Box_Hole
-  - first:
-      33: 3300002
-    second: Cone
-  - first:
-      33: 3300004
-    second: Cylinder_Hole
-  - first:
-      33: 3300006
-    second: Form_02
-  - first:
-      33: 3300008
-    second: half_cylinder
-  - first:
-      33: 3300010
-    second: prism
-  - first:
-      33: 3300012
-    second: Pyramid
-  - first:
-      33: 3300014
-    second: ramp
-  - first:
-      33: 3300016
-    second: Sphere001
-  - first:
-      33: 3300018
-    second: Triangle
-  - first:
-      43: 4300000
-    second: Cone
-  - first:
-      43: 4300002
-    second: Pyramid
-  - first:
-      43: 4300004
-    second: Box_Hole
-  - first:
-      43: 4300006
-    second: Cylinder_Hole
-  - first:
-      43: 4300008
-    second: prism
-  - first:
-      43: 4300010
-    second: half_cylinder
-  - first:
-      43: 4300012
-    second: Sphere001
-  - first:
-      43: 4300014
-    second: ramp
-  - first:
-      43: 4300016
-    second: Form_02
-  - first:
-      43: 4300018
-    second: Triangle
-  - first:
-      95: 9500000
-    second: //RootNode
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Box_Hole
+    100002: Cone
+    100004: Cylinder_Hole
+    100006: Form_02
+    100008: half_cylinder
+    100010: prism
+    100012: Pyramid
+    100014: ramp
+    100016: //RootNode
+    100018: Sphere001
+    100020: Triangle
+    400000: Box_Hole
+    400002: Cone
+    400004: Cylinder_Hole
+    400006: Form_02
+    400008: half_cylinder
+    400010: prism
+    400012: Pyramid
+    400014: ramp
+    400016: //RootNode
+    400018: Sphere001
+    400020: Triangle
+    2300000: Box_Hole
+    2300002: Cone
+    2300004: Cylinder_Hole
+    2300006: Form_02
+    2300008: half_cylinder
+    2300010: prism
+    2300012: Pyramid
+    2300014: ramp
+    2300016: Sphere001
+    2300018: Triangle
+    3300000: Box_Hole
+    3300002: Cone
+    3300004: Cylinder_Hole
+    3300006: Form_02
+    3300008: half_cylinder
+    3300010: prism
+    3300012: Pyramid
+    3300014: ramp
+    3300016: Sphere001
+    3300018: Triangle
+    4300000: Cone
+    4300002: Pyramid
+    4300004: Box_Hole
+    4300006: Cylinder_Hole
+    4300008: prism
+    4300010: half_cylinder
+    4300012: Sphere001
+    4300014: ramp
+    4300016: Form_02
+    4300018: Triangle
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Default
-    second: {fileID: 2100000, guid: 6f6171dea0449e94b958c67ad7614164, type: 2}
+    second: {fileID: 2100000, guid: f0c97109acd2e574a87f0d63e512e971, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -209,19 +102,18 @@ ModelImporter:
     swapUVChannels: 0
     generateSecondaryUV: 1
     useFileUnits: 1
+    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
-    skinWeightsMode: 0
-    maxBonesPerVertex: 4
-    minBoneWeight: 0.001
-    meshOptimizationFlags: -1
     indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -230,11 +122,10 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  referencedClips: []
   importAnimation: 0
   copyAvatar: 0
   humanDescription:
-    serializedVersion: 3
+    serializedVersion: 2
     human: []
     skeleton: []
     armTwist: 0.5
@@ -244,7 +135,6 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 1

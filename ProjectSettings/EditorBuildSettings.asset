@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/___LIBLAB/0___ LibLab Init.unity
     guid: 06e65219892b0b74989d79e4f1bb9706
   - enabled: 1
-    path: Assets/NEW GAME/Scenes/NewGameScene.unity
+    path: Assets/CARD JOUSTING/Scenes/1___ Card Jousting.unity
     guid: e33aa0ee939202942aff4c56679ebda2
   m_configObjects: {}

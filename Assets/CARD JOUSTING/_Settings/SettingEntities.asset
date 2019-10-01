@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2391d6a368835f48aa4eca7d3945e67, type: 3}
+  m_Name: SettingEntities
+  m_EditorClassIdentifier: 
+  entityInfos:
+  - ID: BOB
+    entityEvolutionStats:
+    - entityItems:
+      - itemType: 0
+        wayType: 1
+        force: 0
+    - entityItems:
+      - itemType: 0
+        wayType: 1
+        force: 1
+    - entityItems:
+      - itemType: 0
+        wayType: 1
+        force: 2
+  - ID: PAT
+    entityEvolutionStats:
+    - entityItems:
+      - itemType: 1
+        wayType: 1
+        force: 0
+    - entityItems:
+      - itemType: 1
+        wayType: 1
+        force: 0
+      - itemType: 1
+        wayType: 0
+        force: 0
+    - entityItems:
+      - itemType: 1
+        wayType: 1
+        force: 0
+      - itemType: 1
+        wayType: 2
+        force: 0
+  - ID: LUDIVINE
+    entityEvolutionStats:
+    - entityItems:
+      - itemType: 2
+        wayType: 1
+        force: 1
+    - entityItems:
+      - itemType: 2
+        wayType: 1
+        force: 1
+      - itemType: 2
+        wayType: 0
+        force: 1
+    - entityItems:
+      - itemType: 2
+        wayType: 1
+        force: 1
+      - itemType: 2
+        wayType: 0
+        force: 1
+      - itemType: 2
+        wayType: 2
+        force: 1
