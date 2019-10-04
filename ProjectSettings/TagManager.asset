@@ -9,6 +9,8 @@ TagManager:
   - Defence
   - Grab
   - Entity
+  - GoalPlayer0
+  - GoalPlayer1
   layers:
   - Default
   - TransparentFX

@@ -6,17 +6,28 @@ namespace LibLabGames.NewGame
 {
     public class Entity : MonoBehaviour
     {
-        [Header("Info Entity")]
-        public EntityInfo info;
+        [Header("Control Values")]
+        public float distanceWithNextEntity;
 
-        public int currentLevel;
+        [Header("Infos To Fill")]
+        public string unitName;
+        public float speed = 1;
+        public GameObject secondEntityPrefab;
+
+        [Header("On Play Info")]
+        public bool isReady;
+
+        public int currentEvolutionLevel;
         public int playerID;
         public int wayID;
-        public float speed = 1;
         public float currentSpeed;
 
         public bool isWalk;
-        public bool isReady;
+        public bool isOvertake;
+
+        public Entity nextEntity;
+        public Entity behindEntity;
+        public Entity enemyEntity;
 
         [Header("Elements")]
         public MeshRenderer coreMeshRenderer;
@@ -26,11 +37,6 @@ namespace LibLabGames.NewGame
         public Transform itemRightParent;
         public Transform itemForwardParent;
         public Transform itemLeftParent;
-
-        [Header("Items Prefab")]
-        public GameObject attackObjectPrefab;
-        public GameObject defenceObjectPrefab;
-        public GameObject grabObjectPrefab;
 
         RaycastHit hit;
         Ray m_rayFw;
@@ -47,48 +53,22 @@ namespace LibLabGames.NewGame
             Debug.DrawLine(rayFw.origin, rayFw.origin + rayFw.direction, Color.blue);
         }
 
-        public void DOSpawn(int player, int way)
+        public void DOSpawn(int player, int way, bool isSecond)
         {
-            // TO DELETE
-            /**/
-            info = GameManager.instance.settingEntities.entityInfos[GameManager.instance.debugValue];
-            /**/
-            currentLevel = 0;
-            // TO DELETE
-
             playerID = player;
             wayID = way;
 
-            speed = (info.unitSpeed != 0) ? info.unitSpeed : 1;
-            currentSpeed = speed;
-
             transform.localPosition = Vector3.zero;
 
-            for (int i = 0; i < info.entityEvolutionStats[currentLevel].entityItems.Length; ++i)
-            {
-                // TODO pooling system
-                GameObject go = Instantiate(
-                    // Prefab
-                    info.entityEvolutionStats[currentLevel].entityItems[i].itemType == EntityInfo.eItemType.attack ? attackObjectPrefab :
-                    info.entityEvolutionStats[currentLevel].entityItems[i].itemType == EntityInfo.eItemType.defence ? defenceObjectPrefab :
-                    grabObjectPrefab,
-                    // Parent
-                    info.entityEvolutionStats[currentLevel].entityItems[i].wayType == EntityInfo.eWayType.right ? itemRightParent :
-                    info.entityEvolutionStats[currentLevel].entityItems[i].wayType == EntityInfo.eWayType.forward ? itemForwardParent :
-                    itemLeftParent);
+            if(isSecond)
+                transform.localPosition += Vector3.back * 2.2f;
 
-                go.transform.localPosition = Vector3.zero;
-                go.transform.localRotation = Quaternion.identity;
+            // TEST force vitesse
+            speed = 0.5f;
 
-                if (info.entityEvolutionStats[currentLevel].entityItems[i].itemType == EntityInfo.eItemType.attack)
-                {
-                    go.GetComponent<Item>().attackForce = info.entityEvolutionStats[currentLevel].entityItems[i].level;
-                    go.transform.GetChild(0).GetComponent<MeshRenderer>().material.color =
-                        attackLvlColors[info.entityEvolutionStats[currentLevel].entityItems[i].level];
-                }
-            }
+            currentSpeed = speed;
 
-            // Repositionnement des items chez les parents
+            // Repositionnement des items dans leurs parents
             for (int i = 0; i < itemRightParent.childCount; ++i)
             {
                 itemRightParent.GetChild(i).localPosition += Vector3.forward * i;
@@ -102,51 +82,121 @@ namespace LibLabGames.NewGame
                 itemLeftParent.GetChild(i).localPosition += Vector3.forward * i;
             }
 
+            if (secondEntityPrefab != null)
+            {
+                GameManager.instance.SpawnEntity(secondEntityPrefab, playerID, wayID, true);
+            }
+
             isReady = true;
             isWalk = true;
         }
 
         private void Update()
         {
-            if (!isReady)
+            if (!isReady || GameManager.instance.isDrawPhase)
                 return;
 
-            if (Physics.Raycast(rayFw, out hit, 2.5f, 1 << 8) && !isWalk)
+            if (!isWalk)
             {
-                if (Physics.Raycast(transform.position + transform.forward * 2f, transform.position + transform.forward * 10f, out hit, 3f, 1 << 8) &&
-                    playerID == hit.transform.GetComponentInParent<Entity>().playerID &&
-                    hit.transform.GetComponentInParent<Entity>().isWalk &&
-                    !hit.transform.GetComponentInChildren<Item>().goToEnemyDefence)
-                {
-                    currentSpeed = hit.transform.GetComponentInParent<Entity>().speed;
-                    isWalk = true;
-                }
-                else
-                {
-                    return;
-                }
+                if (nextEntity != null)
+                    CheckCanWalk();
+
+                return;
             }
 
             if (currentSpeed != speed)
+                CheckCanWalk();
+
+            transform.Translate(Vector3.forward * currentSpeed * Time.deltaTime);
+        }
+
+        public void CheckCanWalk()
+        {
+            if (isOvertake)
+                return;
+
+            if (enemyEntity != null)
             {
-                if (Physics.Raycast(rayFw, out hit, 2.5f, 1 << 8) &&
-                    playerID == hit.transform.GetComponentInParent<Entity>().playerID &&
-                    hit.transform.GetComponentInParent<Entity>().isWalk)
+                if (enemyEntity.isReady)
                 {
-                    currentSpeed = hit.transform.GetComponentInParent<Entity>().speed;
-                }
-                else if (!Physics.SphereCast(transform.position, 2.5f, transform.forward, out hit, 2.5f, 1 << 8))
-                {
-                    currentSpeed = speed;
+                    isWalk = false;
+                    currentSpeed = 0;
                 }
             }
 
-            if (isWalk)
-                transform.Translate(Vector3.forward * currentSpeed * Time.deltaTime);
+            else if (!isWalk || currentSpeed != speed)
+            {
+                if (nextEntity == null || !nextEntity.isReady)
+                {
+                    isWalk = true;
+                    currentSpeed = speed;
+                }
+
+                else if ((nextEntity.transform.X() - transform.X()) * ((playerID == 0) ? 1 : -1) > distanceWithNextEntity)
+                {
+                    isWalk = true;
+
+                    if (currentSpeed > nextEntity.currentSpeed && (nextEntity.transform.X() - transform.X()) * ((playerID == 0) ? 1 : -1) < (distanceWithNextEntity + 0.5f))
+                        currentSpeed = nextEntity.currentSpeed;
+                    else
+                        currentSpeed = speed;
+                }
+
+                else
+                {
+                    isWalk = false;
+
+                    if (nextEntity.currentSpeed < currentSpeed)
+                        currentSpeed = nextEntity.currentSpeed;
+                    else
+                        currentSpeed = speed;
+                }
+            }
+
+            if (behindEntity != null)
+            {
+                behindEntity.CheckCanWalk();
+            }
+        }
+
+        private Entity colEntity;
+        private void OnTriggerEnter(Collider col)
+        {
+            if (col.CompareTag("Entity"))
+            {
+                colEntity = col.GetComponentInParent<Entity>();
+
+                if (colEntity == this)
+                    return;
+
+                if (colEntity.playerID != playerID)
+                {
+                    colEntity.DOKillEntity();
+                    DOKillEntity();
+                }
+            }
+            else if (col.CompareTag(string.Format("GoalPlayer{0}", playerID)))
+            {
+                HurtPlayer();
+            }
+        }
+
+        public void HurtPlayer()
+        {
+            DOKillEntity();
+            GameManager.instance.HurtPlayer(playerID == 0 ? 1 : 0);
         }
 
         public void DOKillEntity()
         {
+            if (!isReady)
+                return;
+
+            isReady = false;
+
+            if (behindEntity != null)
+                behindEntity.CheckCanWalk();
+
             Destroy(gameObject);
         }
     }

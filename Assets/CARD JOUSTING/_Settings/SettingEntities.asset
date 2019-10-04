@@ -12,61 +12,94 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2391d6a368835f48aa4eca7d3945e67, type: 3}
   m_Name: SettingEntities
   m_EditorClassIdentifier: 
-  entityInfos:
-  - ID: BOB
-    entityEvolutionStats:
-    - entityItems:
-      - itemType: 0
-        wayType: 1
-        force: 0
-    - entityItems:
-      - itemType: 0
-        wayType: 1
-        force: 1
-    - entityItems:
-      - itemType: 0
-        wayType: 1
-        force: 2
-  - ID: PAT
-    entityEvolutionStats:
-    - entityItems:
-      - itemType: 1
-        wayType: 1
-        force: 0
-    - entityItems:
-      - itemType: 1
-        wayType: 1
-        force: 0
-      - itemType: 1
-        wayType: 0
-        force: 0
-    - entityItems:
-      - itemType: 1
-        wayType: 1
-        force: 0
-      - itemType: 1
-        wayType: 2
-        force: 0
-  - ID: LUDIVINE
-    entityEvolutionStats:
-    - entityItems:
-      - itemType: 2
-        wayType: 1
-        force: 1
-    - entityItems:
-      - itemType: 2
-        wayType: 1
-        force: 1
-      - itemType: 2
-        wayType: 0
-        force: 1
-    - entityItems:
-      - itemType: 2
-        wayType: 1
-        force: 1
-      - itemType: 2
-        wayType: 0
-        force: 1
-      - itemType: 2
-        wayType: 2
-        force: 1
+  entities:
+  - tag: 000
+    evolveTime: 6
+    entityPrefabs:
+    - {fileID: 958956705904844607, guid: dfb1cdc67d84cee4e9ee9655e30c93b5, type: 3}
+    - {fileID: 958956705904844607, guid: ec97aa3eed643264f952adec3544e1c6, type: 3}
+    - {fileID: 958956705904844607, guid: bd81fa2da5a2b8f4bb52c1cbf5d62948, type: 3}
+    entitySprites:
+    - {fileID: 21300000, guid: 60ae65d663e4d5b4a802ce03e02fd9e5, type: 3}
+    - {fileID: 21300000, guid: a1560cc6d594e70449c9973d7f1b9c4c, type: 3}
+    - {fileID: 21300000, guid: 98f6e71728dd9eb4e84e13ab34aafddb, type: 3}
+  - tag: 001
+    evolveTime: 24
+    entityPrefabs:
+    - {fileID: 958956705904844607, guid: 3de01ee4a685d834c81959a4d12acbfd, type: 3}
+    - {fileID: 958956705904844607, guid: 80791d3acf68c254685cc4ed6778ec13, type: 3}
+    entitySprites:
+    - {fileID: 21300000, guid: e726fe40d8f2d1940954c7410fea3056, type: 3}
+    - {fileID: 21300000, guid: aeedebc5b338486428660fad64ffb336, type: 3}
+  - tag: 002
+    evolveTime: 0
+    entityPrefabs:
+    - {fileID: 958956705904844607, guid: d10ad10ec8e23fd44a812fc7aa5ee423, type: 3}
+    entitySprites:
+    - {fileID: 21300000, guid: 1c198dc31ef98924facc0893d60eb92f, type: 3}
+  - tag: 003
+    evolveTime: 0
+    entityPrefabs:
+    - {fileID: 958956705904844607, guid: 9b942d668f5d6354ba5bed0ae90f637d, type: 3}
+    entitySprites:
+    - {fileID: 21300000, guid: 1c59157888829504f95ffd9916138a5e, type: 3}
+  - tag: 004
+    evolveTime: 18
+    entityPrefabs:
+    - {fileID: 958956705904844607, guid: d60f9991cbd9a5141af47b66e6ac4ebb, type: 3}
+    - {fileID: 958956705904844607, guid: 7aef5b948ed0aa94eb1d03802b867050, type: 3}
+    entitySprites:
+    - {fileID: 21300000, guid: 994ff14a39d1eaf46991755cba271881, type: 3}
+    - {fileID: 21300000, guid: 23a03441b4c42ce4b8906f653cc79d0a, type: 3}
+  - tag: 005
+    evolveTime: 0
+    entityPrefabs:
+    - {fileID: 958956705904844607, guid: 700eefacb355fe24e94fe5af9f6e2f00, type: 3}
+    entitySprites:
+    - {fileID: 21300000, guid: 1b91b52b7173ff345808bedf7a11c72f, type: 3}
+  - tag: 006
+    evolveTime: 0
+    entityPrefabs:
+    - {fileID: 958956705904844607, guid: 92a06bdccd0d01b4ab06d74a77b06c34, type: 3}
+    entitySprites:
+    - {fileID: 21300000, guid: d2971f997975cca46870df6f176bf612, type: 3}
+  - tag: 007
+    evolveTime: 0
+    entityPrefabs:
+    - {fileID: 958956705904844607, guid: c1523d3aab98bb64e9a1dc91df4ce1c9, type: 3}
+    entitySprites:
+    - {fileID: 21300000, guid: 55a5ba73f7fd1664cb18fbf6d5499784, type: 3}
+  - tag: 008
+    evolveTime: 0
+    entityPrefabs:
+    - {fileID: 958956705904844607, guid: c0412dc941faa59489d7c34e72c49c4f, type: 3}
+    entitySprites:
+    - {fileID: 21300000, guid: adbfc7eb5007f9c44b2187db2e508914, type: 3}
+  - tag: 009
+    evolveTime: 0
+    entityPrefabs:
+    - {fileID: 958956705904844607, guid: 541b1a4ea96887846b6011c16d604e7f, type: 3}
+    entitySprites:
+    - {fileID: 21300000, guid: 459108f94b90fa44aa142d65e13aa740, type: 3}
+  - tag: 010
+    evolveTime: 0
+    entityPrefabs:
+    - {fileID: 958956705904844607, guid: e5b5c74fcb522f74195ff839adf652b1, type: 3}
+    entitySprites:
+    - {fileID: 21300000, guid: 87bd06e85ff4e50499992ced88ecc00b, type: 3}
+  - tag: 011
+    evolveTime: 6
+    entityPrefabs:
+    - {fileID: 958956705904844607, guid: fa0a5c15e7dad2e458ff232a9958d203, type: 3}
+    - {fileID: 958956705904844607, guid: acbb195ee375fa44eb3dab0b1c08ceec, type: 3}
+    - {fileID: 958956705904844607, guid: 28de38c66cca3db4caae800c74f3d48e, type: 3}
+    entitySprites:
+    - {fileID: 21300000, guid: 34d7f32d269932b49ada3a65cacd49d8, type: 3}
+    - {fileID: 21300000, guid: cf25929695454384f81b34da4085b61d, type: 3}
+    - {fileID: 21300000, guid: 5b5bf56eca86d194597a5940e555da28, type: 3}
+  - tag: 012
+    evolveTime: 0
+    entityPrefabs:
+    - {fileID: 958956705904844607, guid: dae74f52550c1454e8dda38316e29582, type: 3}
+    entitySprites:
+    - {fileID: 21300000, guid: a2553b2f5e6962c43bcfd3ac3682ac7d, type: 3}

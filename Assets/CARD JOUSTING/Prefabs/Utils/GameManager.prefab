@@ -54,27 +54,46 @@ MonoBehaviour:
     type: 3}
   playerInfos:
   - life: 3
-    canSpawn: 0
-    spawnCooldownFadeImage: {fileID: 0}
-    spawnCooldownImage: {fileID: 0}
+    canSpawnOnWay: 
+    spawnCooldownFadeImage:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     spawnTransforms:
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
     lastEntityOnGameBoard: {fileID: 0}
     entitiesOnGameBoard: []
-    entityOnTraining: {fileID: 0}
+    evolutionBackgroundCurrentImage: {fileID: 0}
+    evolutionBackgroundNextImage: {fileID: 0}
+    evolutionProgressionImage: {fileID: 0}
+    evolutionCurrentStatImage: {fileID: 0}
+    evolutionNextStatImage: {fileID: 0}
+    entityOnTraining: 
+    entitiesLevelTwo: []
+    entitiesLevelThree: []
   - life: 3
-    canSpawn: 0
-    spawnCooldownFadeImage: {fileID: 0}
-    spawnCooldownImage: {fileID: 0}
+    canSpawnOnWay: 
+    spawnCooldownFadeImage:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     spawnTransforms:
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
     lastEntityOnGameBoard: {fileID: 0}
     entitiesOnGameBoard: []
-    entityOnTraining: {fileID: 0}
+    evolutionBackgroundCurrentImage: {fileID: 0}
+    evolutionBackgroundNextImage: {fileID: 0}
+    evolutionProgressionImage: {fileID: 0}
+    evolutionCurrentStatImage: {fileID: 0}
+    evolutionNextStatImage: {fileID: 0}
+    entityOnTraining: 
+    entitiesLevelTwo: []
+    entitiesLevelThree: []
   debugKeyCodeSpawn: 610000007a00000065000000
   debugKeyCodeSpawnBis: 010100000201000003010000
+  debugKeyCodeEvolution: 690000006f000000
   debugValue: 0

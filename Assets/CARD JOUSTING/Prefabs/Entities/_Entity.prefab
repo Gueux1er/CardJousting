@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 8813703632723422466}
   - component: {fileID: 949225209069036603}
   m_Layer: 8
-  m_Name: Entity
+  m_Name: _Entity
   m_TagString: Entity
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -139,7 +139,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -155,19 +155,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 762986bba6f6cef4aa8f7d11cb87ebac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  info:
-    ID: 
-    unitCasting: 0
-    unitSpeed: 0
-    entityEvolutionStats: []
-  currentLevel: 0
+  distanceWithNextEntity: 2.2
+  unitName: 
+  speed: 1
+  secondEntityPrefab: {fileID: 0}
+  isReady: 0
+  currentEvolutionLevel: 0
   playerID: 0
   wayID: 0
-  speed: 1
   currentSpeed: 0
-  onHalfWalk: 0
   isWalk: 0
-  isReady: 0
+  isOvertake: 0
+  nextEntity: {fileID: 0}
+  behindEntity: {fileID: 0}
+  enemyEntity: {fileID: 0}
   coreMeshRenderer: {fileID: 949225207412708147}
   attackLvlColors:
   - {r: 1, g: 0.90588236, b: 0, a: 1}
@@ -177,12 +178,6 @@ MonoBehaviour:
   itemRightParent: {fileID: 3784973371068957296}
   itemForwardParent: {fileID: 3018203169385030379}
   itemLeftParent: {fileID: 6750473742910134427}
-  attackObjectPrefab: {fileID: 8381935348610507802, guid: d86d4e451b146c54aa5b2e247fbfc9c3,
-    type: 3}
-  defenceObjectPrefab: {fileID: 2645453796054843102, guid: f60e6f9e5a716974eb760b64c3b4c70e,
-    type: 3}
-  grabObjectPrefab: {fileID: 406327421779755231, guid: d52c14edc46569e439e69e8c57838deb,
-    type: 3}
 --- !u!1 &1106442293233086520
 GameObject:
   m_ObjectHideFlags: 0
