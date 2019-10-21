@@ -72,10 +72,7 @@ namespace LibLabGames.NewGame
                     {
                         entity.currentSpeed = colEntity.currentSpeed;
 
-                        if (!colEntity.isWalk)
-                        {
-                            entity.isWalk = false;
-                        }
+                        entity.isWalk = false;
                     }
                     else if (!entity.isOvertake)
                     {
@@ -205,11 +202,8 @@ namespace LibLabGames.NewGame
                     if (typeItem != eTypeItem.grab)
                     {
                         entity.currentSpeed = colEntity.currentSpeed;
-
-                        if (!colEntity.isWalk)
-                        {
-                            entity.isWalk = false;
-                        }
+                        
+                        entity.isWalk = false;
                     }
                     else if (!entity.isOvertake)
                     {

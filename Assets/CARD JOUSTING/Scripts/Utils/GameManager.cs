@@ -13,6 +13,8 @@ namespace LibLabGames.NewGame
     {
         public static GameManager instance;
 
+        public bool gameIsReady;
+
         public SettingEntities settingEntities;
 
         public GameObject entityPrefab;
@@ -44,9 +46,13 @@ namespace LibLabGames.NewGame
         public CanvasGroup drawPhaseDisplay;
         public Transform drawPhaseTimerTransform;
 
+        public CanvasGroup gameOverDisplay;
+        public TextMeshProUGUI[] playerGameOverTexts;
+
         public KeyCode[] debugKeyCodeSpawn;
         public KeyCode[] debugKeyCodeSpawnBis;
         public KeyCode[] debugKeyCodeEvolution;
+        public string[] debugCardIDs;
         public int debugValue;
 
         private float cooldownSpawnValue;
@@ -66,6 +72,8 @@ namespace LibLabGames.NewGame
             if (!DOAwake()) return;
 
             instance = this;
+
+            gameIsReady = true;
         }
 
         private void Start()
@@ -90,6 +98,7 @@ namespace LibLabGames.NewGame
             evolutionCoco = new IEnumerator[2];
 
             drawPhaseDisplay.alpha = 0;
+            gameOverDisplay.alpha = 0;
 
             // TODO écran d'attente des joueurs (check deck)
 
@@ -126,7 +135,7 @@ namespace LibLabGames.NewGame
         private Entity lastEntitySpwaned;
         private void Update()
         {
-            if (isDrawPhase)
+            if (isDrawPhase || !gameIsReady)
                 return;
 
             for (int i = 0; i < playerInfos.Length; ++i)
@@ -155,9 +164,9 @@ namespace LibLabGames.NewGame
                     if (Input.GetKeyDown(debugKeyCodeSpawn[i]))
                     {
                         // Recupérer l'ID de la carte
-                        string cardID  = "008";
+                        string cardID = debugCardIDs[debugValue];
                         //string cardID = string.Format("00{0}", Random.Range(0,10));
-                        
+
                         int entityLevel = 0;
                         GameObject entityGo = new GameObject();
 
@@ -190,7 +199,7 @@ namespace LibLabGames.NewGame
                     if (playerInfos[i].entityOnTraining == null)
                     {
                         // Recupérer l'ID de la carte
-                        playerInfos[i].entityOnTraining = "008";
+                        playerInfos[i].entityOnTraining = debugCardIDs[debugValue];
                         //playerInfos[i].entityOnTraining = string.Format("00{0}", Random.Range(0,10));
 
                         if (evolutionCoco[i] != null)
@@ -366,19 +375,48 @@ namespace LibLabGames.NewGame
         public void HurtPlayer(int player)
         {
             playerInfos[player].currentLife--;
+
+            if (playerInfos[player].currentLife <= 0)
+                OnGameOver(player);
         }
 
-        public void ReadCardNFC_GameBoard(string info)
+        public void OnGameOver(int loserPlayer)
         {
+            gameIsReady = false;
 
+            gameOverDisplay.alpha = 0;
+            gameOverDisplay.DOFade(1f, 0.5f);
+
+            for (int i = 0; i < 2; ++i)
+            {
+                playerGameOverTexts[i].text = (i == loserPlayer) ? "Loser!" : "Winner!";
+                playerGameOverTexts[i].color = Color.clear;
+                playerGameOverTexts[i].DOColor((i == loserPlayer) ? Color.red : Color.yellow, 0.5f);
+            }
         }
 
-        public void ReadCardNFC_Training(string info)
+        GameObject entityToSpawn;
+        public void ReadCardNFC_GameBoard(string cardID, int playerID, int wayID)
         {
+            int entityLevel = 0;
 
+            if (playerInfos[playerID].entitiesLevelTwo.Find(x => x.Contains(cardID)) != null)
+                entityLevel = 1;
+            if (playerInfos[playerID].entitiesLevelThree.Find(x => x.Contains(cardID)) != null)
+                entityLevel = 2;
+
+            foreach (SettingEntities.Entity entity in settingEntities.entities)
+            {
+                if (entity.tag == cardID)
+                {
+                    entityToSpawn = entity.entityPrefabs[entityLevel];
+                }
+            }
+
+            SpawnEntity(entityToSpawn, playerID, wayID);
         }
 
-        public void WriteCardNFC_Training()
+        public void ReadCardNFC_Training(string cardID, int playerID)
         {
 
         }

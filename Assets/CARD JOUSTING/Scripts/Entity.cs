@@ -93,7 +93,7 @@ namespace LibLabGames.NewGame
 
         private void Update()
         {
-            if (!isReady || GameManager.instance.isDrawPhase)
+            if (!isReady || GameManager.instance.isDrawPhase || !GameManager.instance.gameIsReady)
                 return;
 
             if (!isWalk)

@@ -49,11 +49,14 @@ MonoBehaviour:
   settingDialogs: {fileID: 11400000, guid: f7baa75a2a654e040bbd74188718f8b0, type: 2}
   toActiveAtStart: []
   toDisableAtStart: []
+  gameIsReady: 0
   settingEntities: {fileID: 11400000, guid: 8efd064b716425c41a569266be3e60eb, type: 2}
   entityPrefab: {fileID: 949225209069036600, guid: 5d6d5f3d3f3b3184fb0a8b55a06f793a,
     type: 3}
   playerInfos:
-  - life: 3
+  - maxLife: 3
+    currentLife: 3
+    lifeSlider: {fileID: 0}
     canSpawnOnWay: 
     spawnCooldownFadeImage:
     - {fileID: 0}
@@ -65,6 +68,7 @@ MonoBehaviour:
     - {fileID: 0}
     lastEntityOnGameBoard: {fileID: 0}
     entitiesOnGameBoard: []
+    gamePhaseTimerText: {fileID: 0}
     evolutionBackgroundCurrentImage: {fileID: 0}
     evolutionBackgroundNextImage: {fileID: 0}
     evolutionProgressionImage: {fileID: 0}
@@ -73,7 +77,9 @@ MonoBehaviour:
     entityOnTraining: 
     entitiesLevelTwo: []
     entitiesLevelThree: []
-  - life: 3
+  - maxLife: 3
+    currentLife: 3
+    lifeSlider: {fileID: 0}
     canSpawnOnWay: 
     spawnCooldownFadeImage:
     - {fileID: 0}
@@ -85,6 +91,7 @@ MonoBehaviour:
     - {fileID: 0}
     lastEntityOnGameBoard: {fileID: 0}
     entitiesOnGameBoard: []
+    gamePhaseTimerText: {fileID: 0}
     evolutionBackgroundCurrentImage: {fileID: 0}
     evolutionBackgroundNextImage: {fileID: 0}
     evolutionProgressionImage: {fileID: 0}
@@ -93,7 +100,24 @@ MonoBehaviour:
     entityOnTraining: 
     entitiesLevelTwo: []
     entitiesLevelThree: []
+  isDrawPhase: 0
+  drawPhaseDisplay: {fileID: 0}
+  drawPhaseTimerTransform: {fileID: 0}
+  gameOverDisplay: {fileID: 0}
+  playerGameOverTexts:
+  - {fileID: 0}
+  - {fileID: 0}
   debugKeyCodeSpawn: 610000007a00000065000000
-  debugKeyCodeSpawnBis: 010100000201000003010000
+  debugKeyCodeSpawnBis: 010100000201000003010000040100000501000006010000070100000801000009010000
   debugKeyCodeEvolution: 690000006f000000
+  debugCardIDs:
+  - 000
+  - 001
+  - 002
+  - 003
+  - 004
+  - 005
+  - 006
+  - 007
+  - 008
   debugValue: 0
