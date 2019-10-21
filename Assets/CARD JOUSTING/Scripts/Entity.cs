@@ -162,6 +162,9 @@ namespace LibLabGames.NewGame
         private Entity colEntity;
         private void OnTriggerEnter(Collider col)
         {
+            if (!isReady)
+                return;
+
             if (col.CompareTag("Entity"))
             {
                 colEntity = col.GetComponentInParent<Entity>();
@@ -174,10 +177,6 @@ namespace LibLabGames.NewGame
                     colEntity.DOKillEntity();
                     DOKillEntity();
                 }
-            }
-            else if (col.CompareTag(string.Format("GoalPlayer{0}", playerID)))
-            {
-                HurtPlayer();
             }
         }
 

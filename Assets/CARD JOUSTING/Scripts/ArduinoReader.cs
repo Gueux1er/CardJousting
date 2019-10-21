@@ -27,7 +27,7 @@ public class ArduinoReader : MonoBehaviour
             ports.Find(x => x.Contains(port_01)) == null ||
             ports.Find(x => x.Contains(port_02)) == null)
         {
-            LLLog.LogW("ArduinoReader","Can't found the arduino's ports.");
+            LLLog.LogW("ArduinoReader","Arduino NFC disable!");
             gameObject.SetActive(false);
             return;
         }

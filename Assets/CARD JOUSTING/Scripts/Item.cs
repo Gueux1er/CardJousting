@@ -57,6 +57,16 @@ namespace LibLabGames.NewGame
 
         private void OnTriggerSide(Collider col)
         {
+            if (col.CompareTag(string.Format("GoalPlayer{0}", playerID)))
+            {
+                if (typeItem == eTypeItem.attack)
+                    entity.HurtPlayer();
+                else
+                    DODestroy();
+
+                return;
+            }
+
             if (col.CompareTag("Entity"))
             {
                 colEntity = col.GetComponentInParent<Entity>();
@@ -252,15 +262,21 @@ namespace LibLabGames.NewGame
                     {
                         if (attackForce == colItem.attackForce)
                         {
+                            SoundManager.instance.BothDestroyed();
+
                             colItem.DODestroy();
                             DODestroy();
                         }
                         else if (attackForce > colItem.attackForce)
                         {
+                            SoundManager.instance.Kill();
+
                             colItem.DODestroy();
                         }
                         else if (attackForce < colItem.attackForce)
                         {
+                            SoundManager.instance.Kill();
+
                             DODestroy();
                         }
                     }
@@ -272,6 +288,8 @@ namespace LibLabGames.NewGame
                     }
                     else if (colItem.typeItem == eTypeItem.grab)
                     {
+                        SoundManager.instance.Kill();
+
                         colItem.DODestroy();
                     }
                 }
@@ -281,12 +299,16 @@ namespace LibLabGames.NewGame
                 {
                     if (colItem.typeItem == eTypeItem.attack)
                     {
+                        SoundManager.instance.Blocked();
+
                         colItem.entity.isWalk = false;
                         entity.isWalk = false;
                         entity.enemyEntity = colItem.entity;
                     }
                     else if (colItem.typeItem == eTypeItem.defence)
                     {
+                        SoundManager.instance.Blocked();
+
                         colItem.entity.isWalk = false;
                         entity.isWalk = false;
                         entity.enemyEntity = colItem.entity;
@@ -306,11 +328,15 @@ namespace LibLabGames.NewGame
                     }
                     else if (colItem.typeItem == eTypeItem.defence)
                     {
+                        SoundManager.instance.Kill();
+
                         entity.isOvertake = false;
                         colItem.DODestroy();
                     }
                     else if (colItem.typeItem == eTypeItem.grab)
                     {
+                        SoundManager.instance.BothDestroyed();
+
                         colItem.DODestroy();
                         DODestroy();
                     }

@@ -77,6 +77,9 @@ MonoBehaviour:
     entityOnTraining: 
     entitiesLevelTwo: []
     entitiesLevelThree: []
+    DEBUG_selectionEntityKeys: 310000003200000033000000340000003500000036000000
+    DEBUG_summonKeys: 610000007a00000065000000
+    DEBUG_evolveKey: 115
   - maxLife: 3
     currentLife: 3
     lifeSlider: {fileID: 0}
@@ -100,9 +103,14 @@ MonoBehaviour:
     entityOnTraining: 
     entitiesLevelTwo: []
     entitiesLevelThree: []
+    DEBUG_selectionEntityKeys: 010100000201000003010000040100000501000006010000
+    DEBUG_summonKeys: 140100001201000013010000
+    DEBUG_evolveKey: 273
   isDrawPhase: 0
   drawPhaseDisplay: {fileID: 0}
-  drawPhaseTimerTransform: {fileID: 0}
+  drawPhaseTimerTexts:
+  - {fileID: 0}
+  - {fileID: 0}
   gameOverDisplay: {fileID: 0}
   playerGameOverTexts:
   - {fileID: 0}

@@ -39,12 +39,18 @@ namespace LibLabGames.NewGame
             public string entityOnTraining;
             public List<string> entitiesLevelTwo; // tag des cartes NFC
             public List<string> entitiesLevelThree;
+
+            public KeyCode[] DEBUG_selectionEntityKeys;
+            public KeyCode[] DEBUG_summonKeys;
+            public KeyCode DEBUG_evolveKey;
+            public string[] DEBUG_cardOnHand;
+            public string DEBUG_entityOn;
         }
         public PlayerInfo[] playerInfos;
 
         public bool isDrawPhase;
         public CanvasGroup drawPhaseDisplay;
-        public Transform drawPhaseTimerTransform;
+        public TextMeshProUGUI[] drawPhaseTimerTexts;
 
         public CanvasGroup gameOverDisplay;
         public TextMeshProUGUI[] playerGameOverTexts;
@@ -52,7 +58,6 @@ namespace LibLabGames.NewGame
         public KeyCode[] debugKeyCodeSpawn;
         public KeyCode[] debugKeyCodeSpawnBis;
         public KeyCode[] debugKeyCodeEvolution;
-        public string[] debugCardIDs;
         public int debugValue;
 
         private float cooldownSpawnValue;
@@ -82,8 +87,8 @@ namespace LibLabGames.NewGame
 
             for (int i = 0; i < playerInfos.Length; ++i)
             {
-                DisableEvolution(i);
-                playerInfos[i].entityOnTraining = null;
+                DisableEvolveUI(i);
+                playerInfos[i].entityOnTraining = string.Empty;
 
                 for (int j = 0; j < playerInfos[i].spawnCooldownFadeImage.Count; ++j)
                 {
@@ -107,6 +112,8 @@ namespace LibLabGames.NewGame
         {
             gameIsReady = true;
 
+            SoundManager.instance.StartGame();
+
             EnableGamePhase();
         }
 
@@ -122,14 +129,25 @@ namespace LibLabGames.NewGame
 
         private void EnableDrawPhase()
         {
+            SoundManager.instance.StartDrawPhase();
+
             isDrawPhase = true;
 
             drawPhaseDisplay.DOFade(1f, 1f);
 
-            drawPhaseTimerTransform.localScale = Vector3.one;
-            drawPhaseTimerTransform.DOScale(new Vector3(10, 0, 1), drawPhaseTimer).SetEase(Ease.Linear)
+            phaseTimer = drawPhaseTimer;
+
+            DOTween.To(() => phaseTimer, x => phaseTimer = x, 0, drawPhaseTimer).SetEase(Ease.Linear)
+                .OnUpdate(() =>
+                {
+                    for (int i = 0; i < 2; ++i)
+                    {
+                        drawPhaseTimerTexts[i].text = drawPhaseTimer.ToString("00");
+                    };
+                })
                 .OnComplete(() =>
                 {
+                    SoundManager.instance.EndDrawPhase();
                     drawPhaseDisplay.DOFade(0f, 0.2f);
                     EnableGamePhase();
                 });
@@ -147,83 +165,79 @@ namespace LibLabGames.NewGame
             {
                 playerInfos[i].gamePhaseTimerText.text = phaseTimer.ToString("00");
                 playerInfos[i].lifeSlider.value = (float) playerInfos[i].currentLife / (float) playerInfos[i].maxLife;
-            };
 
-            if (Input.GetKeyDown(KeyCode.Alpha1))
-                currentPlayer = 0;
-            else if (Input.GetKeyDown(KeyCode.Alpha2))
-                currentPlayer = 1;
-
-            for (int i = 0; i < debugKeyCodeSpawnBis.Length; ++i)
-            {
-                if (Input.GetKeyDown(debugKeyCodeSpawnBis[i]))
+                // DEBUG Sélection de carte
+                for (int j = 0; j < playerInfos[i].DEBUG_selectionEntityKeys.Length; ++j)
                 {
-                    debugValue = i;
-                }
-            }
-
-            for (int i = 0; i < debugKeyCodeSpawn.Length; ++i)
-            {
-                if (playerInfos[currentPlayer].canSpawnOnWay[i])
-                {
-                    if (Input.GetKeyDown(debugKeyCodeSpawn[i]))
+                    if (Input.GetKeyDown(playerInfos[i].DEBUG_selectionEntityKeys[j]))
                     {
-                        // Recupérer l'ID de la carte
-                        string cardID = debugCardIDs[debugValue];
-                        //string cardID = string.Format("00{0}", Random.Range(0,10));
+                        playerInfos[i].DEBUG_entityOn = playerInfos[i].DEBUG_cardOnHand[j];
+                    }
+                }
+                // DEBUG invocation de la carte
+                for (int j = 0; j < playerInfos[i].DEBUG_summonKeys.Length; ++j)
+                {
+                    if (playerInfos[i].DEBUG_entityOn != string.Empty && Input.GetKeyDown(playerInfos[i].DEBUG_summonKeys[j]))
+                    {
+                        NFC_Activate(i);
 
                         int entityLevel = 0;
                         GameObject entityGo = new GameObject();
 
-                        if (playerInfos[currentPlayer].entitiesLevelTwo.Find(x => x.Contains(cardID)) != null)
+                        if (playerInfos[i].entitiesLevelTwo.Find(x => x.Contains(playerInfos[i].DEBUG_entityOn)) != null)
                             entityLevel = 1;
-                        if (playerInfos[currentPlayer].entitiesLevelThree.Find(x => x.Contains(cardID)) != null)
+                        if (playerInfos[i].entitiesLevelThree.Find(x => x.Contains(playerInfos[i].DEBUG_entityOn)) != null)
                             entityLevel = 2;
 
                         foreach (SettingEntities.Entity entity in settingEntities.entities)
                         {
-                            if (entity.tag == cardID)
+                            if (entity.tag == playerInfos[i].DEBUG_entityOn)
                             {
                                 entityGo = entity.entityPrefabs[entityLevel];
                             }
                         }
 
-                        SpawnEntity(entityGo, currentPlayer, i);
+                        SpawnEntity(entityGo, i, j);
+
+                        playerInfos[i].DEBUG_entityOn = string.Empty;
                     }
                 }
-            }
-
-            for (int i = 0; i < debugKeyCodeEvolution.Length; ++i)
-            {
-                if (Input.GetKeyDown(debugKeyCodeEvolution[i]))
+                // DEBUG évolution d'une carte
+                if (Input.GetKeyDown(playerInfos[i].DEBUG_evolveKey))
                 {
-                    ActiveEvolution(i);
-                }
-                if (Input.GetKey(debugKeyCodeEvolution[i]))
-                {
-                    if (playerInfos[i].entityOnTraining == null)
+                    if (playerInfos[i].entityOnTraining == string.Empty && playerInfos[i].DEBUG_entityOn != string.Empty)
                     {
-                        // Recupérer l'ID de la carte
-                        playerInfos[i].entityOnTraining = debugCardIDs[debugValue];
-                        //playerInfos[i].entityOnTraining = string.Format("00{0}", Random.Range(0,10));
-
+                        playerInfos[i].entityOnTraining = playerInfos[i].DEBUG_entityOn;
+                        NFC_Activate(i);
+                        ActiveEvolution(i);
+                        
                         if (evolutionCoco[i] != null)
                             StopCoroutine(evolutionCoco[i]);
 
                         evolutionCoco[i] = EvolutionEnum(i, playerInfos[i].entityOnTraining);
                         StartCoroutine(evolutionCoco[i]);
                     }
-                }
-                if (Input.GetKeyUp(debugKeyCodeEvolution[i]))
-                {
-                    playerInfos[i].entityOnTraining = null;
 
-                    if (evolutionCoco[i] != null)
-                        StopCoroutine(evolutionCoco[i]);
+                    else if (playerInfos[i].entityOnTraining != string.Empty)
+                    {
+                        playerInfos[i].entityOnTraining = string.Empty;
 
-                    DisableEvolution(i);
+                        if (evolutionCoco[i] != null)
+                            StopCoroutine(evolutionCoco[i]);
+
+                        DisableEvolution(i);
+                    }
                 }
-            }
+            };
+        }
+
+        private void NFC_Activate(int player)
+        {
+            if (player == 0)
+                SoundManager.instance.NFCDetectLeft();
+
+            else
+                SoundManager.instance.NFCDetectRight();
         }
 
         public void SpawnEntity(GameObject go, int player, int way, bool isSecondEntity = false)
@@ -286,6 +300,8 @@ namespace LibLabGames.NewGame
                             duration = entity.evolveTime;
                     }
                 }
+
+                SoundManager.instance.Evolve((SoundManager.Player) player, duration);
 
                 // Si créature ne peut pas évoluer (déjà au niveau max)
                 if (!canEvolve)
@@ -359,6 +375,13 @@ namespace LibLabGames.NewGame
 
         private void DisableEvolution(int player)
         {
+            SoundManager.instance.CancelEvolve((SoundManager.Player) player);
+
+            DisableEvolveUI(player);
+        }
+
+        private void DisableEvolveUI(int player)
+        {
             playerInfos[player].evolutionCurrentStatImage.gameObject.SetActive(false);
             playerInfos[player].evolutionNextStatImage.gameObject.SetActive(false);
             playerInfos[player].evolutionProgressionImage.fillAmount = 0;
@@ -380,6 +403,8 @@ namespace LibLabGames.NewGame
         public void HurtPlayer(int player)
         {
             playerInfos[player].currentLife--;
+
+            SoundManager.instance.BaseDamage();
 
             if (playerInfos[player].currentLife <= 0)
                 OnGameOver(player);

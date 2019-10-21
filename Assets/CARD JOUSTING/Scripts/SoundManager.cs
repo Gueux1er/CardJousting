@@ -1,12 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-using FMODUnity;
 using FMOD.Studio;
+using FMODUnity;
+using UnityEngine;
 using EventInstance = FMOD.Studio.EventInstance;
 using RuntimeManager = FMODUnity.RuntimeManager;
-
-
+using LibLabSystem;
 
 public class SoundManager : MonoBehaviour
 {
@@ -49,20 +48,21 @@ public class SoundManager : MonoBehaviour
     private Coroutine p1EvolveRoutine;
     private Coroutine p2EvolveRoutine;
 
-    public enum Player
-    { P1, P2};
+    public enum Player { P1, P2 }
 
     public static SoundManager instance;
 
-    void Start()
+    private void Awake()
     {
-        if (instance != null)
+        if (instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else if (instance != this)
         {
             Destroy(this);
+            return;
         }
 
         musicInstance = RuntimeManager.CreateInstance(music);
@@ -74,7 +74,7 @@ public class SoundManager : MonoBehaviour
         blockedInstance = RuntimeManager.CreateInstance(blocked);
         baseDamageInstance = RuntimeManager.CreateInstance(baseDamage);
         evolveP1 = RuntimeManager.CreateInstance(evolve);
-        evolveP2 = RuntimeManager.CreateInstance(evolve); 
+        evolveP2 = RuntimeManager.CreateInstance(evolve);
     }
 
     /// <summary>
@@ -94,19 +94,19 @@ public class SoundManager : MonoBehaviour
 
     public void Evolve(Player player, float duration)
     {
-        switch(player)
+        switch (player)
         {
-            case Player.P1:
-                evolveP1.setParameterByName("evolve_state", 0.0f);
-                evolveP1.start();
-                p1EvolveRoutine = StartCoroutine(EvolveTimer(Player.P1, duration));
-                break;
+        case Player.P1:
+            evolveP1.setParameterByName("evolve_state", 0.0f);
+            evolveP1.start();
+            p1EvolveRoutine = StartCoroutine(EvolveTimer(Player.P1, duration));
+            break;
 
-            case Player.P2:
-                evolveP2.setParameterByName("evolve_state", 0.0f);
-                evolveP2.start();
-                p2EvolveRoutine = StartCoroutine(EvolveTimer(Player.P2, duration));
-                break;
+        case Player.P2:
+            evolveP2.setParameterByName("evolve_state", 0.0f);
+            evolveP2.start();
+            p2EvolveRoutine = StartCoroutine(EvolveTimer(Player.P2, duration));
+            break;
         }
     }
 
@@ -114,17 +114,17 @@ public class SoundManager : MonoBehaviour
     {
         switch (player)
         {
-            case Player.P1:
-                StopCoroutine(p1EvolveRoutine);
-                evolveP1.setParameterByName("evolve_state", 0.0f);
-                StopAfterTimer(evolveP1, 1.0f);
-                break;
+        case Player.P1:
+            StopCoroutine(p1EvolveRoutine);
+            evolveP1.setParameterByName("evolve_state", 0.0f);
+            StopAfterTimer(evolveP1, 1.0f);
+            break;
 
-            case Player.P2:
-                StopCoroutine(p2EvolveRoutine);
-                evolveP2.setParameterByName("evolve_state", 0.0f);
-                StopAfterTimer(evolveP2, 1.0f);
-                break;
+        case Player.P2:
+            StopCoroutine(p2EvolveRoutine);
+            evolveP2.setParameterByName("evolve_state", 0.0f);
+            StopAfterTimer(evolveP2, 1.0f);
+            break;
         }
     }
 
@@ -192,6 +192,4 @@ public class SoundManager : MonoBehaviour
         musicInstance.setParameterByName("game_phase", 0.0f);
     }
 
-
-    
 }
