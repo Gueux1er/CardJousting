@@ -72,8 +72,6 @@ namespace LibLabGames.NewGame
             if (!DOAwake()) return;
 
             instance = this;
-
-            gameIsReady = true;
         }
 
         private void Start()
@@ -101,6 +99,13 @@ namespace LibLabGames.NewGame
             gameOverDisplay.alpha = 0;
 
             // TODO écran d'attente des joueurs (check deck)
+
+            DoStartGame();
+        }
+
+        public void DoStartGame()
+        {
+            gameIsReady = true;
 
             EnableGamePhase();
         }
