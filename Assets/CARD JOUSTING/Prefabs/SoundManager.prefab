@@ -43,14 +43,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a00c837d3f912964badf0cd06a8e6ad9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blocked: 
-  bothDestroyed: 
-  countdown: 
-  evolve: 
-  gameStart: 
-  invocation: 
-  kill: 
-  music: 
-  nfc_detect_left: 
-  nfc_detect_right: 
-  baseDamage: 
+  blocked: event:/blocked
+  bothDestroyed: event:/both-destroyed
+  countdown: event:/countdown_4.5_seconds
+  evolve: event:/evolve_v2
+  gameStart: event:/game_start
+  invocation: event:/invocation
+  kill: event:/kill
+  music: event:/music_v2
+  nfc_detect_left: event:/nfc_detect_left
+  nfc_detect_right: event:/nfc_detect_right
+  baseDamage: event:/base_damage

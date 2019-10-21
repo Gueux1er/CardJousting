@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 114128100985427030}
-  - {fileID: 114115284290100152}
+  - {fileID: 114620580484214034}
+  - {fileID: 114891436416363298}
   EditorEvents:
   - {fileID: 114822306303812216}
   - {fileID: 114527873231256032}
@@ -42,13 +42,47 @@ MonoBehaviour:
   - {fileID: 114229000973294826}
   - {fileID: 114268266057821322}
   EditorParameters:
-  - {fileID: 114801831503963032}
+  - {fileID: 114586885547190026}
   MasterBanks:
-  - {fileID: 114115284290100152}
+  - {fileID: 114891436416363298}
   StringsBanks:
-  - {fileID: 114128100985427030}
-  stringsBankWriteTime: 637072674008804541
+  - {fileID: 114620580484214034}
+  stringsBankWriteTime: 637072670340990956
   cacheVersion: 3
+--- !u!114 &114005206775619732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/overview/evolve_state
+  m_EditorClassIdentifier: 
+  Name: evolve_state
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
+--- !u!114 &114097335422903236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/evolve/evolve_state
+  m_EditorClassIdentifier: 
+  Name: evolve_state
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &114104038549262740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,7 +115,7 @@ MonoBehaviour:
   Path: event:/countdown_4.5_seconds_v2
   guid: 0dcb86573b398c4eb11de04e3ff74feb
   Banks:
-  - {fileID: 114115284290100152}
+  - {fileID: 114891436416363298}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -108,7 +142,7 @@ MonoBehaviour:
   FileSizes:
   - Name: 
     Value: 2349312
-  Exists: 1
+  Exists: 0
 --- !u!114 &114128100985427030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,7 +162,7 @@ MonoBehaviour:
   FileSizes:
   - Name: 
     Value: 2008
-  Exists: 1
+  Exists: 0
 --- !u!114 &114145642036705728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,7 +178,7 @@ MonoBehaviour:
   Path: event:/start_draw_phase
   guid: 3c652e510cb2bf45a182f50f32f3d006
   Banks:
-  - {fileID: 114115284290100152}
+  - {fileID: 114891436416363298}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -167,7 +201,7 @@ MonoBehaviour:
   Path: event:/both-destroyed_v2
   guid: 28980cccfea34642aa88f4477d7ee8a6
   Banks:
-  - {fileID: 114115284290100152}
+  - {fileID: 114891436416363298}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -190,7 +224,7 @@ MonoBehaviour:
   Path: event:/kill
   guid: db2d4f309dcda04c83ed44f62c702e9b
   Banks:
-  - {fileID: 114115284290100152}
+  - {fileID: 114891436416363298}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -198,6 +232,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2991
+--- !u!114 &114212904597107974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/evolve_v2/evolve_state
+  m_EditorClassIdentifier: 
+  Name: evolve_state
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &114229000973294826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,7 +264,7 @@ MonoBehaviour:
   Path: event:/kill_v2
   guid: e8d4cf1e78118c48b080f87807e8bfb3
   Banks:
-  - {fileID: 114115284290100152}
+  - {fileID: 114891436416363298}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -236,7 +287,7 @@ MonoBehaviour:
   Path: event:/invocation_v2
   guid: 0920b923c4623d4aa7cd49122a8672d6
   Banks:
-  - {fileID: 114115284290100152}
+  - {fileID: 114891436416363298}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -260,6 +311,23 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+  Exists: 0
+--- !u!114 &114237229447919170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/base_damage_v2/base_lifepoints
+  m_EditorClassIdentifier: 
+  Name: base_lifepoints
+  Min: 0
+  Max: 4
+  Default: 0
   Exists: 1
 --- !u!114 &114251380999053652
 MonoBehaviour:
@@ -277,7 +345,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &114268266057821322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,15 +361,32 @@ MonoBehaviour:
   Path: event:/base_damage
   guid: f60e657ea3e3494ba99cfc2b47020259
   Banks:
-  - {fileID: 114115284290100152}
+  - {fileID: 114891436416363298}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 114619201105872832}
+  - {fileID: 114998453737278434}
   MinDistance: 0
   MaxDistance: 0
   Length: 3435
+--- !u!114 &114272191769093916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/music/game_phase
+  m_EditorClassIdentifier: 
+  Name: game_phase
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &114272343451197392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -317,7 +402,7 @@ MonoBehaviour:
   Path: event:/nfc_detect_left
   guid: f0ac116f0c5b0d4ba8e7497402938070
   Banks:
-  - {fileID: 114115284290100152}
+  - {fileID: 114891436416363298}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -325,6 +410,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 209
+--- !u!114 &114274710003762986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/music_v2/game_phase
+  m_EditorClassIdentifier: 
+  Name: game_phase
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &114283113183177050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -362,7 +464,7 @@ MonoBehaviour:
   Path: event:/game_start_v2
   guid: 033c3abdd1d54240837248e69188dcf5
   Banks:
-  - {fileID: 114115284290100152}
+  - {fileID: 114891436416363298}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -385,12 +487,12 @@ MonoBehaviour:
   Path: event:/music_v2
   guid: a2e39e643dc052488186762e1e1b4bb0
   Banks:
-  - {fileID: 114115284290100152}
+  - {fileID: 114891436416363298}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114475288053373346}
+  - {fileID: 114274710003762986}
   MinDistance: 0
   MaxDistance: 0
   Length: 80579
@@ -410,7 +512,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &114408464796632608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -426,7 +528,7 @@ MonoBehaviour:
   Path: event:/invocation
   guid: a66be92d09ecf64b96fc6032bb1d7b5c
   Banks:
-  - {fileID: 114115284290100152}
+  - {fileID: 114891436416363298}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -434,6 +536,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2584
+--- !u!114 &114409479382527824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/overview/game_phase
+  m_EditorClassIdentifier: 
+  Name: game_phase
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &114416162413624590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -449,13 +568,13 @@ MonoBehaviour:
   Path: event:/overview
   guid: 87c22d1172759241bb9d778c8c8db7ff
   Banks:
-  - {fileID: 114115284290100152}
+  - {fileID: 114891436416363298}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114251380999053652}
-  - {fileID: 114661192900421904}
+  - {fileID: 114005206775619732}
+  - {fileID: 114409479382527824}
   MinDistance: 0
   MaxDistance: 0
   Length: 60000
@@ -474,7 +593,7 @@ MonoBehaviour:
   Path: event:/nfc_detect_left_v2
   guid: 156335a4bb633945a671847d40854d67
   Banks:
-  - {fileID: 114115284290100152}
+  - {fileID: 114891436416363298}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -498,7 +617,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &114475288053373346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -515,7 +634,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &114507093946400414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -531,7 +650,7 @@ MonoBehaviour:
   Path: event:/nfc_detect_right_v2
   guid: 775233379e837f4e980ecaa4fd2e0742
   Banks:
-  - {fileID: 114115284290100152}
+  - {fileID: 114891436416363298}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -554,7 +673,7 @@ MonoBehaviour:
   Path: event:/nfc_detect_right
   guid: 78d54845622d3845b813cc5778d63e54
   Banks:
-  - {fileID: 114115284290100152}
+  - {fileID: 114891436416363298}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -579,6 +698,23 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
+--- !u!114 &114586885547190026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: game_status
+  m_EditorClassIdentifier: 
+  Name: game_status
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 1
 --- !u!114 &114619201105872832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -595,6 +731,26 @@ MonoBehaviour:
   Min: 0
   Max: 4
   Default: 0
+  Exists: 0
+--- !u!114 &114620580484214034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: C:/Users/ralga/Documents/CardJousting/Assets/Build/Desktop/Master.strings.bank
+  SubDir: 
+  lastModified: 637072670340990956
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 2008
   Exists: 1
 --- !u!114 &114650522896425804
 MonoBehaviour:
@@ -629,7 +785,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &114672577372027834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -645,12 +801,12 @@ MonoBehaviour:
   Path: event:/evolve_v2
   guid: 4d3924b95fb718449e02989d2390e48e
   Banks:
-  - {fileID: 114115284290100152}
+  - {fileID: 114891436416363298}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114440306022849484}
+  - {fileID: 114212904597107974}
   MinDistance: 0
   MaxDistance: 0
   Length: 9751
@@ -669,12 +825,12 @@ MonoBehaviour:
   Path: event:/evolve
   guid: aa592ef654a7234a9242c2ca1e7c1512
   Banks:
-  - {fileID: 114115284290100152}
+  - {fileID: 114891436416363298}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114376929501309912}
+  - {fileID: 114097335422903236}
   MinDistance: 0
   MaxDistance: 0
   Length: 10818
@@ -710,7 +866,7 @@ MonoBehaviour:
   Path: event:/start_draw_phase_v3
   guid: c874590cbc6f4f4dafe5d5829f000436
   Banks:
-  - {fileID: 114115284290100152}
+  - {fileID: 114891436416363298}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -733,7 +889,7 @@ MonoBehaviour:
   Path: event:/blocked
   guid: a516d0649e043c46984a7b1e8ddbbcbc
   Banks:
-  - {fileID: 114115284290100152}
+  - {fileID: 114891436416363298}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -756,7 +912,7 @@ MonoBehaviour:
   Path: event:/blocked_v2
   guid: b7b7564fa1fd17488bcafa9d3e43e047
   Banks:
-  - {fileID: 114115284290100152}
+  - {fileID: 114891436416363298}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -779,7 +935,7 @@ MonoBehaviour:
   Path: event:/countdown_4.5_seconds
   guid: c4663db53afdd749b4911c762b831afe
   Banks:
-  - {fileID: 114115284290100152}
+  - {fileID: 114891436416363298}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -823,7 +979,7 @@ MonoBehaviour:
   Min: 0
   Max: 4
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &114822306303812216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -839,12 +995,12 @@ MonoBehaviour:
   Path: event:/music
   guid: 240fedca5ad39c4686f4b0dd2d769dd3
   Banks:
-  - {fileID: 114115284290100152}
+  - {fileID: 114891436416363298}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114232087110671806}
+  - {fileID: 114272191769093916}
   MinDistance: 0
   MaxDistance: 0
   Length: 13503
@@ -863,12 +1019,12 @@ MonoBehaviour:
   Path: event:/base_damage_v2
   guid: 9c6c96e15bcc9a46a8cf0571c1a2c413
   Banks:
-  - {fileID: 114115284290100152}
+  - {fileID: 114891436416363298}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 114841402143612786}
+  - {fileID: 114237229447919170}
   MinDistance: 0
   MaxDistance: 0
   Length: 3435
@@ -888,7 +1044,7 @@ MonoBehaviour:
   Min: 0
   Max: 4
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &114862028191374766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -909,6 +1065,26 @@ MonoBehaviour:
   - Name: 
     Value: 845728
   Exists: 0
+--- !u!114 &114891436416363298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: C:/Users/ralga/Documents/CardJousting/Assets/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637072670340437264
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 2349312
+  Exists: 1
 --- !u!114 &114893777175451626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -924,7 +1100,7 @@ MonoBehaviour:
   Path: event:/start_draw_phase_v2
   guid: 27ca24dac750b64db1753e1f8d1d06f3
   Banks:
-  - {fileID: 114115284290100152}
+  - {fileID: 114891436416363298}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -947,7 +1123,7 @@ MonoBehaviour:
   Path: event:/game_start
   guid: 9979783f465eee4b87b496e776a43c57
   Banks:
-  - {fileID: 114115284290100152}
+  - {fileID: 114891436416363298}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -972,3 +1148,20 @@ MonoBehaviour:
   Max: 4
   Default: 0
   Exists: 0
+--- !u!114 &114998453737278434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/base_damage/base_lifepoints
+  m_EditorClassIdentifier: 
+  Name: base_lifepoints
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 1
