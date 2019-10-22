@@ -13,7 +13,24 @@ MonoBehaviour:
   m_Name: SettingEntities
   m_EditorClassIdentifier: 
   entities:
-  - tag: 000
+  - nameEntity: Zombie
+    tagList:
+    - 88040A95
+    - 88041B1F
+    - 88044090
+    - 88049C28
+    - 88049F3D
+    - 8804A71B
+    - 88043C48
+    - 8804606C
+    - 88044530
+    - 88041489
+    - 8804A32F
+    - A988A687
+    - 88045281
+    - 88041A8C
+    - 8804E288
+    - 8804AD10
     evolveTime: 6
     entityPrefabs:
     - {fileID: 958956705904844607, guid: dfb1cdc67d84cee4e9ee9655e30c93b5, type: 3}
@@ -23,7 +40,12 @@ MonoBehaviour:
     - {fileID: 21300000, guid: 60ae65d663e4d5b4a802ce03e02fd9e5, type: 3}
     - {fileID: 21300000, guid: a1560cc6d594e70449c9973d7f1b9c4c, type: 3}
     - {fileID: 21300000, guid: 98f6e71728dd9eb4e84e13ab34aafddb, type: 3}
-  - tag: 001
+  - nameEntity: MurDeChair
+    tagList:
+    - 83FEA524
+    - 88042D98
+    - 88043A23
+    - 88047835
     evolveTime: 24
     entityPrefabs:
     - {fileID: 958956705904844607, guid: 3de01ee4a685d834c81959a4d12acbfd, type: 3}
@@ -31,19 +53,30 @@ MonoBehaviour:
     entitySprites:
     - {fileID: 21300000, guid: e726fe40d8f2d1940954c7410fea3056, type: 3}
     - {fileID: 21300000, guid: aeedebc5b338486428660fad64ffb336, type: 3}
-  - tag: 002
+  - nameEntity: Tronconneur
+    tagList:
+    - 4B58AF1C
+    - 7932BB55
+    - 8804132C
+    - 8804A422
     evolveTime: 0
     entityPrefabs:
     - {fileID: 958956705904844607, guid: d10ad10ec8e23fd44a812fc7aa5ee423, type: 3}
     entitySprites:
     - {fileID: 21300000, guid: 1c198dc31ef98924facc0893d60eb92f, type: 3}
-  - tag: 003
+  - nameEntity: _003
+    tagList: []
     evolveTime: 0
     entityPrefabs:
     - {fileID: 958956705904844607, guid: 9b942d668f5d6354ba5bed0ae90f637d, type: 3}
     entitySprites:
     - {fileID: 21300000, guid: 1c59157888829504f95ffd9916138a5e, type: 3}
-  - tag: 004
+  - nameEntity: Papa
+    tagList:
+    - 8804F92E
+    - 8804BB90
+    - 7931AC87
+    - 8804CF30
     evolveTime: 18
     entityPrefabs:
     - {fileID: 958956705904844607, guid: d60f9991cbd9a5141af47b66e6ac4ebb, type: 3}
@@ -51,25 +84,33 @@ MonoBehaviour:
     entitySprites:
     - {fileID: 21300000, guid: 994ff14a39d1eaf46991755cba271881, type: 3}
     - {fileID: 21300000, guid: 23a03441b4c42ce4b8906f653cc79d0a, type: 3}
-  - tag: 005
+  - nameEntity: _005
+    tagList: []
     evolveTime: 0
     entityPrefabs:
     - {fileID: 958956705904844607, guid: 700eefacb355fe24e94fe5af9f6e2f00, type: 3}
     entitySprites:
     - {fileID: 21300000, guid: 1b91b52b7173ff345808bedf7a11c72f, type: 3}
-  - tag: 006
+  - nameEntity: _006
+    tagList: []
     evolveTime: 0
     entityPrefabs:
     - {fileID: 958956705904844607, guid: 92a06bdccd0d01b4ab06d74a77b06c34, type: 3}
     entitySprites:
     - {fileID: 21300000, guid: d2971f997975cca46870df6f176bf612, type: 3}
-  - tag: 007
+  - nameEntity: _007
+    tagList: []
     evolveTime: 0
     entityPrefabs:
     - {fileID: 958956705904844607, guid: c1523d3aab98bb64e9a1dc91df4ce1c9, type: 3}
     entitySprites:
     - {fileID: 21300000, guid: 55a5ba73f7fd1664cb18fbf6d5499784, type: 3}
-  - tag: 008
+  - nameEntity: MadScientist
+    tagList:
+    - 88041A19
+    - 8804F940
+    - B1DB0531
+    - 8804C63B
     evolveTime: 18
     entityPrefabs:
     - {fileID: 958956705904844607, guid: c0412dc941faa59489d7c34e72c49c4f, type: 3}
@@ -77,19 +118,26 @@ MonoBehaviour:
     entitySprites:
     - {fileID: 21300000, guid: 1b91b52b7173ff345808bedf7a11c72f, type: 3}
     - {fileID: 21300000, guid: adbfc7eb5007f9c44b2187db2e508914, type: 3}
-  - tag: 009
+  - nameEntity: _009
+    tagList: []
     evolveTime: 0
     entityPrefabs:
     - {fileID: 958956705904844607, guid: 541b1a4ea96887846b6011c16d604e7f, type: 3}
     entitySprites:
     - {fileID: 21300000, guid: 459108f94b90fa44aa142d65e13aa740, type: 3}
-  - tag: 010
+  - nameEntity: _010
+    tagList: []
     evolveTime: 0
     entityPrefabs:
     - {fileID: 958956705904844607, guid: e5b5c74fcb522f74195ff839adf652b1, type: 3}
     entitySprites:
     - {fileID: 21300000, guid: 87bd06e85ff4e50499992ced88ecc00b, type: 3}
-  - tag: 011
+  - nameEntity: Berserk
+    tagList:
+    - 939A8324
+    - 8804CE1B
+    - A99D077F
+    - 8804617E
     evolveTime: 6
     entityPrefabs:
     - {fileID: 958956705904844607, guid: fa0a5c15e7dad2e458ff232a9958d203, type: 3}
@@ -99,7 +147,8 @@ MonoBehaviour:
     - {fileID: 21300000, guid: 34d7f32d269932b49ada3a65cacd49d8, type: 3}
     - {fileID: 21300000, guid: cf25929695454384f81b34da4085b61d, type: 3}
     - {fileID: 21300000, guid: 5b5bf56eca86d194597a5940e555da28, type: 3}
-  - tag: 012
+  - nameEntity: _012
+    tagList: []
     evolveTime: 0
     entityPrefabs:
     - {fileID: 958956705904844607, guid: dae74f52550c1454e8dda38316e29582, type: 3}

@@ -187,6 +187,11 @@ namespace LibLabGames.NewGame
                     colEntity.DOKillEntity();
                     DOKillEntity();
                 }
+                else if (!isOvertake)
+                {
+                    currentSpeed = colEntity.currentSpeed;
+                    isWalk = false;
+                }
             }
         }
 

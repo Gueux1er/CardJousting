@@ -6029,22 +6029,22 @@ PrefabInstance:
     - target: {fileID: 1242755401608364675, guid: eec4ba884a7403f4484acbc0e92d1a4a,
         type: 3}
       propertyPath: playerInfos.Array.data[0].DEBUG_cardOnHand.Array.data[0]
-      value: 005
-      objectReference: {fileID: 0}
-    - target: {fileID: 1242755401608364675, guid: eec4ba884a7403f4484acbc0e92d1a4a,
-        type: 3}
-      propertyPath: playerInfos.Array.data[0].DEBUG_cardOnHand.Array.data[1]
-      value: 004
-      objectReference: {fileID: 0}
-    - target: {fileID: 1242755401608364675, guid: eec4ba884a7403f4484acbc0e92d1a4a,
-        type: 3}
-      propertyPath: playerInfos.Array.data[0].DEBUG_cardOnHand.Array.data[2]
       value: 001
       objectReference: {fileID: 0}
     - target: {fileID: 1242755401608364675, guid: eec4ba884a7403f4484acbc0e92d1a4a,
         type: 3}
-      propertyPath: playerInfos.Array.data[0].DEBUG_cardOnHand.Array.data[3]
+      propertyPath: playerInfos.Array.data[0].DEBUG_cardOnHand.Array.data[1]
       value: 008
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242755401608364675, guid: eec4ba884a7403f4484acbc0e92d1a4a,
+        type: 3}
+      propertyPath: playerInfos.Array.data[0].DEBUG_cardOnHand.Array.data[2]
+      value: 000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242755401608364675, guid: eec4ba884a7403f4484acbc0e92d1a4a,
+        type: 3}
+      propertyPath: playerInfos.Array.data[0].DEBUG_cardOnHand.Array.data[3]
+      value: 000
       objectReference: {fileID: 0}
     - target: {fileID: 1242755401608364675, guid: eec4ba884a7403f4484acbc0e92d1a4a,
         type: 3}
@@ -6064,17 +6064,17 @@ PrefabInstance:
     - target: {fileID: 1242755401608364675, guid: eec4ba884a7403f4484acbc0e92d1a4a,
         type: 3}
       propertyPath: playerInfos.Array.data[1].DEBUG_cardOnHand.Array.data[1]
-      value: 008
+      value: 000
       objectReference: {fileID: 0}
     - target: {fileID: 1242755401608364675, guid: eec4ba884a7403f4484acbc0e92d1a4a,
         type: 3}
       propertyPath: playerInfos.Array.data[1].DEBUG_cardOnHand.Array.data[2]
-      value: 008
+      value: 000
       objectReference: {fileID: 0}
     - target: {fileID: 1242755401608364675, guid: eec4ba884a7403f4484acbc0e92d1a4a,
         type: 3}
       propertyPath: playerInfos.Array.data[1].DEBUG_cardOnHand.Array.data[3]
-      value: 001
+      value: 000
       objectReference: {fileID: 0}
     - target: {fileID: 1242755401608364675, guid: eec4ba884a7403f4484acbc0e92d1a4a,
         type: 3}

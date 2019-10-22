@@ -44,7 +44,7 @@ namespace LibLabGames.NewGame
             public KeyCode[] DEBUG_summonKeys;
             public KeyCode DEBUG_evolveKey;
             public string[] DEBUG_cardOnHand;
-            public string DEBUG_entityOn;
+            public int DEBUG_entityIDOn;
         }
         public PlayerInfo[] playerInfos;
 
@@ -91,6 +91,7 @@ namespace LibLabGames.NewGame
                 playerInfos[i].entityOnTraining = string.Empty;
 
                 playerInfos[i].lastEntitiesOnGameBoard = new Entity[3];
+                playerInfos[i].DEBUG_entityIDOn = -1;
 
                 for (int j = 0; j < playerInfos[i].spawnCooldownFadeImage.Count; ++j)
                 {
@@ -171,40 +172,41 @@ namespace LibLabGames.NewGame
                 // DEBUG Sélection de carte
                 for (int j = 0; j < playerInfos[i].DEBUG_cardOnHand.Length; ++j)
                 {
-                    if (Input.GetKeyDown(playerInfos[i].DEBUG_selectionEntityKeys[j]))
+                    if (Input.GetKeyDown(playerInfos[i].DEBUG_selectionEntityKeys[j]) && playerInfos[i].DEBUG_cardOnHand[j] != string.Empty)
                     {
-                        playerInfos[i].DEBUG_entityOn = playerInfos[i].DEBUG_cardOnHand[j];
+                        playerInfos[i].DEBUG_entityIDOn = j;
+                        break;
                     }
                 }
 
                 // DEBUG invocation de la carte
                 for (int j = 0; j < playerInfos[i].DEBUG_summonKeys.Length; ++j)
                 {
-                    if (playerInfos[i].DEBUG_entityOn != string.Empty && Input.GetKeyDown(playerInfos[i].DEBUG_summonKeys[j]))
+                    if (playerInfos[i].DEBUG_entityIDOn != -1 && Input.GetKeyDown(playerInfos[i].DEBUG_summonKeys[j]))
                     {
                         NFC_Activate(i);
 
                         int entityLevel = 0;
 
                         // Chercher si la carte a été évolué au niveau 2
-                        if (playerInfos[i].entitiesLevelTwo.Find(x => x.Contains(playerInfos[i].DEBUG_entityOn)) != null)
+                        if (playerInfos[i].entitiesLevelTwo.Find(x => x.Contains(playerInfos[i].DEBUG_cardOnHand[playerInfos[i].DEBUG_entityIDOn])) != null)
                         {
                             entityLevel = 1;
                             for (int k = 0; k < playerInfos[i].entitiesLevelTwo.Count; ++k)
                             {
-                                if (playerInfos[i].entitiesLevelTwo[k] == playerInfos[i].DEBUG_entityOn)
+                                if (playerInfos[i].entitiesLevelTwo[k] == playerInfos[i].DEBUG_cardOnHand[playerInfos[i].DEBUG_entityIDOn])
                                 {
                                     playerInfos[i].entitiesLevelTwo[k] = string.Empty;
                                 }
                             }
                         }
                         // Chercher si la carte a été évolué au niveau 3
-                        if (playerInfos[i].entitiesLevelThree.Find(x => x.Contains(playerInfos[i].DEBUG_entityOn)) != null)
+                        if (playerInfos[i].entitiesLevelThree.Find(x => x.Contains(playerInfos[i].DEBUG_cardOnHand[playerInfos[i].DEBUG_entityIDOn])) != null)
                         {
                             entityLevel = 2;
                             for (int k = 0; k < playerInfos[i].entitiesLevelThree.Count; ++k)
                             {
-                                if (playerInfos[i].entitiesLevelThree[k] == playerInfos[i].DEBUG_entityOn)
+                                if (playerInfos[i].entitiesLevelThree[k] == playerInfos[i].DEBUG_cardOnHand[playerInfos[i].DEBUG_entityIDOn])
                                 {
                                     playerInfos[i].entitiesLevelThree[k] = string.Empty;
                                 }
@@ -212,7 +214,7 @@ namespace LibLabGames.NewGame
                         }
 
                         // Chercher si la carte invoquée est dans la chambre d'évolution
-                        if (playerInfos[i].entityOnTraining == playerInfos[i].DEBUG_entityOn)
+                        if (playerInfos[i].entityOnTraining == playerInfos[i].DEBUG_cardOnHand[playerInfos[i].DEBUG_entityIDOn])
                         {
                             playerInfos[i].entityOnTraining = string.Empty;
 
@@ -224,9 +226,12 @@ namespace LibLabGames.NewGame
                         // Cherche le gameObject à invoquer
                         foreach (SettingEntities.Entity entity in settingEntities.entities)
                         {
-                            if (entity.tag == playerInfos[i].DEBUG_entityOn)
+                            for (int tg = 0; tg < entity.tagList.Count; ++tg)
                             {
-                                entityGo = entity.entityPrefabs[entityLevel];
+                                if (entity.tagList[tg] == playerInfos[i].DEBUG_cardOnHand[playerInfos[i].DEBUG_entityIDOn])
+                                {
+                                    entityGo = entity.entityPrefabs[entityLevel];
+                                }
                             }
                         }
                         if (entityGo == null)
@@ -239,24 +244,18 @@ namespace LibLabGames.NewGame
                         entityGo = null;
 
                         // DEBUG Enlève la carte de la main
-                        for (int k = 0; k < playerInfos[i].DEBUG_cardOnHand.Length; ++k)
-                        {
-                            if (playerInfos[i].DEBUG_cardOnHand[k] == playerInfos[i].DEBUG_entityOn)
-                            {
-                                playerInfos[i].DEBUG_cardOnHand[k] = string.Empty;
-                            }
-                        }
+                        playerInfos[i].DEBUG_cardOnHand[playerInfos[i].DEBUG_entityIDOn] = string.Empty;
 
-                        playerInfos[i].DEBUG_entityOn = string.Empty;
+                        playerInfos[i].DEBUG_entityIDOn = -1;
                     }
                 }
                 // DEBUG évolution d'une carte
                 if (Input.GetKeyDown(playerInfos[i].DEBUG_evolveKey))
                 {
-                    if (playerInfos[i].entityOnTraining == string.Empty && playerInfos[i].DEBUG_entityOn != string.Empty)
+                    if (playerInfos[i].entityOnTraining == string.Empty && playerInfos[i].DEBUG_entityIDOn != -1)
                     {
-                        playerInfos[i].entityOnTraining = playerInfos[i].DEBUG_entityOn;
-                        playerInfos[i].DEBUG_entityOn = string.Empty;
+                        playerInfos[i].entityOnTraining = playerInfos[i].DEBUG_cardOnHand[playerInfos[i].DEBUG_entityIDOn];
+                        playerInfos[i].DEBUG_entityIDOn = -1;
 
                         NFC_Activate(i);
                         ActiveEvolution(i);
@@ -323,30 +322,33 @@ namespace LibLabGames.NewGame
                 Sprite[] statSprites = new Sprite[3];
                 foreach (SettingEntities.Entity entity in settingEntities.entities)
                 {
-                    if (entity.tag == cardID)
+                    for (int tg = 0; tg < entity.tagList.Count; ++tg)
                     {
-                        if (playerInfos[player].entitiesLevelTwo.Find(x => x.Contains(cardID)) != null)
-                            currentLevel = 1;
-                        else if (playerInfos[player].entitiesLevelThree.Find(x => x.Contains(cardID)) != null)
-                            currentLevel = 2;
+                        if (entity.tagList[tg] == cardID)
+                        {
+                            if (playerInfos[player].entitiesLevelTwo.Find(x => x.Contains(cardID)) != null)
+                                currentLevel = 1;
+                            else if (playerInfos[player].entitiesLevelThree.Find(x => x.Contains(cardID)) != null)
+                                currentLevel = 2;
 
-                        statSprites = entity.entitySprites;
-                        playerInfos[player].evolutionCurrentStatImage.sprite = statSprites[currentLevel];
-                        if (currentLevel + 1 != statSprites.Length)
-                            playerInfos[player].evolutionNextStatImage.sprite = statSprites[currentLevel + 1];
+                            statSprites = entity.entitySprites;
+                            playerInfos[player].evolutionCurrentStatImage.sprite = statSprites[currentLevel];
+                            if (currentLevel + 1 != statSprites.Length)
+                                playerInfos[player].evolutionNextStatImage.sprite = statSprites[currentLevel + 1];
 
-                        canEvolve = entity.evolveTime > 0;
+                            canEvolve = entity.evolveTime > 0;
 
-                        if (!canEvolve)
-                            break;
+                            if (!canEvolve)
+                                break;
 
-                        if (entity.entityPrefabs.Length == 2 && playerInfos[player].entitiesLevelTwo.Find(x => x.Contains(cardID)) != null)
-                            canEvolve = false;
-                        else if (entity.entityPrefabs.Length == 3 && playerInfos[player].entitiesLevelThree.Find(x => x.Contains(cardID)) != null)
-                            canEvolve = false;
+                            if (entity.entityPrefabs.Length == 2 && playerInfos[player].entitiesLevelTwo.Find(x => x.Contains(cardID)) != null)
+                                canEvolve = false;
+                            else if (entity.entityPrefabs.Length == 3 && playerInfos[player].entitiesLevelThree.Find(x => x.Contains(cardID)) != null)
+                                canEvolve = false;
 
-                        if (canEvolve)
-                            duration = entity.evolveTime;
+                            if (canEvolve)
+                                duration = entity.evolveTime;
+                        }
                     }
                 }
 
@@ -486,9 +488,12 @@ namespace LibLabGames.NewGame
 
             foreach (SettingEntities.Entity entity in settingEntities.entities)
             {
-                if (entity.tag == cardID)
+                for (int tg = 0; tg < entity.tagList.Count; ++tg)
                 {
-                    entityToSpawn = entity.entityPrefabs[entityLevel];
+                    if (entity.tagList[tg] == cardID)
+                    {
+                        entityToSpawn = entity.entityPrefabs[entityLevel];
+                    }
                 }
             }
 

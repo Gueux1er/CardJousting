@@ -219,8 +219,6 @@ namespace LibLabGames.NewGame
                     colEntity.DOKillEntity();
                 else if (colEntity.wayID == entity.wayID)
                 {
-                    print("k");
-
                     if (typeItem != eTypeItem.grab)
                     {
                         entity.currentSpeed = colEntity.currentSpeed;
