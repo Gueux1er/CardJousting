@@ -28,7 +28,7 @@ namespace LibLabGames.NewGame
             public List<bool> canSpawnOnWay;
             public List<Image> spawnCooldownFadeImage;
             public List<Transform> spawnTransforms;
-            public Entity lastEntityOnGameBoard;
+            public Entity[] lastEntitiesOnGameBoard;
             public List<Entity> entitiesOnGameBoard;
             public TextMeshProUGUI gamePhaseTimerText;
             public Image evolutionBackgroundCurrentImage;
@@ -89,6 +89,8 @@ namespace LibLabGames.NewGame
             {
                 DisableEvolveUI(i);
                 playerInfos[i].entityOnTraining = string.Empty;
+
+                playerInfos[i].lastEntitiesOnGameBoard = new Entity[3];
 
                 for (int j = 0; j < playerInfos[i].spawnCooldownFadeImage.Count; ++j)
                 {
@@ -155,7 +157,7 @@ namespace LibLabGames.NewGame
 
         private int currentPlayer;
         private Entity entitySpwaned;
-        private Entity lastEntitySpwaned;
+        private GameObject entityGo;
         private void Update()
         {
             if (isDrawPhase || !gameIsReady)
@@ -167,7 +169,7 @@ namespace LibLabGames.NewGame
                 playerInfos[i].lifeSlider.value = (float) playerInfos[i].currentLife / (float) playerInfos[i].maxLife;
 
                 // DEBUG Sélection de carte
-                for (int j = 0; j < playerInfos[i].DEBUG_selectionEntityKeys.Length; ++j)
+                for (int j = 0; j < playerInfos[i].DEBUG_cardOnHand.Length; ++j)
                 {
                     if (Input.GetKeyDown(playerInfos[i].DEBUG_selectionEntityKeys[j]))
                     {
@@ -178,12 +180,11 @@ namespace LibLabGames.NewGame
                 // DEBUG invocation de la carte
                 for (int j = 0; j < playerInfos[i].DEBUG_summonKeys.Length; ++j)
                 {
-                    if (playerInfos[i].DEBUG_entityOn != string.Empty && playerInfos[i].DEBUG_entityOn != "-1" && Input.GetKeyDown(playerInfos[i].DEBUG_summonKeys[j]))
+                    if (playerInfos[i].DEBUG_entityOn != string.Empty && Input.GetKeyDown(playerInfos[i].DEBUG_summonKeys[j]))
                     {
                         NFC_Activate(i);
 
                         int entityLevel = 0;
-                        GameObject entityGo = new GameObject();
 
                         // Chercher si la carte a été évolué au niveau 2
                         if (playerInfos[i].entitiesLevelTwo.Find(x => x.Contains(playerInfos[i].DEBUG_entityOn)) != null)
@@ -220,6 +221,7 @@ namespace LibLabGames.NewGame
                             DisableEvolution(i);
                         }
 
+                        // Cherche le gameObject à invoquer
                         foreach (SettingEntities.Entity entity in settingEntities.entities)
                         {
                             if (entity.tag == playerInfos[i].DEBUG_entityOn)
@@ -227,14 +229,21 @@ namespace LibLabGames.NewGame
                                 entityGo = entity.entityPrefabs[entityLevel];
                             }
                         }
+                        if (entityGo == null)
+                        {
+                            LLLog.LogE("Spawn Entity", "No found gameObject to spawn!");
+                        }
 
                         SpawnEntity(entityGo, i, j);
 
+                        entityGo = null;
+
+                        // DEBUG Enlève la carte de la main
                         for (int k = 0; k < playerInfos[i].DEBUG_cardOnHand.Length; ++k)
                         {
                             if (playerInfos[i].DEBUG_cardOnHand[k] == playerInfos[i].DEBUG_entityOn)
                             {
-                                playerInfos[i].DEBUG_cardOnHand[k] = "-1";
+                                playerInfos[i].DEBUG_cardOnHand[k] = string.Empty;
                             }
                         }
 
@@ -244,9 +253,11 @@ namespace LibLabGames.NewGame
                 // DEBUG évolution d'une carte
                 if (Input.GetKeyDown(playerInfos[i].DEBUG_evolveKey))
                 {
-                    if (playerInfos[i].entityOnTraining == string.Empty && playerInfos[i].DEBUG_entityOn != string.Empty && playerInfos[i].DEBUG_entityOn != "-1")
+                    if (playerInfos[i].entityOnTraining == string.Empty && playerInfos[i].DEBUG_entityOn != string.Empty)
                     {
                         playerInfos[i].entityOnTraining = playerInfos[i].DEBUG_entityOn;
+                        playerInfos[i].DEBUG_entityOn = string.Empty;
+
                         NFC_Activate(i);
                         ActiveEvolution(i);
 
@@ -284,18 +295,17 @@ namespace LibLabGames.NewGame
             print(go.name);
             entitySpwaned = Instantiate(go, playerInfos[player].spawnTransforms[way]).GetComponent<Entity>();
 
-            playerInfos[player].lastEntityOnGameBoard = entitySpwaned;
             playerInfos[player].entitiesOnGameBoard.Add(entitySpwaned);
 
             CooldownSpawn(player, way);
 
-            if (lastEntitySpwaned != null)
+            if (playerInfos[player].lastEntitiesOnGameBoard[way] != null)
             {
-                lastEntitySpwaned.behindEntity = entitySpwaned;
-                entitySpwaned.nextEntity = lastEntitySpwaned;
+                playerInfos[player].lastEntitiesOnGameBoard[way].behindEntity = entitySpwaned;
+                entitySpwaned.nextEntity = playerInfos[player].lastEntitiesOnGameBoard[way];
             }
 
-            lastEntitySpwaned = entitySpwaned;
+            playerInfos[player].lastEntitiesOnGameBoard[way] = entitySpwaned;
 
             entitySpwaned.DOSpawn(player, way, isSecondEntity);
         }
@@ -439,9 +449,9 @@ namespace LibLabGames.NewGame
             playerInfos[player].evolutionBackgroundNextImage.color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
         }
 
-        public void HurtPlayer(int player)
+        public void HurtPlayer(int player, int value)
         {
-            playerInfos[player].currentLife--;
+            playerInfos[player].currentLife -= value;
 
             SoundManager.instance.BaseDamage();
 

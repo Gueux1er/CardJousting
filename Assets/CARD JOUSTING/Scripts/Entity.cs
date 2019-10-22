@@ -24,6 +24,7 @@ namespace LibLabGames.NewGame
 
         public bool isWalk;
         public bool isOvertake;
+        public bool haveItemOnSide;
 
         public Entity nextEntity;
         public Entity behindEntity;
@@ -88,7 +89,9 @@ namespace LibLabGames.NewGame
             }
 
             isReady = true;
-            isWalk = true;
+            
+            
+            CheckCanWalk();
         }
 
         private void Update()
@@ -187,9 +190,9 @@ namespace LibLabGames.NewGame
             }
         }
 
-        public void HurtPlayer()
+        public void HurtPlayer(int value)
         {
-            GameManager.instance.HurtPlayer(playerID == 0 ? 1 : 0);
+            GameManager.instance.HurtPlayer(playerID == 0 ? 1 : 0, value);
             DOKillEntity();
         }
 

@@ -14,7 +14,6 @@ namespace LibLabGames.NewGame
         private Entity entity;
 
         private int playerID;
-        private int wayID;
         private int positionID;
 
         public bool onTheSide;
@@ -26,13 +25,13 @@ namespace LibLabGames.NewGame
         {
             entity = GetComponentInParent<Entity>();
             playerID = entity.playerID;
-            wayID = transform.parent.GetSiblingIndex();
             positionID = transform.GetSiblingIndex();
 
             onTheSide = transform.parent != entity.itemForwardParent;
 
             forwardCollider.enabled = !onTheSide;
             sideCollider.enabled = onTheSide;
+            entity.haveItemOnSide = onTheSide;
         }
 
         private Entity colEntity;
@@ -40,28 +39,28 @@ namespace LibLabGames.NewGame
         private RaycastHit[] hits;
         private void OnTriggerEnter(Collider col)
         {
+            if (onDestoy)
+                return;
+
             if (onTheSide)
             {
                 OnTriggerSide(col);
             }
             else
             {
-                if (col.CompareTag(string.Format("GoalPlayer{0}", playerID)))
-                {
-                    if (typeItem == eTypeItem.attack)
-                        entity.HurtPlayer();
-                    else
-                        DODestroy();
-
-                    return;
-                }
-                
                 OnTriggerNoSide(col);
             }
         }
 
         private void OnTriggerSide(Collider col)
         {
+            if (col.CompareTag(string.Format("GoalPlayer{0}", playerID)))
+            {
+                DODestroy();
+
+                return;
+            }
+
             if (col.CompareTag("Entity"))
             {
                 colEntity = col.GetComponentInParent<Entity>();
@@ -69,9 +68,9 @@ namespace LibLabGames.NewGame
                 if (colEntity == entity)
                     return;
 
-                if (colEntity.playerID != playerID)
+                if (colEntity.playerID != playerID && colEntity.wayID != entity.wayID && typeItem != eTypeItem.defence && !colEntity.haveItemOnSide)
                     colEntity.DOKillEntity();
-                else
+                else if (colEntity.wayID == entity.wayID)
                 {
                     if (typeItem != eTypeItem.grab)
                     {
@@ -193,6 +192,22 @@ namespace LibLabGames.NewGame
 
         private void OnTriggerNoSide(Collider col)
         {
+            if (col.CompareTag(string.Format("GoalPlayer{0}", playerID)))
+            {
+                int damage = 1;
+
+                if (typeItem == eTypeItem.attack)
+                {
+                    damage += attackForce + 1;
+                }
+
+                entity.HurtPlayer(damage);
+
+                DODestroy();
+
+                return;
+            }
+
             if (col.CompareTag("Entity"))
             {
                 colEntity = col.GetComponentInParent<Entity>();
@@ -200,10 +215,12 @@ namespace LibLabGames.NewGame
                 if (colEntity == entity)
                     return;
 
-                if (colEntity.playerID != playerID)
+                if (colEntity.playerID != playerID && colEntity.wayID == entity.wayID)
                     colEntity.DOKillEntity();
-                else
+                else if (colEntity.wayID == entity.wayID)
                 {
+                    print("k");
+
                     if (typeItem != eTypeItem.grab)
                     {
                         entity.currentSpeed = colEntity.currentSpeed;
