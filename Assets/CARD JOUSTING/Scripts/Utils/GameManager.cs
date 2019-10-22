@@ -142,7 +142,7 @@ namespace LibLabGames.NewGame
                 {
                     for (int i = 0; i < 2; ++i)
                     {
-                        drawPhaseTimerTexts[i].text = drawPhaseTimer.ToString("00");
+                        drawPhaseTimerTexts[i].text = phaseTimer.ToString("00");
                     };
                 })
                 .OnComplete(() =>
@@ -174,20 +174,51 @@ namespace LibLabGames.NewGame
                         playerInfos[i].DEBUG_entityOn = playerInfos[i].DEBUG_cardOnHand[j];
                     }
                 }
+
                 // DEBUG invocation de la carte
                 for (int j = 0; j < playerInfos[i].DEBUG_summonKeys.Length; ++j)
                 {
-                    if (playerInfos[i].DEBUG_entityOn != string.Empty && Input.GetKeyDown(playerInfos[i].DEBUG_summonKeys[j]))
+                    if (playerInfos[i].DEBUG_entityOn != string.Empty && playerInfos[i].DEBUG_entityOn != "-1" && Input.GetKeyDown(playerInfos[i].DEBUG_summonKeys[j]))
                     {
                         NFC_Activate(i);
 
                         int entityLevel = 0;
                         GameObject entityGo = new GameObject();
 
+                        // Chercher si la carte a été évolué au niveau 2
                         if (playerInfos[i].entitiesLevelTwo.Find(x => x.Contains(playerInfos[i].DEBUG_entityOn)) != null)
+                        {
                             entityLevel = 1;
+                            for (int k = 0; k < playerInfos[i].entitiesLevelTwo.Count; ++k)
+                            {
+                                if (playerInfos[i].entitiesLevelTwo[k] == playerInfos[i].DEBUG_entityOn)
+                                {
+                                    playerInfos[i].entitiesLevelTwo[k] = string.Empty;
+                                }
+                            }
+                        }
+                        // Chercher si la carte a été évolué au niveau 3
                         if (playerInfos[i].entitiesLevelThree.Find(x => x.Contains(playerInfos[i].DEBUG_entityOn)) != null)
+                        {
                             entityLevel = 2;
+                            for (int k = 0; k < playerInfos[i].entitiesLevelThree.Count; ++k)
+                            {
+                                if (playerInfos[i].entitiesLevelThree[k] == playerInfos[i].DEBUG_entityOn)
+                                {
+                                    playerInfos[i].entitiesLevelThree[k] = string.Empty;
+                                }
+                            }
+                        }
+
+                        // Chercher si la carte invoquée est dans la chambre d'évolution
+                        if (playerInfos[i].entityOnTraining == playerInfos[i].DEBUG_entityOn)
+                        {
+                            playerInfos[i].entityOnTraining = string.Empty;
+
+                            if (evolutionCoco[i] != null)
+                                StopCoroutine(evolutionCoco[i]);
+                            DisableEvolution(i);
+                        }
 
                         foreach (SettingEntities.Entity entity in settingEntities.entities)
                         {
@@ -199,18 +230,26 @@ namespace LibLabGames.NewGame
 
                         SpawnEntity(entityGo, i, j);
 
+                        for (int k = 0; k < playerInfos[i].DEBUG_cardOnHand.Length; ++k)
+                        {
+                            if (playerInfos[i].DEBUG_cardOnHand[k] == playerInfos[i].DEBUG_entityOn)
+                            {
+                                playerInfos[i].DEBUG_cardOnHand[k] = "-1";
+                            }
+                        }
+
                         playerInfos[i].DEBUG_entityOn = string.Empty;
                     }
                 }
                 // DEBUG évolution d'une carte
                 if (Input.GetKeyDown(playerInfos[i].DEBUG_evolveKey))
                 {
-                    if (playerInfos[i].entityOnTraining == string.Empty && playerInfos[i].DEBUG_entityOn != string.Empty)
+                    if (playerInfos[i].entityOnTraining == string.Empty && playerInfos[i].DEBUG_entityOn != string.Empty && playerInfos[i].DEBUG_entityOn != "-1")
                     {
                         playerInfos[i].entityOnTraining = playerInfos[i].DEBUG_entityOn;
                         NFC_Activate(i);
                         ActiveEvolution(i);
-                        
+
                         if (evolutionCoco[i] != null)
                             StopCoroutine(evolutionCoco[i]);
 

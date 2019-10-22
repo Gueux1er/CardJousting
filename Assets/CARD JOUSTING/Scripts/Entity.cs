@@ -60,7 +60,7 @@ namespace LibLabGames.NewGame
 
             transform.localPosition = Vector3.zero;
 
-            if(isSecond)
+            if (isSecond)
                 transform.localPosition += Vector3.back * 2.2f;
 
             // TEST force vitesse
@@ -165,6 +165,13 @@ namespace LibLabGames.NewGame
             if (!isReady)
                 return;
 
+            if (col.CompareTag(string.Format("GoalPlayer{0}", playerID)))
+            {
+                DOKillEntity();
+
+                return;
+            }
+
             if (col.CompareTag("Entity"))
             {
                 colEntity = col.GetComponentInParent<Entity>();
@@ -182,8 +189,8 @@ namespace LibLabGames.NewGame
 
         public void HurtPlayer()
         {
-            DOKillEntity();
             GameManager.instance.HurtPlayer(playerID == 0 ? 1 : 0);
+            DOKillEntity();
         }
 
         public void DOKillEntity()

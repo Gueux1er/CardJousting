@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 114620580484214034}
-  - {fileID: 114891436416363298}
+  - {fileID: 114679470113974704}
+  - {fileID: 114312779604880318}
   EditorEvents:
   - {fileID: 114822306303812216}
   - {fileID: 114527873231256032}
@@ -41,14 +41,32 @@ MonoBehaviour:
   - {fileID: 114745425904254906}
   - {fileID: 114229000973294826}
   - {fileID: 114268266057821322}
+  - {fileID: 114360076745342882}
   EditorParameters:
-  - {fileID: 114586885547190026}
+  - {fileID: 114904956676857574}
   MasterBanks:
-  - {fileID: 114891436416363298}
+  - {fileID: 114312779604880318}
   StringsBanks:
-  - {fileID: 114620580484214034}
-  stringsBankWriteTime: 637072670340990956
+  - {fileID: 114679470113974704}
+  stringsBankWriteTime: 637072761680440182
   cacheVersion: 3
+--- !u!114 &114000428816329340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/base_damage/base_lifepoints
+  m_EditorClassIdentifier: 
+  Name: base_lifepoints
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 0
 --- !u!114 &114005206775619732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,6 +84,222 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 1
+--- !u!114 &114012143910761630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/both-destroyed
+  m_EditorClassIdentifier: 
+  Path: event:/both-destroyed
+  guid: 7831ad55876d93429c3ceb86c2767857
+  Banks:
+  - {fileID: 114694366261360166}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2991
+--- !u!114 &114017578471954504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/overview/game_phase
+  m_EditorClassIdentifier: 
+  Name: game_phase
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &114018620156486924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/music/game_phase
+  m_EditorClassIdentifier: 
+  Name: game_phase
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &114026595148597566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/overview/game_phase
+  m_EditorClassIdentifier: 
+  Name: game_phase
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &114028061972681432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: game_status
+  m_EditorClassIdentifier: 
+  Name: game_status
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 1
+--- !u!114 &114043507236904760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/music/game_phase
+  m_EditorClassIdentifier: 
+  Name: game_phase
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &114043842187060742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: D:/Users/cleme/Document/CardJousting/Assets/Build/Desktop/Master.strings.bank
+  SubDir: 
+  lastModified: 637072761680440182
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 2050
+  Exists: 1
+--- !u!114 &114047537709469510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/music/game_phase
+  m_EditorClassIdentifier: 
+  Name: game_phase
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &114048375686834326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/overview/game_phase
+  m_EditorClassIdentifier: 
+  Name: game_phase
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &114078282094575856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/evolve_v2/evolve_state
+  m_EditorClassIdentifier: 
+  Name: evolve_state
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &114079554897102192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: D:/Users/cleme/Document/CardJousting/Assets/Build/Desktop/Master.strings.bank
+  SubDir: 
+  lastModified: 637072761680440182
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 2050
+  Exists: 1
+--- !u!114 &114088922395521320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/overview/evolve_state
+  m_EditorClassIdentifier: 
+  Name: evolve_state
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
 --- !u!114 &114097335422903236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,6 +317,23 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 1
+--- !u!114 &114098773822935964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/music_v2/game_phase
+  m_EditorClassIdentifier: 
+  Name: game_phase
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
 --- !u!114 &114104038549262740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,6 +347,23 @@ MonoBehaviour:
   m_Name: parameter:/evolve/evolve_state
   m_EditorClassIdentifier: 
   Name: evolve_state
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &114106904958684266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/music/game_phase
+  m_EditorClassIdentifier: 
+  Name: game_phase
   Min: 0
   Max: 1
   Default: 0
@@ -115,7 +383,15 @@ MonoBehaviour:
   Path: event:/countdown_4.5_seconds_v2
   guid: 0dcb86573b398c4eb11de04e3ff74feb
   Banks:
-  - {fileID: 114891436416363298}
+  - {fileID: 114937057251049598}
+  - {fileID: 114599053684663358}
+  - {fileID: 114193665581453576}
+  - {fileID: 114546891615623316}
+  - {fileID: 114694366261360166}
+  - {fileID: 114135829620408118}
+  - {fileID: 114932110822474798}
+  - {fileID: 114587048343660598}
+  - {fileID: 114312779604880318}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -143,6 +419,23 @@ MonoBehaviour:
   - Name: 
     Value: 2349312
   Exists: 0
+--- !u!114 &114118925683093218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/overview/evolve_state
+  m_EditorClassIdentifier: 
+  Name: evolve_state
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
 --- !u!114 &114128100985427030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,6 +456,106 @@ MonoBehaviour:
   - Name: 
     Value: 2008
   Exists: 0
+--- !u!114 &114133528745028704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/evolve/evolve_state
+  m_EditorClassIdentifier: 
+  Name: evolve_state
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &114134063352755456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: D:/Users/cleme/Document/CardJousting/Assets/Build/Desktop/Master.strings.bank
+  SubDir: 
+  lastModified: 637072761680440182
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 2050
+  Exists: 1
+--- !u!114 &114135829620408118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: D:/Users/cleme/Document/CardJousting/Assets/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637072761680043744
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 2349312
+  Exists: 1
+--- !u!114 &114138842995011964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/both-destroyed
+  m_EditorClassIdentifier: 
+  Path: event:/both-destroyed
+  guid: 7831ad55876d93429c3ceb86c2767857
+  Banks:
+  - {fileID: 114135829620408118}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2991
+--- !u!114 &114140418257207556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: D:/Users/cleme/Document/CardJousting/Assets/Build/Desktop/Master.strings.bank
+  SubDir: 
+  lastModified: 637072761680440182
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 2050
+  Exists: 1
 --- !u!114 &114145642036705728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,7 +571,15 @@ MonoBehaviour:
   Path: event:/start_draw_phase
   guid: 3c652e510cb2bf45a182f50f32f3d006
   Banks:
-  - {fileID: 114891436416363298}
+  - {fileID: 114937057251049598}
+  - {fileID: 114599053684663358}
+  - {fileID: 114193665581453576}
+  - {fileID: 114546891615623316}
+  - {fileID: 114694366261360166}
+  - {fileID: 114135829620408118}
+  - {fileID: 114932110822474798}
+  - {fileID: 114587048343660598}
+  - {fileID: 114312779604880318}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -186,6 +587,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 849
+--- !u!114 &114152599568867154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/evolve_v2/evolve_state
+  m_EditorClassIdentifier: 
+  Name: evolve_state
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &114168238374955188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,7 +619,15 @@ MonoBehaviour:
   Path: event:/both-destroyed_v2
   guid: 28980cccfea34642aa88f4477d7ee8a6
   Banks:
-  - {fileID: 114891436416363298}
+  - {fileID: 114937057251049598}
+  - {fileID: 114599053684663358}
+  - {fileID: 114193665581453576}
+  - {fileID: 114546891615623316}
+  - {fileID: 114694366261360166}
+  - {fileID: 114135829620408118}
+  - {fileID: 114932110822474798}
+  - {fileID: 114587048343660598}
+  - {fileID: 114312779604880318}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -209,6 +635,43 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2991
+--- !u!114 &114184223325769118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/evolve_v2/evolve_state
+  m_EditorClassIdentifier: 
+  Name: evolve_state
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &114193665581453576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: D:/Users/cleme/Document/CardJousting/Assets/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637072761680043744
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 2349312
+  Exists: 1
 --- !u!114 &114198236182064960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,7 +687,15 @@ MonoBehaviour:
   Path: event:/kill
   guid: db2d4f309dcda04c83ed44f62c702e9b
   Banks:
-  - {fileID: 114891436416363298}
+  - {fileID: 114937057251049598}
+  - {fileID: 114599053684663358}
+  - {fileID: 114193665581453576}
+  - {fileID: 114546891615623316}
+  - {fileID: 114694366261360166}
+  - {fileID: 114135829620408118}
+  - {fileID: 114932110822474798}
+  - {fileID: 114587048343660598}
+  - {fileID: 114312779604880318}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -232,6 +703,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2991
+--- !u!114 &114203313014484818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/evolve_v2/evolve_state
+  m_EditorClassIdentifier: 
+  Name: evolve_state
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
 --- !u!114 &114212904597107974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,6 +737,57 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 1
+--- !u!114 &114215417978013824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/overview/evolve_state
+  m_EditorClassIdentifier: 
+  Name: evolve_state
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &114215498131604428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/evolve_v2/evolve_state
+  m_EditorClassIdentifier: 
+  Name: evolve_state
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &114219182572423992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/evolve/evolve_state
+  m_EditorClassIdentifier: 
+  Name: evolve_state
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
 --- !u!114 &114229000973294826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,7 +803,15 @@ MonoBehaviour:
   Path: event:/kill_v2
   guid: e8d4cf1e78118c48b080f87807e8bfb3
   Banks:
-  - {fileID: 114891436416363298}
+  - {fileID: 114937057251049598}
+  - {fileID: 114599053684663358}
+  - {fileID: 114193665581453576}
+  - {fileID: 114546891615623316}
+  - {fileID: 114694366261360166}
+  - {fileID: 114135829620408118}
+  - {fileID: 114932110822474798}
+  - {fileID: 114587048343660598}
+  - {fileID: 114312779604880318}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -287,7 +834,15 @@ MonoBehaviour:
   Path: event:/invocation_v2
   guid: 0920b923c4623d4aa7cd49122a8672d6
   Banks:
-  - {fileID: 114891436416363298}
+  - {fileID: 114937057251049598}
+  - {fileID: 114599053684663358}
+  - {fileID: 114193665581453576}
+  - {fileID: 114546891615623316}
+  - {fileID: 114694366261360166}
+  - {fileID: 114135829620408118}
+  - {fileID: 114932110822474798}
+  - {fileID: 114587048343660598}
+  - {fileID: 114312779604880318}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -346,6 +901,23 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
+--- !u!114 &114260862166973776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/base_damage_v2/base_lifepoints
+  m_EditorClassIdentifier: 
+  Name: base_lifepoints
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 0
 --- !u!114 &114268266057821322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -361,12 +933,20 @@ MonoBehaviour:
   Path: event:/base_damage
   guid: f60e657ea3e3494ba99cfc2b47020259
   Banks:
-  - {fileID: 114891436416363298}
+  - {fileID: 114937057251049598}
+  - {fileID: 114599053684663358}
+  - {fileID: 114193665581453576}
+  - {fileID: 114546891615623316}
+  - {fileID: 114694366261360166}
+  - {fileID: 114135829620408118}
+  - {fileID: 114932110822474798}
+  - {fileID: 114587048343660598}
+  - {fileID: 114312779604880318}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 114998453737278434}
+  - {fileID: 114735558477660274}
   MinDistance: 0
   MaxDistance: 0
   Length: 3435
@@ -402,7 +982,15 @@ MonoBehaviour:
   Path: event:/nfc_detect_left
   guid: f0ac116f0c5b0d4ba8e7497402938070
   Banks:
-  - {fileID: 114891436416363298}
+  - {fileID: 114937057251049598}
+  - {fileID: 114599053684663358}
+  - {fileID: 114193665581453576}
+  - {fileID: 114546891615623316}
+  - {fileID: 114694366261360166}
+  - {fileID: 114135829620408118}
+  - {fileID: 114932110822474798}
+  - {fileID: 114587048343660598}
+  - {fileID: 114312779604880318}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -449,6 +1037,77 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2991
+--- !u!114 &114297934504839458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/evolve/evolve_state
+  m_EditorClassIdentifier: 
+  Name: evolve_state
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &114298264213949032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/overview/evolve_state
+  m_EditorClassIdentifier: 
+  Name: evolve_state
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &114311491672087100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/music_v2/game_phase
+  m_EditorClassIdentifier: 
+  Name: game_phase
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &114312779604880318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: D:/Users/cleme/Document/CardJousting/Assets/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637072761680043744
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 2349312
+  Exists: 1
 --- !u!114 &114330363580929268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -464,7 +1123,15 @@ MonoBehaviour:
   Path: event:/game_start_v2
   guid: 033c3abdd1d54240837248e69188dcf5
   Banks:
-  - {fileID: 114891436416363298}
+  - {fileID: 114937057251049598}
+  - {fileID: 114599053684663358}
+  - {fileID: 114193665581453576}
+  - {fileID: 114546891615623316}
+  - {fileID: 114694366261360166}
+  - {fileID: 114135829620408118}
+  - {fileID: 114932110822474798}
+  - {fileID: 114587048343660598}
+  - {fileID: 114312779604880318}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -472,6 +1139,86 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 940
+--- !u!114 &114360076745342882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/both-destroyed
+  m_EditorClassIdentifier: 
+  Path: event:/both-destroyed
+  guid: 7831ad55876d93429c3ceb86c2767857
+  Banks:
+  - {fileID: 114312779604880318}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2991
+--- !u!114 &114363302320670344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/overview/evolve_state
+  m_EditorClassIdentifier: 
+  Name: evolve_state
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &114366863147631534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/both-destroyed
+  m_EditorClassIdentifier: 
+  Path: event:/both-destroyed
+  guid: 7831ad55876d93429c3ceb86c2767857
+  Banks:
+  - {fileID: 114546891615623316}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2991
+--- !u!114 &114371678870346274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: game_status
+  m_EditorClassIdentifier: 
+  Name: game_status
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 1
 --- !u!114 &114372467625064552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -487,12 +1234,20 @@ MonoBehaviour:
   Path: event:/music_v2
   guid: a2e39e643dc052488186762e1e1b4bb0
   Banks:
-  - {fileID: 114891436416363298}
+  - {fileID: 114937057251049598}
+  - {fileID: 114599053684663358}
+  - {fileID: 114193665581453576}
+  - {fileID: 114546891615623316}
+  - {fileID: 114694366261360166}
+  - {fileID: 114135829620408118}
+  - {fileID: 114932110822474798}
+  - {fileID: 114587048343660598}
+  - {fileID: 114312779604880318}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114274710003762986}
+  - {fileID: 114636115455893574}
   MinDistance: 0
   MaxDistance: 0
   Length: 80579
@@ -513,6 +1268,91 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
+--- !u!114 &114393626886116780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/evolve/evolve_state
+  m_EditorClassIdentifier: 
+  Name: evolve_state
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &114394720435709298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/base_damage_v2/base_lifepoints
+  m_EditorClassIdentifier: 
+  Name: base_lifepoints
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 0
+--- !u!114 &114403096313742122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/evolve_v2/evolve_state
+  m_EditorClassIdentifier: 
+  Name: evolve_state
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &114404009999952222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/base_damage/base_lifepoints
+  m_EditorClassIdentifier: 
+  Name: base_lifepoints
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 0
+--- !u!114 &114405638600462246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/overview/game_phase
+  m_EditorClassIdentifier: 
+  Name: game_phase
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
 --- !u!114 &114408464796632608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -528,7 +1368,15 @@ MonoBehaviour:
   Path: event:/invocation
   guid: a66be92d09ecf64b96fc6032bb1d7b5c
   Banks:
-  - {fileID: 114891436416363298}
+  - {fileID: 114937057251049598}
+  - {fileID: 114599053684663358}
+  - {fileID: 114193665581453576}
+  - {fileID: 114546891615623316}
+  - {fileID: 114694366261360166}
+  - {fileID: 114135829620408118}
+  - {fileID: 114932110822474798}
+  - {fileID: 114587048343660598}
+  - {fileID: 114312779604880318}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -553,6 +1401,23 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 1
+--- !u!114 &114412401530113438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: game_status
+  m_EditorClassIdentifier: 
+  Name: game_status
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 1
 --- !u!114 &114416162413624590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -568,13 +1433,21 @@ MonoBehaviour:
   Path: event:/overview
   guid: 87c22d1172759241bb9d778c8c8db7ff
   Banks:
-  - {fileID: 114891436416363298}
+  - {fileID: 114937057251049598}
+  - {fileID: 114599053684663358}
+  - {fileID: 114193665581453576}
+  - {fileID: 114546891615623316}
+  - {fileID: 114694366261360166}
+  - {fileID: 114135829620408118}
+  - {fileID: 114932110822474798}
+  - {fileID: 114587048343660598}
+  - {fileID: 114312779604880318}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114005206775619732}
-  - {fileID: 114409479382527824}
+  - {fileID: 114644850301369652}
+  - {fileID: 114611350812883606}
   MinDistance: 0
   MaxDistance: 0
   Length: 60000
@@ -593,7 +1466,15 @@ MonoBehaviour:
   Path: event:/nfc_detect_left_v2
   guid: 156335a4bb633945a671847d40854d67
   Banks:
-  - {fileID: 114891436416363298}
+  - {fileID: 114937057251049598}
+  - {fileID: 114599053684663358}
+  - {fileID: 114193665581453576}
+  - {fileID: 114546891615623316}
+  - {fileID: 114694366261360166}
+  - {fileID: 114135829620408118}
+  - {fileID: 114932110822474798}
+  - {fileID: 114587048343660598}
+  - {fileID: 114312779604880318}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -601,6 +1482,40 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 209
+--- !u!114 &114429091896937648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/overview/evolve_state
+  m_EditorClassIdentifier: 
+  Name: evolve_state
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &114432844183317382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/evolve/evolve_state
+  m_EditorClassIdentifier: 
+  Name: evolve_state
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
 --- !u!114 &114440306022849484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -614,6 +1529,23 @@ MonoBehaviour:
   m_Name: parameter:/evolve_v2/evolve_state
   m_EditorClassIdentifier: 
   Name: evolve_state
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &114475279376718588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/music_v2/game_phase
+  m_EditorClassIdentifier: 
+  Name: game_phase
   Min: 0
   Max: 1
   Default: 0
@@ -635,6 +1567,60 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
+--- !u!114 &114485728464231426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/music/game_phase
+  m_EditorClassIdentifier: 
+  Name: game_phase
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &114489297512702932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/music_v2/game_phase
+  m_EditorClassIdentifier: 
+  Name: game_phase
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &114493077187910156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: D:/Users/cleme/Document/CardJousting/Assets/Build/Desktop/Master.strings.bank
+  SubDir: 
+  lastModified: 637072761680440182
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 2050
+  Exists: 1
 --- !u!114 &114507093946400414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -650,7 +1636,15 @@ MonoBehaviour:
   Path: event:/nfc_detect_right_v2
   guid: 775233379e837f4e980ecaa4fd2e0742
   Banks:
-  - {fileID: 114891436416363298}
+  - {fileID: 114937057251049598}
+  - {fileID: 114599053684663358}
+  - {fileID: 114193665581453576}
+  - {fileID: 114546891615623316}
+  - {fileID: 114694366261360166}
+  - {fileID: 114135829620408118}
+  - {fileID: 114932110822474798}
+  - {fileID: 114587048343660598}
+  - {fileID: 114312779604880318}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -673,7 +1667,15 @@ MonoBehaviour:
   Path: event:/nfc_detect_right
   guid: 78d54845622d3845b813cc5778d63e54
   Banks:
-  - {fileID: 114891436416363298}
+  - {fileID: 114937057251049598}
+  - {fileID: 114599053684663358}
+  - {fileID: 114193665581453576}
+  - {fileID: 114546891615623316}
+  - {fileID: 114694366261360166}
+  - {fileID: 114135829620408118}
+  - {fileID: 114932110822474798}
+  - {fileID: 114587048343660598}
+  - {fileID: 114312779604880318}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -698,6 +1700,111 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
+--- !u!114 &114534153843452872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: game_status
+  m_EditorClassIdentifier: 
+  Name: game_status
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 1
+--- !u!114 &114535625735514382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/base_damage/base_lifepoints
+  m_EditorClassIdentifier: 
+  Name: base_lifepoints
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 0
+--- !u!114 &114544533043623612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: game_status
+  m_EditorClassIdentifier: 
+  Name: game_status
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 1
+--- !u!114 &114546891615623316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: D:/Users/cleme/Document/CardJousting/Assets/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637072761680043744
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 2349312
+  Exists: 1
+--- !u!114 &114548703271340626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/overview/game_phase
+  m_EditorClassIdentifier: 
+  Name: game_phase
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &114584580597718166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/music/game_phase
+  m_EditorClassIdentifier: 
+  Name: game_phase
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
 --- !u!114 &114586885547190026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -713,6 +1820,86 @@ MonoBehaviour:
   Name: game_status
   Min: 0
   Max: 4
+  Default: 0
+  Exists: 1
+--- !u!114 &114587048343660598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: D:/Users/cleme/Document/CardJousting/Assets/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637072761680043744
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 2349312
+  Exists: 1
+--- !u!114 &114588638369038258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/both-destroyed
+  m_EditorClassIdentifier: 
+  Path: event:/both-destroyed
+  guid: 7831ad55876d93429c3ceb86c2767857
+  Banks:
+  - {fileID: 114599053684663358}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2991
+--- !u!114 &114599053684663358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: D:/Users/cleme/Document/CardJousting/Assets/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637072761680043744
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 2349312
+  Exists: 1
+--- !u!114 &114611350812883606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/overview/game_phase
+  m_EditorClassIdentifier: 
+  Name: game_phase
+  Min: 0
+  Max: 1
   Default: 0
   Exists: 1
 --- !u!114 &114619201105872832
@@ -752,6 +1939,131 @@ MonoBehaviour:
   - Name: 
     Value: 2008
   Exists: 1
+--- !u!114 &114629142731664498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/music_v2/game_phase
+  m_EditorClassIdentifier: 
+  Name: game_phase
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &114629654444412372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/both-destroyed
+  m_EditorClassIdentifier: 
+  Path: event:/both-destroyed
+  guid: 7831ad55876d93429c3ceb86c2767857
+  Banks:
+  - {fileID: 114932110822474798}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2991
+--- !u!114 &114636115455893574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/music_v2/game_phase
+  m_EditorClassIdentifier: 
+  Name: game_phase
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
+--- !u!114 &114641013760001236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/base_damage_v2/base_lifepoints
+  m_EditorClassIdentifier: 
+  Name: base_lifepoints
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 0
+--- !u!114 &114643148232661314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/music_v2/game_phase
+  m_EditorClassIdentifier: 
+  Name: game_phase
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &114644850301369652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/overview/evolve_state
+  m_EditorClassIdentifier: 
+  Name: evolve_state
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
+--- !u!114 &114644986951422886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/base_damage/base_lifepoints
+  m_EditorClassIdentifier: 
+  Name: base_lifepoints
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 0
 --- !u!114 &114650522896425804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -786,6 +2098,23 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
+--- !u!114 &114666280831146262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/base_damage/base_lifepoints
+  m_EditorClassIdentifier: 
+  Name: base_lifepoints
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 0
 --- !u!114 &114672577372027834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -801,15 +2130,131 @@ MonoBehaviour:
   Path: event:/evolve_v2
   guid: 4d3924b95fb718449e02989d2390e48e
   Banks:
-  - {fileID: 114891436416363298}
+  - {fileID: 114937057251049598}
+  - {fileID: 114599053684663358}
+  - {fileID: 114193665581453576}
+  - {fileID: 114546891615623316}
+  - {fileID: 114694366261360166}
+  - {fileID: 114135829620408118}
+  - {fileID: 114932110822474798}
+  - {fileID: 114587048343660598}
+  - {fileID: 114312779604880318}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114212904597107974}
+  - {fileID: 114152599568867154}
   MinDistance: 0
   MaxDistance: 0
   Length: 9751
+--- !u!114 &114679470113974704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: D:/Users/cleme/Document/CardJousting/Assets/Build/Desktop/Master.strings.bank
+  SubDir: 
+  lastModified: 637072761680440182
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 2050
+  Exists: 1
+--- !u!114 &114690836323788974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/base_damage_v2/base_lifepoints
+  m_EditorClassIdentifier: 
+  Name: base_lifepoints
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 0
+--- !u!114 &114694366261360166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: D:/Users/cleme/Document/CardJousting/Assets/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637072761680043744
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 2349312
+  Exists: 1
+--- !u!114 &114698069146766812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/base_damage_v2/base_lifepoints
+  m_EditorClassIdentifier: 
+  Name: base_lifepoints
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 0
+--- !u!114 &114710265827018456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/music_v2/game_phase
+  m_EditorClassIdentifier: 
+  Name: game_phase
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &114715046013555774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/base_damage_v2/base_lifepoints
+  m_EditorClassIdentifier: 
+  Name: base_lifepoints
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 0
 --- !u!114 &114720055745203286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -825,15 +2270,77 @@ MonoBehaviour:
   Path: event:/evolve
   guid: aa592ef654a7234a9242c2ca1e7c1512
   Banks:
-  - {fileID: 114891436416363298}
+  - {fileID: 114937057251049598}
+  - {fileID: 114599053684663358}
+  - {fileID: 114193665581453576}
+  - {fileID: 114546891615623316}
+  - {fileID: 114694366261360166}
+  - {fileID: 114135829620408118}
+  - {fileID: 114932110822474798}
+  - {fileID: 114587048343660598}
+  - {fileID: 114312779604880318}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114097335422903236}
+  - {fileID: 114970740370987812}
   MinDistance: 0
   MaxDistance: 0
   Length: 10818
+--- !u!114 &114720451759031976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/evolve/evolve_state
+  m_EditorClassIdentifier: 
+  Name: evolve_state
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &114735558477660274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/base_damage/base_lifepoints
+  m_EditorClassIdentifier: 
+  Name: base_lifepoints
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 1
+--- !u!114 &114737365390703240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: D:/Users/cleme/Document/CardJousting/Assets/Build/Desktop/Master.strings.bank
+  SubDir: 
+  lastModified: 637072761680440182
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 2050
+  Exists: 1
 --- !u!114 &114743073078076404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -851,6 +2358,23 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
+--- !u!114 &114744559062757490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/base_damage/base_lifepoints
+  m_EditorClassIdentifier: 
+  Name: base_lifepoints
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 0
 --- !u!114 &114745425904254906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -866,7 +2390,15 @@ MonoBehaviour:
   Path: event:/start_draw_phase_v3
   guid: c874590cbc6f4f4dafe5d5829f000436
   Banks:
-  - {fileID: 114891436416363298}
+  - {fileID: 114937057251049598}
+  - {fileID: 114599053684663358}
+  - {fileID: 114193665581453576}
+  - {fileID: 114546891615623316}
+  - {fileID: 114694366261360166}
+  - {fileID: 114135829620408118}
+  - {fileID: 114932110822474798}
+  - {fileID: 114587048343660598}
+  - {fileID: 114312779604880318}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -874,6 +2406,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 918
+--- !u!114 &114749121370319952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/both-destroyed
+  m_EditorClassIdentifier: 
+  Path: event:/both-destroyed
+  guid: 7831ad55876d93429c3ceb86c2767857
+  Banks:
+  - {fileID: 114587048343660598}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2991
 --- !u!114 &114750336663118426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -889,7 +2444,15 @@ MonoBehaviour:
   Path: event:/blocked
   guid: a516d0649e043c46984a7b1e8ddbbcbc
   Banks:
-  - {fileID: 114891436416363298}
+  - {fileID: 114937057251049598}
+  - {fileID: 114599053684663358}
+  - {fileID: 114193665581453576}
+  - {fileID: 114546891615623316}
+  - {fileID: 114694366261360166}
+  - {fileID: 114135829620408118}
+  - {fileID: 114932110822474798}
+  - {fileID: 114587048343660598}
+  - {fileID: 114312779604880318}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -897,6 +2460,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1300
+--- !u!114 &114753510608482218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/overview/game_phase
+  m_EditorClassIdentifier: 
+  Name: game_phase
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
 --- !u!114 &114754549905307430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -912,7 +2492,15 @@ MonoBehaviour:
   Path: event:/blocked_v2
   guid: b7b7564fa1fd17488bcafa9d3e43e047
   Banks:
-  - {fileID: 114891436416363298}
+  - {fileID: 114937057251049598}
+  - {fileID: 114599053684663358}
+  - {fileID: 114193665581453576}
+  - {fileID: 114546891615623316}
+  - {fileID: 114694366261360166}
+  - {fileID: 114135829620408118}
+  - {fileID: 114932110822474798}
+  - {fileID: 114587048343660598}
+  - {fileID: 114312779604880318}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -920,6 +2508,74 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1300
+--- !u!114 &114758868222342258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/overview/evolve_state
+  m_EditorClassIdentifier: 
+  Name: evolve_state
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &114759049452229464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/evolve_v2/evolve_state
+  m_EditorClassIdentifier: 
+  Name: evolve_state
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &114759582633940260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/base_damage_v2/base_lifepoints
+  m_EditorClassIdentifier: 
+  Name: base_lifepoints
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 0
+--- !u!114 &114764877399526030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/base_damage_v2/base_lifepoints
+  m_EditorClassIdentifier: 
+  Name: base_lifepoints
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 0
 --- !u!114 &114768167331410868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -935,7 +2591,15 @@ MonoBehaviour:
   Path: event:/countdown_4.5_seconds
   guid: c4663db53afdd749b4911c762b831afe
   Banks:
-  - {fileID: 114891436416363298}
+  - {fileID: 114937057251049598}
+  - {fileID: 114599053684663358}
+  - {fileID: 114193665581453576}
+  - {fileID: 114546891615623316}
+  - {fileID: 114694366261360166}
+  - {fileID: 114135829620408118}
+  - {fileID: 114932110822474798}
+  - {fileID: 114587048343660598}
+  - {fileID: 114312779604880318}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -943,6 +2607,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 4736
+--- !u!114 &114774169768186462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/base_damage_v2/base_lifepoints
+  m_EditorClassIdentifier: 
+  Name: base_lifepoints
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 1
 --- !u!114 &114792749445067678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -963,6 +2644,23 @@ MonoBehaviour:
   - Name: 
     Value: 1332
   Exists: 0
+--- !u!114 &114798740500506306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/overview/game_phase
+  m_EditorClassIdentifier: 
+  Name: game_phase
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
 --- !u!114 &114801831503963032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -980,6 +2678,46 @@ MonoBehaviour:
   Max: 4
   Default: 0
   Exists: 0
+--- !u!114 &114810412474546982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/music/game_phase
+  m_EditorClassIdentifier: 
+  Name: game_phase
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &114814318196603416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/both-destroyed
+  m_EditorClassIdentifier: 
+  Path: event:/both-destroyed
+  guid: 7831ad55876d93429c3ceb86c2767857
+  Banks:
+  - {fileID: 114193665581453576}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2991
 --- !u!114 &114822306303812216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -995,15 +2733,63 @@ MonoBehaviour:
   Path: event:/music
   guid: 240fedca5ad39c4686f4b0dd2d769dd3
   Banks:
-  - {fileID: 114891436416363298}
+  - {fileID: 114937057251049598}
+  - {fileID: 114599053684663358}
+  - {fileID: 114193665581453576}
+  - {fileID: 114546891615623316}
+  - {fileID: 114694366261360166}
+  - {fileID: 114135829620408118}
+  - {fileID: 114932110822474798}
+  - {fileID: 114587048343660598}
+  - {fileID: 114312779604880318}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114272191769093916}
+  - {fileID: 114882632412115634}
   MinDistance: 0
   MaxDistance: 0
   Length: 13503
+--- !u!114 &114829422472643156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: game_status
+  m_EditorClassIdentifier: 
+  Name: game_status
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 1
+--- !u!114 &114832246184050990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/both-destroyed
+  m_EditorClassIdentifier: 
+  Path: event:/both-destroyed
+  guid: 7831ad55876d93429c3ceb86c2767857
+  Banks:
+  - {fileID: 114937057251049598}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2991
 --- !u!114 &114837896150582868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1019,15 +2805,43 @@ MonoBehaviour:
   Path: event:/base_damage_v2
   guid: 9c6c96e15bcc9a46a8cf0571c1a2c413
   Banks:
-  - {fileID: 114891436416363298}
+  - {fileID: 114937057251049598}
+  - {fileID: 114599053684663358}
+  - {fileID: 114193665581453576}
+  - {fileID: 114546891615623316}
+  - {fileID: 114694366261360166}
+  - {fileID: 114135829620408118}
+  - {fileID: 114932110822474798}
+  - {fileID: 114587048343660598}
+  - {fileID: 114312779604880318}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 114237229447919170}
+  - {fileID: 114774169768186462}
   MinDistance: 0
   MaxDistance: 0
   Length: 3435
+--- !u!114 &114838878707943884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: D:/Users/cleme/Document/CardJousting/Assets/Build/Desktop/Master.strings.bank
+  SubDir: 
+  lastModified: 637072761680440182
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 2050
+  Exists: 1
 --- !u!114 &114841402143612786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1043,6 +2857,40 @@ MonoBehaviour:
   Name: base_lifepoints
   Min: 0
   Max: 4
+  Default: 0
+  Exists: 0
+--- !u!114 &114848062296646628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/overview/evolve_state
+  m_EditorClassIdentifier: 
+  Name: evolve_state
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &114861101906902416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/music_v2/game_phase
+  m_EditorClassIdentifier: 
+  Name: game_phase
+  Min: 0
+  Max: 1
   Default: 0
   Exists: 0
 --- !u!114 &114862028191374766
@@ -1064,6 +2912,108 @@ MonoBehaviour:
   FileSizes:
   - Name: 
     Value: 845728
+  Exists: 0
+--- !u!114 &114871737103622842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/music/game_phase
+  m_EditorClassIdentifier: 
+  Name: game_phase
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &114874209555434610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/evolve/evolve_state
+  m_EditorClassIdentifier: 
+  Name: evolve_state
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &114882632412115634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/music/game_phase
+  m_EditorClassIdentifier: 
+  Name: game_phase
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
+--- !u!114 &114883942020658006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/overview/game_phase
+  m_EditorClassIdentifier: 
+  Name: game_phase
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &114889272826094944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/evolve_v2/evolve_state
+  m_EditorClassIdentifier: 
+  Name: evolve_state
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &114891251846206454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/base_damage/base_lifepoints
+  m_EditorClassIdentifier: 
+  Name: base_lifepoints
+  Min: 0
+  Max: 4
+  Default: 0
   Exists: 0
 --- !u!114 &114891436416363298
 MonoBehaviour:
@@ -1100,7 +3050,15 @@ MonoBehaviour:
   Path: event:/start_draw_phase_v2
   guid: 27ca24dac750b64db1753e1f8d1d06f3
   Banks:
-  - {fileID: 114891436416363298}
+  - {fileID: 114937057251049598}
+  - {fileID: 114599053684663358}
+  - {fileID: 114193665581453576}
+  - {fileID: 114546891615623316}
+  - {fileID: 114694366261360166}
+  - {fileID: 114135829620408118}
+  - {fileID: 114932110822474798}
+  - {fileID: 114587048343660598}
+  - {fileID: 114312779604880318}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1108,6 +3066,40 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1689
+--- !u!114 &114898653291917180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/base_damage/base_lifepoints
+  m_EditorClassIdentifier: 
+  Name: base_lifepoints
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 0
+--- !u!114 &114900610626489736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: game_status
+  m_EditorClassIdentifier: 
+  Name: game_status
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 1
 --- !u!114 &114901197413127588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1123,7 +3115,15 @@ MonoBehaviour:
   Path: event:/game_start
   guid: 9979783f465eee4b87b496e776a43c57
   Banks:
-  - {fileID: 114891436416363298}
+  - {fileID: 114937057251049598}
+  - {fileID: 114599053684663358}
+  - {fileID: 114193665581453576}
+  - {fileID: 114546891615623316}
+  - {fileID: 114694366261360166}
+  - {fileID: 114135829620408118}
+  - {fileID: 114932110822474798}
+  - {fileID: 114587048343660598}
+  - {fileID: 114312779604880318}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1131,6 +3131,151 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2000
+--- !u!114 &114904956676857574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: game_status
+  m_EditorClassIdentifier: 
+  Name: game_status
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 1
+--- !u!114 &114919074994256128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/evolve/evolve_state
+  m_EditorClassIdentifier: 
+  Name: evolve_state
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &114923240405683458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: game_status
+  m_EditorClassIdentifier: 
+  Name: game_status
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 1
+--- !u!114 &114932110822474798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: D:/Users/cleme/Document/CardJousting/Assets/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637072761680043744
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 2349312
+  Exists: 1
+--- !u!114 &114937057251049598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: D:/Users/cleme/Document/CardJousting/Assets/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637072761680043744
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 2349312
+  Exists: 1
+--- !u!114 &114945047331006626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: D:/Users/cleme/Document/CardJousting/Assets/Build/Desktop/Master.strings.bank
+  SubDir: 
+  lastModified: 637072761680440182
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 2050
+  Exists: 1
+--- !u!114 &114955044339132544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/evolve_v2/evolve_state
+  m_EditorClassIdentifier: 
+  Name: evolve_state
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &114970740370987812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/evolve/evolve_state
+  m_EditorClassIdentifier: 
+  Name: evolve_state
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &114996070648752350
 MonoBehaviour:
   m_ObjectHideFlags: 0

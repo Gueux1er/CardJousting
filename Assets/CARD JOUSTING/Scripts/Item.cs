@@ -40,33 +40,28 @@ namespace LibLabGames.NewGame
         private RaycastHit[] hits;
         private void OnTriggerEnter(Collider col)
         {
-            if (col.CompareTag(string.Format("GoalPlayer{0}", playerID)))
-            {
-                entity.HurtPlayer();
-            }
-
             if (onTheSide)
             {
                 OnTriggerSide(col);
             }
             else
             {
+                if (col.CompareTag(string.Format("GoalPlayer{0}", playerID)))
+                {
+                    if (typeItem == eTypeItem.attack)
+                        entity.HurtPlayer();
+                    else
+                        DODestroy();
+
+                    return;
+                }
+                
                 OnTriggerNoSide(col);
             }
         }
 
         private void OnTriggerSide(Collider col)
         {
-            if (col.CompareTag(string.Format("GoalPlayer{0}", playerID)))
-            {
-                if (typeItem == eTypeItem.attack)
-                    entity.HurtPlayer();
-                else
-                    DODestroy();
-
-                return;
-            }
-
             if (col.CompareTag("Entity"))
             {
                 colEntity = col.GetComponentInParent<Entity>();
@@ -212,7 +207,7 @@ namespace LibLabGames.NewGame
                     if (typeItem != eTypeItem.grab)
                     {
                         entity.currentSpeed = colEntity.currentSpeed;
-                        
+
                         entity.isWalk = false;
                     }
                     else if (!entity.isOvertake)
