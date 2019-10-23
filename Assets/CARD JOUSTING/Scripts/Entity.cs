@@ -10,8 +10,8 @@ namespace LibLabGames.NewGame
         public float distanceWithNextEntity;
 
         [Header("Infos To Fill")]
-        public string unitName;
         public float speed = 1;
+        public bool isSecondEntity;
         public GameObject secondEntityPrefab;
 
         [Header("On Play Info")]
@@ -31,6 +31,7 @@ namespace LibLabGames.NewGame
         public Entity enemyEntity;
 
         [Header("Elements")]
+        public GameObject spriteObject;
         public MeshRenderer coreMeshRenderer;
         public Color[] attackLvlColors;
 
@@ -54,18 +55,20 @@ namespace LibLabGames.NewGame
             Debug.DrawLine(rayFw.origin, rayFw.origin + rayFw.direction, Color.blue);
         }
 
-        public void DOSpawn(int player, int way, bool isSecond)
+        public void DOSpawn(int player, int way)
         {
+            spriteObject.SetActive(!GameManager.instance.DEBUG_displayMeshArm);
+            coreMeshRenderer.enabled = GameManager.instance.DEBUG_displayMeshArm;
+
             playerID = player;
             wayID = way;
 
             transform.localPosition = Vector3.zero;
 
-            if (isSecond)
-                transform.localPosition += Vector3.back * 2.2f;
-
-            // TEST force vitesse
-            speed = 0.5f;
+            if (isSecondEntity)
+            {
+                transform.localPosition += Vector3.back * distanceWithNextEntity;
+            }
 
             currentSpeed = speed;
 
@@ -85,11 +88,10 @@ namespace LibLabGames.NewGame
 
             if (secondEntityPrefab != null)
             {
-                GameManager.instance.SpawnEntity(secondEntityPrefab, playerID, wayID, true);
+                GameManager.instance.SpawnSecondEntity(secondEntityPrefab, playerID, wayID);
             }
 
             isReady = true;
-            
             
             CheckCanWalk();
         }

@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db5b749eebb820245be62f4e4016b06c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  port_00: COM1
-  port_01: COM2
+  port_00: COM3
+  port_01: COM4
   port_02: COM3
   timeout: 1
