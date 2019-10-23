@@ -18,6 +18,8 @@ namespace LibLabGames.NewGame
 
         public bool onTheSide;
 
+        public GameObject meshObject;
+
         public Collider forwardCollider;
         public Collider sideCollider;
 
@@ -32,6 +34,8 @@ namespace LibLabGames.NewGame
             forwardCollider.enabled = !onTheSide;
             sideCollider.enabled = onTheSide;
             entity.haveItemOnSide = onTheSide;
+
+            meshObject.SetActive(GameManager.instance.DEBUG_displayMeshArm);
         }
 
         private Entity colEntity;
@@ -160,7 +164,6 @@ namespace LibLabGames.NewGame
                     {
                         colItem.entity.isWalk = false;
                         entity.isWalk = false;
-                        //goToEnemyDefence = false;
                         entity.enemyEntity = colItem.entity;
                     }
                     else if (colItem.typeItem == eTypeItem.grab)

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SettingEntities
   m_EditorClassIdentifier: 
   entities:
-  - nameEntity: Zombie
+  - nameEntity: Mindless Rusher
     tagList:
     - 88040A95
     - 88041B1F
@@ -40,7 +40,7 @@ MonoBehaviour:
     - {fileID: 21300000, guid: 60ae65d663e4d5b4a802ce03e02fd9e5, type: 3}
     - {fileID: 21300000, guid: a1560cc6d594e70449c9973d7f1b9c4c, type: 3}
     - {fileID: 21300000, guid: 98f6e71728dd9eb4e84e13ab34aafddb, type: 3}
-  - nameEntity: MurDeChair
+  - nameEntity: Dancing Hand
     tagList:
     - 83FEA524
     - 88042D98
@@ -53,7 +53,7 @@ MonoBehaviour:
     entitySprites:
     - {fileID: 21300000, guid: e726fe40d8f2d1940954c7410fea3056, type: 3}
     - {fileID: 21300000, guid: aeedebc5b338486428660fad64ffb336, type: 3}
-  - nameEntity: Tronconneur
+  - nameEntity: Crabboy
     tagList:
     - 4B58AF1C
     - 7932BB55
@@ -64,14 +64,7 @@ MonoBehaviour:
     - {fileID: 958956705904844607, guid: d10ad10ec8e23fd44a812fc7aa5ee423, type: 3}
     entitySprites:
     - {fileID: 21300000, guid: 1c198dc31ef98924facc0893d60eb92f, type: 3}
-  - nameEntity: _003
-    tagList: []
-    evolveTime: 0
-    entityPrefabs:
-    - {fileID: 958956705904844607, guid: 9b942d668f5d6354ba5bed0ae90f637d, type: 3}
-    entitySprites:
-    - {fileID: 21300000, guid: 1c59157888829504f95ffd9916138a5e, type: 3}
-  - nameEntity: Papa
+  - nameEntity: Big Daddy
     tagList:
     - 8804F92E
     - 8804BB90
@@ -84,6 +77,41 @@ MonoBehaviour:
     entitySprites:
     - {fileID: 21300000, guid: 994ff14a39d1eaf46991755cba271881, type: 3}
     - {fileID: 21300000, guid: 23a03441b4c42ce4b8906f653cc79d0a, type: 3}
+  - nameEntity: Flesh Wall
+    tagList:
+    - 88041A19
+    - 8804F940
+    - B1DB0531
+    - 8804C63B
+    evolveTime: 18
+    entityPrefabs:
+    - {fileID: 958956705904844607, guid: c0412dc941faa59489d7c34e72c49c4f, type: 3}
+    - {fileID: 958956705904844607, guid: 175c1a2c2978dd64dbcf3dd3cf5f5813, type: 3}
+    entitySprites:
+    - {fileID: 21300000, guid: 1b91b52b7173ff345808bedf7a11c72f, type: 3}
+    - {fileID: 21300000, guid: adbfc7eb5007f9c44b2187db2e508914, type: 3}
+  - nameEntity: Toto
+    tagList:
+    - 939A8324
+    - 8804CE1B
+    - A99D077F
+    - 8804617E
+    evolveTime: 6
+    entityPrefabs:
+    - {fileID: 958956705904844607, guid: fa0a5c15e7dad2e458ff232a9958d203, type: 3}
+    - {fileID: 958956705904844607, guid: acbb195ee375fa44eb3dab0b1c08ceec, type: 3}
+    - {fileID: 958956705904844607, guid: 28de38c66cca3db4caae800c74f3d48e, type: 3}
+    entitySprites:
+    - {fileID: 21300000, guid: 34d7f32d269932b49ada3a65cacd49d8, type: 3}
+    - {fileID: 21300000, guid: cf25929695454384f81b34da4085b61d, type: 3}
+    - {fileID: 21300000, guid: 5b5bf56eca86d194597a5940e555da28, type: 3}
+  - nameEntity: _003
+    tagList: []
+    evolveTime: 0
+    entityPrefabs:
+    - {fileID: 958956705904844607, guid: 9b942d668f5d6354ba5bed0ae90f637d, type: 3}
+    entitySprites:
+    - {fileID: 21300000, guid: 1c59157888829504f95ffd9916138a5e, type: 3}
   - nameEntity: _005
     tagList: []
     evolveTime: 0
@@ -105,19 +133,6 @@ MonoBehaviour:
     - {fileID: 958956705904844607, guid: c1523d3aab98bb64e9a1dc91df4ce1c9, type: 3}
     entitySprites:
     - {fileID: 21300000, guid: 55a5ba73f7fd1664cb18fbf6d5499784, type: 3}
-  - nameEntity: MadScientist
-    tagList:
-    - 88041A19
-    - 8804F940
-    - B1DB0531
-    - 8804C63B
-    evolveTime: 18
-    entityPrefabs:
-    - {fileID: 958956705904844607, guid: c0412dc941faa59489d7c34e72c49c4f, type: 3}
-    - {fileID: 958956705904844607, guid: 175c1a2c2978dd64dbcf3dd3cf5f5813, type: 3}
-    entitySprites:
-    - {fileID: 21300000, guid: 1b91b52b7173ff345808bedf7a11c72f, type: 3}
-    - {fileID: 21300000, guid: adbfc7eb5007f9c44b2187db2e508914, type: 3}
   - nameEntity: _009
     tagList: []
     evolveTime: 0
@@ -132,21 +147,6 @@ MonoBehaviour:
     - {fileID: 958956705904844607, guid: e5b5c74fcb522f74195ff839adf652b1, type: 3}
     entitySprites:
     - {fileID: 21300000, guid: 87bd06e85ff4e50499992ced88ecc00b, type: 3}
-  - nameEntity: Berserk
-    tagList:
-    - 939A8324
-    - 8804CE1B
-    - A99D077F
-    - 8804617E
-    evolveTime: 6
-    entityPrefabs:
-    - {fileID: 958956705904844607, guid: fa0a5c15e7dad2e458ff232a9958d203, type: 3}
-    - {fileID: 958956705904844607, guid: acbb195ee375fa44eb3dab0b1c08ceec, type: 3}
-    - {fileID: 958956705904844607, guid: 28de38c66cca3db4caae800c74f3d48e, type: 3}
-    entitySprites:
-    - {fileID: 21300000, guid: 34d7f32d269932b49ada3a65cacd49d8, type: 3}
-    - {fileID: 21300000, guid: cf25929695454384f81b34da4085b61d, type: 3}
-    - {fileID: 21300000, guid: 5b5bf56eca86d194597a5940e555da28, type: 3}
   - nameEntity: _012
     tagList: []
     evolveTime: 0

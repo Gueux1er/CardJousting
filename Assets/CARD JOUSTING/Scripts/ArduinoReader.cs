@@ -1,21 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.IO.Ports;
-using System.Threading;
 using System.Linq;
+using System.Threading;
 using LibLabGames.NewGame;
-using UnityEngine;
 using LibLabSystem;
+using UnityEngine;
 
 public class ArduinoReader : MonoBehaviour
 {
     public string port_00;
     public string port_01;
-    public string port_02;
     public int timeout = 1;
     SerialPort serial_00;
     SerialPort serial_01;
-    SerialPort serial_02;
 
     Thread thread;
 
@@ -24,10 +22,9 @@ public class ArduinoReader : MonoBehaviour
         List<string> ports = SerialPort.GetPortNames().ToList();
 
         if (ports.Find(x => x.Contains(port_00)) == null ||
-            ports.Find(x => x.Contains(port_01)) == null ||
-            ports.Find(x => x.Contains(port_02)) == null)
+            ports.Find(x => x.Contains(port_01)) == null)
         {
-            LLLog.LogW("ArduinoReader","Arduino NFC disable!");
+            LLLog.LogW("ArduinoReader", "Arduino NFC disable!");
             gameObject.SetActive(false);
             return;
         }
@@ -39,17 +36,12 @@ public class ArduinoReader : MonoBehaviour
         serial_01 = new SerialPort(port_01, 9600);
         serial_01.ReadTimeout = timeout;
         serial_01.Open();
-
-        serial_02 = new SerialPort(port_02, 9600);
-        serial_02.ReadTimeout = timeout;
-        serial_02.Open();
     }
 
     void Update()
     {
         ReadSerial(serial_00);
         ReadSerial(serial_01);
-        ReadSerial(serial_02);
     }
 
     void ReadSerial(SerialPort serial)
@@ -58,54 +50,60 @@ public class ArduinoReader : MonoBehaviour
         {
             string msg = "";
             string cardID = "";
+            string captorID = "";
             try
             {
                 msg = serial.ReadLine();
                 serial.BaseStream.Flush();
                 serial.DiscardInBuffer();
 
-                print(msg);
-                cardID = msg.Split(' ') [1];
+                cardID = msg.Substring(0, msg.Length - 1);
+                captorID = msg.Substring(msg.Length - 1);
 
                 switch (serial.PortName)
                 {
-                case "COM1":
-                    if (msg[0] == 0)
+                case "COM3":
+                    if (captorID == "0")
                     {
-                        GameManager.instance.ReadCardNFC_GameBoard(cardID, 0, 0);
-                    }
-                    else if (msg[0] == 1)
-                    {
+                        // Line Middle P0
                         GameManager.instance.ReadCardNFC_GameBoard(cardID, 0, 1);
                     }
-                    else if (msg[0] == 2)
+                    else if (captorID == "1")
                     {
+                        // Line Right P0
                         GameManager.instance.ReadCardNFC_GameBoard(cardID, 0, 2);
                     }
-                    break;
-
-                case "COM2":
-                    if (msg[0] == 0)
+                    else if (captorID == "2")
                     {
-                        GameManager.instance.ReadCardNFC_GameBoard(cardID, 1, 0);
+                        // Line Left P0
+                        GameManager.instance.ReadCardNFC_GameBoard(cardID, 0, 0);
                     }
-                    else if (msg[0] == 1)
+                    else if (captorID == "3")
                     {
-                        GameManager.instance.ReadCardNFC_GameBoard(cardID, 1, 1);
-                    }
-                    else if (msg[0] == 2)
-                    {
-                        GameManager.instance.ReadCardNFC_GameBoard(cardID, 1, 2);
-                    }
-                    break;
-
-                case "COM3":
-                    if (msg[0] == 0)
-                    {
+                        // Evolution P0
                         GameManager.instance.ReadCardNFC_Training(cardID, 0);
                     }
-                    else if (msg[0] == 1)
+                    break;
+
+                case "COM4":
+                    if (captorID == "0")
                     {
+                        // Line Right P1
+                        GameManager.instance.ReadCardNFC_GameBoard(cardID, 1, 0);
+                    }
+                    else if (captorID == "1")
+                    {
+                        // Line Middle P1
+                        GameManager.instance.ReadCardNFC_GameBoard(cardID, 1, 1);
+                    }
+                    else if (captorID == "2")
+                    {
+                        // Line Left P1
+                        GameManager.instance.ReadCardNFC_GameBoard(cardID, 1, 2);
+                    }
+                    else if (captorID == "3")
+                    {
+                        // Evolution P1
                         GameManager.instance.ReadCardNFC_Training(cardID, 1);
                     }
                     break;

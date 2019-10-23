@@ -143,6 +143,7 @@ MonoBehaviour:
   typeItem: 1
   attackForce: 0
   onTheSide: 0
+  meshObject: {fileID: 949225207949022479}
   forwardCollider: {fileID: 1648870253586233731}
   sideCollider: {fileID: 4720655437045198594}
 --- !u!1 &3608917991864071265
