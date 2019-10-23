@@ -43,6 +43,7 @@ namespace LibLabGames.NewGame
             public string entityOnTraining;
             public List<string> entitiesLevelTwo; // tag des cartes NFC
             public List<string> entitiesLevelThree;
+            public List<string> cardsOnGraveyard;
 
             public KeyCode[] DEBUG_selectionEntityKeys;
             public KeyCode[] DEBUG_summonKeys;
@@ -241,6 +242,11 @@ namespace LibLabGames.NewGame
         private GameObject entityGo;
         public void SpawnEntity(string cardID, int player, int way)
         {
+            if (playerInfos[player].cardsOnGraveyard.Find(x => x.Contains(cardID)) != null)
+                return;
+
+            playerInfos[player].cardsOnGraveyard.Add(cardID);
+
             NFC_Activate(player);
 
             int entityLevel = 0;
@@ -326,7 +332,7 @@ namespace LibLabGames.NewGame
                 playerInfos[player].lastEntitiesOnGameBoard[way].behindEntity = entitySpwaned;
                 entitySpwaned.nextEntity = playerInfos[player].lastEntitiesOnGameBoard[way];
             }
-            
+
             entitySpwaned.DOSpawn(player, way);
 
             playerInfos[player].lastEntitiesOnGameBoard[way] = entitySpwaned;
@@ -510,6 +516,9 @@ namespace LibLabGames.NewGame
 
         public void ReadCardNFC_Training(string cardID, int playerID)
         {
+            if (playerInfos[playerID].cardsOnGraveyard.Find(x => x.Contains(cardID)) != null)
+                return;
+                
             if (checkEvolutionActiveCoco[playerID] != null)
                 StopCoroutine(checkEvolutionActiveCoco[playerID]);
 

@@ -103,7 +103,7 @@ namespace LibLabGames.NewGame
 
             if (!isWalk)
             {
-                if (nextEntity != null)
+                if (nextEntity != null || enemyEntity == null)
                     CheckCanWalk();
 
                 return;
@@ -172,6 +172,8 @@ namespace LibLabGames.NewGame
 
             if (col.CompareTag(string.Format("GoalPlayer{0}", playerID)))
             {
+                HurtPlayer(1);
+
                 DOKillEntity();
 
                 return;
