@@ -31,6 +31,8 @@ public class SoundManager : MonoBehaviour
     public string nfc_detect_right;
     [EventRef]
     public string baseDamage;
+    [EventRef]
+    public string summon;
 
     private EventInstance blockedInstance;
     private EventInstance bothDestroyedInstance;
@@ -42,6 +44,7 @@ public class SoundManager : MonoBehaviour
     private EventInstance nfc_detect_leftInstance;
     private EventInstance nfc_detect_rightInstance;
     private EventInstance baseDamageInstance;
+    private EventInstance summonInstance;
 
     private EventInstance evolveP1;
     private EventInstance evolveP2;
@@ -75,6 +78,7 @@ public class SoundManager : MonoBehaviour
         baseDamageInstance = RuntimeManager.CreateInstance(baseDamage);
         evolveP1 = RuntimeManager.CreateInstance(evolve);
         evolveP2 = RuntimeManager.CreateInstance(evolve);
+        summonInstance = RuntimeManager.CreateInstance(summon);
     }
 
     /// <summary>
@@ -90,6 +94,11 @@ public class SoundManager : MonoBehaviour
     public void BaseDamage()
     {
         baseDamageInstance.start();
+    }
+
+    public void Summon()
+    {
+        summonInstance.start();
     }
 
     public void Evolve(Player player, float duration)

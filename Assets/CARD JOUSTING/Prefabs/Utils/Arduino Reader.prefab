@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &696442882249383999
+--- !u!1 &6801472110542433401
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2405075559083282237}
-  - component: {fileID: 3335777707404676808}
+  - component: {fileID: 6801472110542433403}
+  - component: {fileID: 6801472110542433402}
   m_Layer: 0
-  m_Name: SoundManager
+  m_Name: Arduino Reader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2405075559083282237
+--- !u!4 &6801472110542433403
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 696442882249383999}
+  m_GameObject: {fileID: 6801472110542433401}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,26 +31,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3335777707404676808
+--- !u!114 &6801472110542433402
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 696442882249383999}
+  m_GameObject: {fileID: 6801472110542433401}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00c837d3f912964badf0cd06a8e6ad9, type: 3}
+  m_Script: {fileID: 11500000, guid: db5b749eebb820245be62f4e4016b06c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blocked: event:/blocked
-  bothDestroyed: event:/both-destroyed
-  countdown: event:/countdown_4.5_seconds
-  evolve: event:/evolve_v2
-  gameStart: event:/game_start
-  invocation: event:/invocation
-  kill: event:/kill
-  music: event:/music_v2
-  nfc_detect_left: event:/nfc_detect_left
-  nfc_detect_right: event:/nfc_detect_right
-  baseDamage: event:/base_damage
+  port_00: COM3
+  port_01: COM4
+  timeout: 5

@@ -57,6 +57,8 @@ namespace LibLabGames.NewGame
 
         public void DOSpawn(int player, int way)
         {
+            SoundManager.instance.Summon();
+
             spriteObject.SetActive(!GameManager.instance.DEBUG_displayMeshArm);
             coreMeshRenderer.enabled = GameManager.instance.DEBUG_displayMeshArm;
 
@@ -74,17 +76,11 @@ namespace LibLabGames.NewGame
 
             // Repositionnement des items dans leurs parents
             for (int i = 0; i < itemRightParent.childCount; ++i)
-            {
                 itemRightParent.GetChild(i).localPosition += Vector3.forward * i;
-            }
             for (int i = 0; i < itemForwardParent.childCount; ++i)
-            {
                 itemForwardParent.GetChild(i).localPosition += Vector3.forward * i;
-            }
             for (int i = 0; i < itemLeftParent.childCount; ++i)
-            {
                 itemLeftParent.GetChild(i).localPosition += Vector3.forward * i;
-            }
 
             if (secondEntityPrefab != null)
             {

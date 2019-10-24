@@ -9,6 +9,8 @@ using UnityEngine;
 
 public class ArduinoReader : MonoBehaviour
 {
+    public static ArduinoReader instance;
+
     public string port_00;
     public string port_01;
     public int timeout = 1;
@@ -16,6 +18,20 @@ public class ArduinoReader : MonoBehaviour
     SerialPort serial_01;
 
     Thread thread;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else if (instance != this)
+        {
+            Destroy(this);
+            return;
+        }
+    }
 
     void Start()
     {
