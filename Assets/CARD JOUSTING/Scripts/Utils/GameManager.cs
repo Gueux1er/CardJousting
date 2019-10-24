@@ -65,16 +65,17 @@ namespace LibLabGames.NewGame
         public KeyCode[] debugKeyCodeEvolution;
         public int debugValue;
 
-        private float cooldownSpawnValue;
-        private int gamePhaseTimer;
-        private int drawPhaseTimer;
+        [HideInInspector] public  float cooldownSpawnValue;
+        [HideInInspector] public  int gamePhaseTimer;
+        [HideInInspector] public  int drawPhaseTimer;
+        [HideInInspector] public float globalEntitySpeed;
 
         public override void GetSettingGameValues()
         {
             cooldownSpawnValue = settingValues.GetFloatValue("cooldownSpawn");
-            //gamePhaseTimer = (int) settingValues.GetFloatValue("gamePhaseTimer");
-            gamePhaseTimer = 60;
-            drawPhaseTimer = 7;
+            gamePhaseTimer = (int) settingValues.GetFloatValue("gamePhaseTimer");
+            drawPhaseTimer = (int) settingValues.GetFloatValue("drawPhaseTimer");
+            globalEntitySpeed = settingValues.GetFloatValue("globalEntitySpeed");
         }
 
         private void Awake()
@@ -365,7 +366,13 @@ namespace LibLabGames.NewGame
                             if (currentLevel + 1 != statSprites.Length)
                                 playerInfos[player].evolutionNextStatImage.sprite = statSprites[currentLevel + 1];
 
-                            canEvolve = entity.evolveTime > 0;
+                            if (entity.evolveTimes.Count == currentLevel)
+                            {
+                                canEvolve = false;
+                                break;
+                            }
+
+                            canEvolve = entity.evolveTimes[currentLevel] > 0;
 
                             if (!canEvolve)
                                 break;
@@ -376,7 +383,7 @@ namespace LibLabGames.NewGame
                                 canEvolve = false;
 
                             if (canEvolve)
-                                duration = entity.evolveTime;
+                                duration = entity.evolveTimes[currentLevel];
                         }
                     }
                 }
@@ -397,11 +404,14 @@ namespace LibLabGames.NewGame
                 // Si créature peut évoluer au niveau 2 ou 3
                 else
                 {
-                    float startTime = Time.time;
+                    //float startTime = Time.time;
                     float t = 0;
 
-                    while (Time.time - startTime <= duration)
+                    while (t < 1)
                     {
+                        while (isDrawPhase)
+                            yield return null;
+
                         t += Time.deltaTime / duration;
                         playerInfos[player].evolutionProgressionImage.fillAmount = Mathf.Lerp(0, 1, t);
 
@@ -417,7 +427,7 @@ namespace LibLabGames.NewGame
 
                     playerInfos[player].evolutionProgressionImage.fillAmount = 0;
 
-                    yield return new WaitForSeconds(0.5f);
+                    yield return new WaitForSeconds(1f);
                 }
             }
         }

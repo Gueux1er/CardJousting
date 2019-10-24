@@ -6,6 +6,7 @@ using UnityEngine;
 using EventInstance = FMOD.Studio.EventInstance;
 using RuntimeManager = FMODUnity.RuntimeManager;
 using LibLabSystem;
+using LibLabGames.NewGame;
 
 public class SoundManager : MonoBehaviour
 {
@@ -98,6 +99,7 @@ public class SoundManager : MonoBehaviour
 
     public void Summon()
     {
+        summonInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         summonInstance.start();
     }
 
@@ -108,12 +110,16 @@ public class SoundManager : MonoBehaviour
         case Player.P1:
             evolveP1.setParameterByName("evolve_state", 0.0f);
             evolveP1.start();
+            if (p1EvolveRoutine != null)
+                StopCoroutine(p1EvolveRoutine);
             p1EvolveRoutine = StartCoroutine(EvolveTimer(Player.P1, duration));
             break;
 
         case Player.P2:
             evolveP2.setParameterByName("evolve_state", 0.0f);
             evolveP2.start();
+            if (p2EvolveRoutine != null)
+                StopCoroutine(p2EvolveRoutine);
             p2EvolveRoutine = StartCoroutine(EvolveTimer(Player.P2, duration));
             break;
         }
@@ -158,11 +164,16 @@ public class SoundManager : MonoBehaviour
 
         while (timer < duration)
         {
+            while (GameManager.instance.isDrawPhase)
+                yield return null;
+
             yield return new WaitForEndOfFrame();
             timer += Time.deltaTime;
             inst.setParameterByName("evolve_state", timer / duration);
         }
-        yield return new WaitForSeconds(1.0f);
+
+        yield return new WaitForSeconds(1f);
+
         inst.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 
@@ -178,27 +189,34 @@ public class SoundManager : MonoBehaviour
 
     public void Kill()
     {
+        killInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         killInstance.start();
     }
 
     public void BothDestroyed()
     {
+        bothDestroyedInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         bothDestroyedInstance.start();
     }
 
     public void Blocked()
     {
+        blockedInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         blockedInstance.start();
     }
 
     public void StartDrawPhase()
     {
         musicInstance.setParameterByName("game_phase", 0.75f);
+        evolveP1.setPaused(true);
+        evolveP2.setPaused(true);
     }
 
     public void EndDrawPhase()
     {
         musicInstance.setParameterByName("game_phase", 0.0f);
+        evolveP1.setPaused(false);
+        evolveP2.setPaused(false);
     }
 
 }

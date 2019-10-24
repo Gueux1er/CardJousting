@@ -31,7 +31,9 @@ MonoBehaviour:
     - 88041A8C
     - 8804E288
     - 8804AD10
-    evolveTime: 6
+    evolveTimes:
+    - 6
+    - 10
     entityPrefabs:
     - {fileID: 958956705904844607, guid: dfb1cdc67d84cee4e9ee9655e30c93b5, type: 3}
     - {fileID: 958956705904844607, guid: ec97aa3eed643264f952adec3544e1c6, type: 3}
@@ -46,20 +48,21 @@ MonoBehaviour:
     - 88042D98
     - 88043A23
     - 88047835
-    evolveTime: 12
+    evolveTimes:
+    - 12
     entityPrefabs:
     - {fileID: 958956705904844607, guid: 3de01ee4a685d834c81959a4d12acbfd, type: 3}
     - {fileID: 958956705904844607, guid: 80791d3acf68c254685cc4ed6778ec13, type: 3}
     entitySprites:
     - {fileID: 21300000, guid: e726fe40d8f2d1940954c7410fea3056, type: 3}
     - {fileID: 21300000, guid: aeedebc5b338486428660fad64ffb336, type: 3}
-  - nameEntity: Crabboy
+  - nameEntity: Snap Boy
     tagList:
     - 4B58AF1C
     - 7932BB55
     - 8804132C
     - 8804A422
-    evolveTime: 0
+    evolveTimes: []
     entityPrefabs:
     - {fileID: 958956705904844607, guid: d10ad10ec8e23fd44a812fc7aa5ee423, type: 3}
     entitySprites:
@@ -70,7 +73,8 @@ MonoBehaviour:
     - 8804BB90
     - 7931AC87
     - 8804CF30
-    evolveTime: 12
+    evolveTimes:
+    - 12
     entityPrefabs:
     - {fileID: 958956705904844607, guid: d60f9991cbd9a5141af47b66e6ac4ebb, type: 3}
     - {fileID: 958956705904844607, guid: 7aef5b948ed0aa94eb1d03802b867050, type: 3}
@@ -83,20 +87,23 @@ MonoBehaviour:
     - 8804F940
     - B1DB0531
     - 8804C63B
-    evolveTime: 12
+    evolveTimes:
+    - 18
     entityPrefabs:
     - {fileID: 958956705904844607, guid: c0412dc941faa59489d7c34e72c49c4f, type: 3}
     - {fileID: 958956705904844607, guid: 175c1a2c2978dd64dbcf3dd3cf5f5813, type: 3}
     entitySprites:
     - {fileID: 21300000, guid: 1b91b52b7173ff345808bedf7a11c72f, type: 3}
     - {fileID: 21300000, guid: adbfc7eb5007f9c44b2187db2e508914, type: 3}
-  - nameEntity: Toto
+  - nameEntity: Douglas
     tagList:
     - 939A8324
     - 8804CE1B
     - A99D077F
     - 8804617E
-    evolveTime: 6
+    evolveTimes:
+    - 12
+    - 12
     entityPrefabs:
     - {fileID: 958956705904844607, guid: fa0a5c15e7dad2e458ff232a9958d203, type: 3}
     - {fileID: 958956705904844607, guid: acbb195ee375fa44eb3dab0b1c08ceec, type: 3}
@@ -107,49 +114,49 @@ MonoBehaviour:
     - {fileID: 21300000, guid: 5b5bf56eca86d194597a5940e555da28, type: 3}
   - nameEntity: _003
     tagList: []
-    evolveTime: 0
+    evolveTimes: []
     entityPrefabs:
     - {fileID: 958956705904844607, guid: 9b942d668f5d6354ba5bed0ae90f637d, type: 3}
     entitySprites:
     - {fileID: 21300000, guid: 1c59157888829504f95ffd9916138a5e, type: 3}
   - nameEntity: _005
     tagList: []
-    evolveTime: 0
+    evolveTimes: []
     entityPrefabs:
     - {fileID: 958956705904844607, guid: 700eefacb355fe24e94fe5af9f6e2f00, type: 3}
     entitySprites:
     - {fileID: 21300000, guid: 1b91b52b7173ff345808bedf7a11c72f, type: 3}
   - nameEntity: _006
     tagList: []
-    evolveTime: 0
+    evolveTimes: []
     entityPrefabs:
     - {fileID: 958956705904844607, guid: 92a06bdccd0d01b4ab06d74a77b06c34, type: 3}
     entitySprites:
     - {fileID: 21300000, guid: d2971f997975cca46870df6f176bf612, type: 3}
   - nameEntity: _007
     tagList: []
-    evolveTime: 0
+    evolveTimes: []
     entityPrefabs:
     - {fileID: 958956705904844607, guid: c1523d3aab98bb64e9a1dc91df4ce1c9, type: 3}
     entitySprites:
     - {fileID: 21300000, guid: 55a5ba73f7fd1664cb18fbf6d5499784, type: 3}
   - nameEntity: _009
     tagList: []
-    evolveTime: 0
+    evolveTimes: []
     entityPrefabs:
     - {fileID: 958956705904844607, guid: 541b1a4ea96887846b6011c16d604e7f, type: 3}
     entitySprites:
     - {fileID: 21300000, guid: 459108f94b90fa44aa142d65e13aa740, type: 3}
   - nameEntity: _010
     tagList: []
-    evolveTime: 0
+    evolveTimes: []
     entityPrefabs:
     - {fileID: 958956705904844607, guid: e5b5c74fcb522f74195ff839adf652b1, type: 3}
     entitySprites:
     - {fileID: 21300000, guid: 87bd06e85ff4e50499992ced88ecc00b, type: 3}
   - nameEntity: _012
     tagList: []
-    evolveTime: 0
+    evolveTimes: []
     entityPrefabs:
     - {fileID: 958956705904844607, guid: dae74f52550c1454e8dda38316e29582, type: 3}
     entitySprites:

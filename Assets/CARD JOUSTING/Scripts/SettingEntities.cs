@@ -12,7 +12,7 @@ namespace LibLabGames.NewGame
         {
             public string nameEntity;
             public List<string> tagList;
-            public float evolveTime;
+            public List<float> evolveTimes;
             public GameObject[] entityPrefabs;
             public Sprite[] entitySprites;
         }

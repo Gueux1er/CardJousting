@@ -1,4 +1,6 @@
 NAME;VALUE
 cooldownSpawn;3
 globalSummonCasting;3
-gamePhaseTimer;60
+gamePhaseTimer;50
+drawPhaseTimer;10
+globalEntitySpeed;0,7

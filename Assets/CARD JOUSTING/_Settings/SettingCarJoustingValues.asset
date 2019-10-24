@@ -20,6 +20,12 @@ MonoBehaviour:
     m_keys:
     - cooldownSpawn
     - globalSummonCasting
+    - gamePhaseTimer
+    - drawPhaseTimer
+    - globalEntitySpeed
     m_values:
     - 3
     - 3
+    - 50
+    - 10
+    - 0.7
