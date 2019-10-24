@@ -40,6 +40,9 @@ namespace LibLabGames.NewGame
         public Transform itemForwardParent;
         public Transform itemLeftParent;
 
+        public GameObject vfx_summonPrefab;
+        public GameObject vfx_attackPrefab;
+
         RaycastHit hit;
         Ray m_rayFw;
         Ray rayFw { get { return _RayFw(); } }
@@ -85,6 +88,8 @@ namespace LibLabGames.NewGame
             {
                 GameManager.instance.SpawnSecondEntity(secondEntityPrefab, playerID, wayID);
             }
+
+            Instantiate(vfx_summonPrefab, transform.position, Quaternion.identity);
 
             isReady = true;
 
@@ -226,6 +231,8 @@ namespace LibLabGames.NewGame
         {
             if (!isReady)
                 return;
+
+            Instantiate(vfx_attackPrefab, transform.position, Quaternion.identity);
 
             isReady = false;
 
