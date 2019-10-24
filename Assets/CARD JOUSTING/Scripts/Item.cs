@@ -222,13 +222,7 @@ namespace LibLabGames.NewGame
                     colEntity.DOKillEntity();
                 else if (colEntity.wayID == entity.wayID)
                 {
-                    if (typeItem != eTypeItem.grab)
-                    {
-                        entity.currentSpeed = colEntity.currentSpeed;
-
-                        entity.isWalk = false;
-                    }
-                    else if (!entity.isOvertake)
+                    if (typeItem == eTypeItem.grab && !entity.isOvertake)
                     {
                         Entity ent = entity.nextEntity;
 
@@ -249,8 +243,44 @@ namespace LibLabGames.NewGame
                             entity.behindEntity = ent;
                             entity.behindEntity.nextEntity = entity;
 
+                            if(GameManager.instance.playerInfos[playerID].lastEntitiesOnGameBoard[entity.wayID] == entity)
+                                GameManager.instance.playerInfos[playerID].lastEntitiesOnGameBoard[entity.wayID] = ent;
+
                             entity.isOvertake = true;
                         }
+                    }
+                    else if (typeItem == eTypeItem.attack && !entity.isOvertake)
+                    {
+                        Entity ent = entity.nextEntity;
+
+                        while (ent.nextEntity != null)
+                            ent = ent.nextEntity;
+
+                        if (ent.enemyEntity == null ||
+                            ent.enemyEntity.itemForwardParent.GetComponentInChildren<Item>().typeItem != eTypeItem.attack)
+                        {
+                            entity.currentSpeed = colEntity.currentSpeed;
+
+                            entity.isWalk = false;
+                        }
+                        else if (ent.enemyEntity.itemForwardParent.GetComponentInChildren<Item>().attackForce <= attackForce)
+                        {
+                            entity.nextEntity.behindEntity = entity.behindEntity;
+                            entity.nextEntity = null;
+                            entity.behindEntity = ent;
+                            entity.behindEntity.nextEntity = entity;
+
+                            if(GameManager.instance.playerInfos[playerID].lastEntitiesOnGameBoard[entity.wayID] == entity)
+                                GameManager.instance.playerInfos[playerID].lastEntitiesOnGameBoard[entity.wayID] = ent;
+
+                            entity.isOvertake = true;
+                        }
+                    }
+                    else
+                    {
+                        entity.currentSpeed = colEntity.currentSpeed;
+
+                        entity.isWalk = false;
                     }
                 }
 

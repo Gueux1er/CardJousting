@@ -46,7 +46,7 @@ MonoBehaviour:
     - 88042D98
     - 88043A23
     - 88047835
-    evolveTime: 24
+    evolveTime: 12
     entityPrefabs:
     - {fileID: 958956705904844607, guid: 3de01ee4a685d834c81959a4d12acbfd, type: 3}
     - {fileID: 958956705904844607, guid: 80791d3acf68c254685cc4ed6778ec13, type: 3}
@@ -70,7 +70,7 @@ MonoBehaviour:
     - 8804BB90
     - 7931AC87
     - 8804CF30
-    evolveTime: 18
+    evolveTime: 12
     entityPrefabs:
     - {fileID: 958956705904844607, guid: d60f9991cbd9a5141af47b66e6ac4ebb, type: 3}
     - {fileID: 958956705904844607, guid: 7aef5b948ed0aa94eb1d03802b867050, type: 3}
@@ -83,7 +83,7 @@ MonoBehaviour:
     - 8804F940
     - B1DB0531
     - 8804C63B
-    evolveTime: 18
+    evolveTime: 12
     entityPrefabs:
     - {fileID: 958956705904844607, guid: c0412dc941faa59489d7c34e72c49c4f, type: 3}
     - {fileID: 958956705904844607, guid: 175c1a2c2978dd64dbcf3dd3cf5f5813, type: 3}
