@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Runtime.Serialization;
 using LibLabSystem;
 using UnityEngine;
+using UnityEditor;
 
 namespace LibLabGames.NewGame
 {
@@ -69,6 +70,9 @@ namespace LibLabGames.NewGame
                     floatValues.Add(fileGrid[i, 0], float.Parse(fileGrid[i, 1]));
                 }
             }
+
+            EditorUtility.SetDirty(this);
+
             LLLog.Log("SettingValues", "The setting game values was successful updated !");
         }
     }

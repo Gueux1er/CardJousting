@@ -29,16 +29,19 @@ namespace LibLabGames.NewGame
         public Entity nextEntity;
         public Entity behindEntity;
         public Entity enemyEntity;
+        public List<Entity> enemyEntitiesOnSide;
 
         [Header("Elements")]
         public GameObject spriteObject;
-        public MeshRenderer coreMeshRenderer;
         public Color[] attackLvlColors;
 
         public Transform coreTransform;
         public Transform itemRightParent;
         public Transform itemForwardParent;
         public Transform itemLeftParent;
+
+        public GameObject vfx_summonPrefab;
+        public GameObject vfx_attackPrefab;
 
         RaycastHit hit;
         Ray m_rayFw;
@@ -60,7 +63,6 @@ namespace LibLabGames.NewGame
             SoundManager.instance.Summon();
 
             spriteObject.SetActive(!GameManager.instance.DEBUG_displayMeshArm);
-            coreMeshRenderer.enabled = GameManager.instance.DEBUG_displayMeshArm;
 
             playerID = player;
             wayID = way;
@@ -72,7 +74,7 @@ namespace LibLabGames.NewGame
                 transform.localPosition += Vector3.back * distanceWithNextEntity;
             }
 
-            currentSpeed = speed;
+            currentSpeed = speed * GameManager.instance.globalEntitySpeed;
 
             // Repositionnement des items dans leurs parents
             for (int i = 0; i < itemRightParent.childCount; ++i)
@@ -87,8 +89,12 @@ namespace LibLabGames.NewGame
                 GameManager.instance.SpawnSecondEntity(secondEntityPrefab, playerID, wayID);
             }
 
+            Instantiate(vfx_summonPrefab, transform.position, Quaternion.identity);
+
             isReady = true;
-            
+
+            enemyEntitiesOnSide = new List<Entity>();
+
             CheckCanWalk();
         }
 
@@ -96,6 +102,10 @@ namespace LibLabGames.NewGame
         {
             if (!isReady || GameManager.instance.isDrawPhase || !GameManager.instance.gameIsReady)
                 return;
+                
+
+            if (enemyEntitiesOnSide.Count > 0)
+                CheckEntityOnSide();
 
             if (!isWalk)
             {
@@ -124,16 +134,21 @@ namespace LibLabGames.NewGame
                     currentSpeed = 0;
                 }
             }
+            if (enemyEntitiesOnSide.Count > 0)
+            {
+                isWalk = false;
+                currentSpeed = 0;
+            }
 
             else if (!isWalk || currentSpeed != speed)
             {
-                if (nextEntity == null || !nextEntity.isReady)
+                if (enemyEntity == null && (nextEntity == null || !nextEntity.isReady))
                 {
                     isWalk = true;
                     currentSpeed = speed;
                 }
 
-                else if ((nextEntity.transform.X() - transform.X()) * ((playerID == 0) ? 1 : -1) > distanceWithNextEntity)
+                else if (enemyEntity == null && (nextEntity.transform.X() - transform.X()) * ((playerID == 0) ? 1 : -1) > distanceWithNextEntity)
                 {
                     isWalk = true;
 
@@ -160,6 +175,15 @@ namespace LibLabGames.NewGame
             }
         }
 
+        private void CheckEntityOnSide()
+        {
+            for (int i = enemyEntitiesOnSide.Count - 1; i > - 1; --i)
+            {
+                if (enemyEntitiesOnSide[i] == null)
+                    enemyEntitiesOnSide.RemoveAt(i);
+            }
+        }
+
         private Entity colEntity;
         private void OnTriggerEnter(Collider col)
         {
@@ -169,6 +193,8 @@ namespace LibLabGames.NewGame
             if (col.CompareTag(string.Format("GoalPlayer{0}", playerID)))
             {
                 HurtPlayer(1);
+
+                SoundManager.instance.BothDestroyed();
 
                 DOKillEntity();
 
@@ -205,6 +231,8 @@ namespace LibLabGames.NewGame
         {
             if (!isReady)
                 return;
+
+            Instantiate(vfx_attackPrefab, transform.position, Quaternion.identity);
 
             isReady = false;
 

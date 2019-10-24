@@ -18,8 +18,6 @@ namespace LibLabGames.NewGame
 
         public bool onTheSide;
 
-        public GameObject meshObject;
-
         public Collider forwardCollider;
         public Collider sideCollider;
 
@@ -34,8 +32,6 @@ namespace LibLabGames.NewGame
             forwardCollider.enabled = !onTheSide;
             sideCollider.enabled = onTheSide;
             entity.haveItemOnSide = onTheSide;
-
-            meshObject.SetActive(GameManager.instance.DEBUG_displayMeshArm);
         }
 
         private Entity colEntity;
@@ -73,7 +69,10 @@ namespace LibLabGames.NewGame
                     return;
 
                 if (colEntity.playerID != playerID && colEntity.wayID != entity.wayID && typeItem != eTypeItem.defence && !colEntity.haveItemOnSide)
+                {
+                    SoundManager.instance.Kill();
                     colEntity.DOKillEntity();
+                }
                 else if (colEntity.wayID == entity.wayID)
                 {
                     if (typeItem != eTypeItem.grab)
@@ -195,6 +194,7 @@ namespace LibLabGames.NewGame
 
         private void OnTriggerNoSide(Collider col)
         {
+            // Inflige des dégâts à la base ennemi
             if (col.CompareTag(string.Format("GoalPlayer{0}", playerID)))
             {
                 int damage = 1;
@@ -211,6 +211,7 @@ namespace LibLabGames.NewGame
                 return;
             }
 
+            // Rencontre avec un coeur d'entité
             if (col.CompareTag("Entity"))
             {
                 colEntity = col.GetComponentInParent<Entity>();
@@ -219,7 +220,10 @@ namespace LibLabGames.NewGame
                     return;
 
                 if (colEntity.playerID != playerID && colEntity.wayID == entity.wayID)
+                {
+                    SoundManager.instance.Kill();
                     colEntity.DOKillEntity();
+                }
                 else if (colEntity.wayID == entity.wayID)
                 {
                     if (typeItem == eTypeItem.grab && !entity.isOvertake)
@@ -229,8 +233,8 @@ namespace LibLabGames.NewGame
                         while (ent.nextEntity != null)
                             ent = ent.nextEntity;
 
-                        if (ent.enemyEntity == null ||
-                            ent.enemyEntity.itemForwardParent.GetComponentInChildren<Item>().typeItem != eTypeItem.defence)
+                        if (ent.enemyEntitiesOnSide.Count < 0 ||
+                            (ent.enemyEntity == null && ent.enemyEntity.itemForwardParent.GetComponentInChildren<Item>().typeItem != eTypeItem.defence))
                         {
                             entity.currentSpeed = colEntity.currentSpeed;
 
@@ -243,7 +247,7 @@ namespace LibLabGames.NewGame
                             entity.behindEntity = ent;
                             entity.behindEntity.nextEntity = entity;
 
-                            if(GameManager.instance.playerInfos[playerID].lastEntitiesOnGameBoard[entity.wayID] == entity)
+                            if (GameManager.instance.playerInfos[playerID].lastEntitiesOnGameBoard[entity.wayID] == entity)
                                 GameManager.instance.playerInfos[playerID].lastEntitiesOnGameBoard[entity.wayID] = ent;
 
                             entity.isOvertake = true;
@@ -256,7 +260,13 @@ namespace LibLabGames.NewGame
                         while (ent.nextEntity != null)
                             ent = ent.nextEntity;
 
-                        if (ent.enemyEntity == null ||
+                        if (ent.enemyEntitiesOnSide.Count > 0)
+                        {
+                            entity.currentSpeed = colEntity.currentSpeed;
+
+                            entity.isWalk = false;
+                        }
+                        else if (ent.enemyEntity == null ||
                             ent.enemyEntity.itemForwardParent.GetComponentInChildren<Item>().typeItem != eTypeItem.attack)
                         {
                             entity.currentSpeed = colEntity.currentSpeed;
@@ -270,7 +280,7 @@ namespace LibLabGames.NewGame
                             entity.behindEntity = ent;
                             entity.behindEntity.nextEntity = entity;
 
-                            if(GameManager.instance.playerInfos[playerID].lastEntitiesOnGameBoard[entity.wayID] == entity)
+                            if (GameManager.instance.playerInfos[playerID].lastEntitiesOnGameBoard[entity.wayID] == entity)
                                 GameManager.instance.playerInfos[playerID].lastEntitiesOnGameBoard[entity.wayID] = ent;
 
                             entity.isOvertake = true;
@@ -291,11 +301,21 @@ namespace LibLabGames.NewGame
 
             colItem = col.GetComponentInParent<Item>();
 
+            // Rencontre avec un attribut
             if (colItem != null)
             {
-                if (colItem.playerID == playerID || colItem.onTheSide)
+                if (colItem.playerID == playerID || (colItem.onTheSide && colItem.typeItem != eTypeItem.defence))
                 {
                     return;
+                }
+
+                // Vient du côté (Bouclier)
+                if (colItem.onTheSide)
+                {
+                    colItem.entity.isWalk = false;
+                    entity.isWalk = false;
+                    colItem.entity.enemyEntitiesOnSide.Add(entity);
+                    entity.enemyEntitiesOnSide.Add(colItem.entity);
                 }
 
                 // I am an ATTACK
@@ -318,8 +338,6 @@ namespace LibLabGames.NewGame
                         }
                         else if (attackForce < colItem.attackForce)
                         {
-                            SoundManager.instance.Kill();
-
                             DODestroy();
                         }
                     }
