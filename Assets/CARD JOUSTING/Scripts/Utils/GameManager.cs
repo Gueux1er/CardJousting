@@ -29,6 +29,7 @@ namespace LibLabGames.NewGame
             public int maxLife;
             public int currentLife;
             public Transform lifeParent;
+            public Image backgroundLifeImage;
             public Slider lifeSlider;
             public List<bool> canSpawnOnWay;
             public List<Image> spawnCooldownFadeImage;
@@ -497,6 +498,10 @@ namespace LibLabGames.NewGame
             playerInfos[player].lifeParent.DOKill();
             playerInfos[player].lifeParent.localPosition = Vector3.zero;
             playerInfos[player].lifeParent.DOShakePosition(0.2f, 5);
+
+            playerInfos[player].backgroundLifeImage.DOKill();
+            playerInfos[player].backgroundLifeImage.color = new Color (1,0,0,0);
+            playerInfos[player].backgroundLifeImage.DOColor(Color.red, 0.25f).From().SetEase(Ease.InCirc);
             
             playerInfos[player].lifeSlider.DOKill();
             playerInfos[player].lifeSlider.DOValue((float) playerInfos[player].currentLife / (float) playerInfos[player].maxLife, 0.3f);
@@ -526,7 +531,7 @@ namespace LibLabGames.NewGame
         GameObject entityToSpawn;
         public void ReadCardNFC_GameBoard(string cardID, int playerID, int wayID)
         {
-            if (!playerInfos[playerID].canSpawnOnWay[wayID])
+            if (isDrawPhase || !gameIsReady || !playerInfos[playerID].canSpawnOnWay[wayID])
                 return;
 
             SpawnEntity(cardID, playerID, wayID);
@@ -534,7 +539,7 @@ namespace LibLabGames.NewGame
 
         public void ReadCardNFC_Training(string cardID, int playerID)
         {
-            if (playerInfos[playerID].cardsOnGraveyard.Find(x => x.Contains(cardID)) != null)
+            if (isDrawPhase || !gameIsReady || playerInfos[playerID].cardsOnGraveyard.Find(x => x.Contains(cardID)) != null)
                 return;
 
             if (checkEvolutionActiveCoco[playerID] != null)
