@@ -51,6 +51,7 @@ namespace LibLabGames.NewGame
             floatValues.Clear();
         }
 
+        #if UNITY_EDITOR
         [ContextMenu("Update Values by CSV")]
         public void UpdateValuesByCSV()
         {
@@ -75,5 +76,6 @@ namespace LibLabGames.NewGame
 
             LLLog.Log("SettingValues", "The setting game values was successful updated !");
         }
+        #endif
     }
 }

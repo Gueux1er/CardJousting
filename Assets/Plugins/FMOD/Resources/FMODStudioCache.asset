@@ -1,5 +1,337 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9129819960001947802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: "C:/Users/Cl\xE9ment Roth/Documents/CardJousting/Assets/Build/Desktop/Master.bank"
+  SubDir: 
+  lastModified: 637075531872682469
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 2247488
+  Exists: 1
+--- !u!114 &-8828999745831661988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/overview/evolve_state
+  m_EditorClassIdentifier: 
+  Name: evolve_state
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
+--- !u!114 &-8603955484580675624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: "C:/Users/Cl\xE9ment Roth/Documents/CardJousting/Assets/Build/Desktop/Master.strings.bank"
+  SubDir: 
+  lastModified: 637075531872712454
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 2050
+  Exists: 1
+--- !u!114 &-7867514544578504687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/overview/game_phase
+  m_EditorClassIdentifier: 
+  Name: game_phase
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &-7723567414251922918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/evolve/evolve_state
+  m_EditorClassIdentifier: 
+  Name: evolve_state
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &-7723447419983214167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/music/game_phase
+  m_EditorClassIdentifier: 
+  Name: game_phase
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
+--- !u!114 &-7431300777268489327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: "C:/Users/Cl\xE9ment Roth/Documents/CardJousting/Assets/Build/Desktop/Master.bank"
+  SubDir: 
+  lastModified: 637075531872682469
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 2247488
+  Exists: 1
+--- !u!114 &-7111880318452172519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/overview/evolve_state
+  m_EditorClassIdentifier: 
+  Name: evolve_state
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &-5714255851065844792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/music_v2/game_phase
+  m_EditorClassIdentifier: 
+  Name: game_phase
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &-4641251830725882711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/evolve/evolve_state
+  m_EditorClassIdentifier: 
+  Name: evolve_state
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &-4277068977170828832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: game_status
+  m_EditorClassIdentifier: 
+  Name: game_status
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 1
+--- !u!114 &-4126831163924817430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/evolve_v2/evolve_state
+  m_EditorClassIdentifier: 
+  Name: evolve_state
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
+--- !u!114 &-3485280371739867197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/base_damage_v2/base_lifepoints
+  m_EditorClassIdentifier: 
+  Name: base_lifepoints
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 0
+--- !u!114 &-2800825473746348537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/music_v2/game_phase
+  m_EditorClassIdentifier: 
+  Name: game_phase
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &-2494582913969006173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/evolve/evolve_state
+  m_EditorClassIdentifier: 
+  Name: evolve_state
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
+--- !u!114 &-1820658303599540326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/overview/game_phase
+  m_EditorClassIdentifier: 
+  Name: game_phase
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
+--- !u!114 &-1377970118655895626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/evolve_v2/evolve_state
+  m_EditorClassIdentifier: 
+  Name: evolve_state
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &-1062501734136440594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/base_damage_v2/base_lifepoints
+  m_EditorClassIdentifier: 
+  Name: base_lifepoints
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 1
+--- !u!114 &-335594044004589762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: game_status
+  m_EditorClassIdentifier: 
+  Name: game_status
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13,8 +345,8 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 114741964338743620}
-  - {fileID: 114514402278218896}
+  - {fileID: -8603955484580675624}
+  - {fileID: 8766779581953527684}
   EditorEvents:
   - {fileID: 114822306303812216}
   - {fileID: 114527873231256032}
@@ -43,12 +375,12 @@ MonoBehaviour:
   - {fileID: 114268266057821322}
   - {fileID: 114360076745342882}
   EditorParameters:
-  - {fileID: 114936259196447238}
+  - {fileID: -335594044004589762}
   MasterBanks:
-  - {fileID: 114514402278218896}
+  - {fileID: 8766779581953527684}
   StringsBanks:
-  - {fileID: 114741964338743620}
-  stringsBankWriteTime: 637072761680440182
+  - {fileID: -8603955484580675624}
+  stringsBankWriteTime: 637075531872712454
   cacheVersion: 3
 --- !u!114 &114000428816329340
 MonoBehaviour:
@@ -799,7 +1131,9 @@ MonoBehaviour:
   - {fileID: 114319916392884810}
   - {fileID: 114524009692174438}
   - {fileID: 114530156292981288}
-  - {fileID: 114514402278218896}
+  - {fileID: -7431300777268489327}
+  - {fileID: -9129819960001947802}
+  - {fileID: 8766779581953527684}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1128,7 +1462,9 @@ MonoBehaviour:
   - {fileID: 114319916392884810}
   - {fileID: 114524009692174438}
   - {fileID: 114530156292981288}
-  - {fileID: 114514402278218896}
+  - {fileID: -7431300777268489327}
+  - {fileID: -9129819960001947802}
+  - {fileID: 8766779581953527684}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1260,7 +1596,9 @@ MonoBehaviour:
   - {fileID: 114319916392884810}
   - {fileID: 114524009692174438}
   - {fileID: 114530156292981288}
-  - {fileID: 114514402278218896}
+  - {fileID: -7431300777268489327}
+  - {fileID: -9129819960001947802}
+  - {fileID: 8766779581953527684}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1452,7 +1790,9 @@ MonoBehaviour:
   - {fileID: 114319916392884810}
   - {fileID: 114524009692174438}
   - {fileID: 114530156292981288}
-  - {fileID: 114514402278218896}
+  - {fileID: -7431300777268489327}
+  - {fileID: -9129819960001947802}
+  - {fileID: 8766779581953527684}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1737,7 +2077,9 @@ MonoBehaviour:
   - {fileID: 114319916392884810}
   - {fileID: 114524009692174438}
   - {fileID: 114530156292981288}
-  - {fileID: 114514402278218896}
+  - {fileID: -7431300777268489327}
+  - {fileID: -9129819960001947802}
+  - {fileID: 8766779581953527684}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1784,7 +2126,9 @@ MonoBehaviour:
   - {fileID: 114319916392884810}
   - {fileID: 114524009692174438}
   - {fileID: 114530156292981288}
-  - {fileID: 114514402278218896}
+  - {fileID: -7431300777268489327}
+  - {fileID: -9129819960001947802}
+  - {fileID: 8766779581953527684}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1967,7 +2311,9 @@ MonoBehaviour:
   - {fileID: 114319916392884810}
   - {fileID: 114524009692174438}
   - {fileID: 114530156292981288}
-  - {fileID: 114514402278218896}
+  - {fileID: -7431300777268489327}
+  - {fileID: -9129819960001947802}
+  - {fileID: 8766779581953527684}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2065,7 +2411,9 @@ MonoBehaviour:
   - {fileID: 114319916392884810}
   - {fileID: 114524009692174438}
   - {fileID: 114530156292981288}
-  - {fileID: 114514402278218896}
+  - {fileID: -7431300777268489327}
+  - {fileID: -9129819960001947802}
+  - {fileID: 8766779581953527684}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2401,7 +2749,9 @@ MonoBehaviour:
   - {fileID: 114319916392884810}
   - {fileID: 114524009692174438}
   - {fileID: 114530156292981288}
-  - {fileID: 114514402278218896}
+  - {fileID: -7431300777268489327}
+  - {fileID: -9129819960001947802}
+  - {fileID: 8766779581953527684}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2531,7 +2881,9 @@ MonoBehaviour:
   - {fileID: 114319916392884810}
   - {fileID: 114524009692174438}
   - {fileID: 114530156292981288}
-  - {fileID: 114514402278218896}
+  - {fileID: -7431300777268489327}
+  - {fileID: -9129819960001947802}
+  - {fileID: 8766779581953527684}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2652,12 +3004,14 @@ MonoBehaviour:
   - {fileID: 114319916392884810}
   - {fileID: 114524009692174438}
   - {fileID: 114530156292981288}
-  - {fileID: 114514402278218896}
+  - {fileID: -7431300777268489327}
+  - {fileID: -9129819960001947802}
+  - {fileID: 8766779581953527684}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114675494675109924}
+  - {fileID: 1134969486519027903}
   MinDistance: 0
   MaxDistance: 0
   Length: 84694
@@ -2927,7 +3281,9 @@ MonoBehaviour:
   - {fileID: 114319916392884810}
   - {fileID: 114524009692174438}
   - {fileID: 114530156292981288}
-  - {fileID: 114514402278218896}
+  - {fileID: -7431300777268489327}
+  - {fileID: -9129819960001947802}
+  - {fileID: 8766779581953527684}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -3025,13 +3381,15 @@ MonoBehaviour:
   - {fileID: 114319916392884810}
   - {fileID: 114524009692174438}
   - {fileID: 114530156292981288}
-  - {fileID: 114514402278218896}
+  - {fileID: -7431300777268489327}
+  - {fileID: -9129819960001947802}
+  - {fileID: 8766779581953527684}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114761182049932498}
-  - {fileID: 114209627000469252}
+  - {fileID: -8828999745831661988}
+  - {fileID: -1820658303599540326}
   MinDistance: 0
   MaxDistance: 0
   Length: 60000
@@ -3091,7 +3449,9 @@ MonoBehaviour:
   - {fileID: 114319916392884810}
   - {fileID: 114524009692174438}
   - {fileID: 114530156292981288}
-  - {fileID: 114514402278218896}
+  - {fileID: -7431300777268489327}
+  - {fileID: -9129819960001947802}
+  - {fileID: 8766779581953527684}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -3521,7 +3881,9 @@ MonoBehaviour:
   - {fileID: 114319916392884810}
   - {fileID: 114524009692174438}
   - {fileID: 114530156292981288}
-  - {fileID: 114514402278218896}
+  - {fileID: -7431300777268489327}
+  - {fileID: -9129819960001947802}
+  - {fileID: 8766779581953527684}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -3568,7 +3930,7 @@ MonoBehaviour:
   FileSizes:
   - Name: 
     Value: 2247488
-  Exists: 1
+  Exists: 0
 --- !u!114 &114524009692174438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3645,7 +4007,9 @@ MonoBehaviour:
   - {fileID: 114319916392884810}
   - {fileID: 114524009692174438}
   - {fileID: 114530156292981288}
-  - {fileID: 114514402278218896}
+  - {fileID: -7431300777268489327}
+  - {fileID: -9129819960001947802}
+  - {fileID: 8766779581953527684}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -4626,12 +4990,14 @@ MonoBehaviour:
   - {fileID: 114319916392884810}
   - {fileID: 114524009692174438}
   - {fileID: 114530156292981288}
-  - {fileID: 114514402278218896}
+  - {fileID: -7431300777268489327}
+  - {fileID: -9129819960001947802}
+  - {fileID: 8766779581953527684}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114603689812446026}
+  - {fileID: -4126831163924817430}
   MinDistance: 0
   MaxDistance: 0
   Length: 9751
@@ -4924,12 +5290,14 @@ MonoBehaviour:
   - {fileID: 114319916392884810}
   - {fileID: 114524009692174438}
   - {fileID: 114530156292981288}
-  - {fileID: 114514402278218896}
+  - {fileID: -7431300777268489327}
+  - {fileID: -9129819960001947802}
+  - {fileID: 8766779581953527684}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114766442952770270}
+  - {fileID: -2494582913969006173}
   MinDistance: 0
   MaxDistance: 0
   Length: 10818
@@ -5060,7 +5428,7 @@ MonoBehaviour:
   FileSizes:
   - Name: 
     Value: 2050
-  Exists: 1
+  Exists: 0
 --- !u!114 &114742348566575670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5185,7 +5553,9 @@ MonoBehaviour:
   - {fileID: 114319916392884810}
   - {fileID: 114524009692174438}
   - {fileID: 114530156292981288}
-  - {fileID: 114514402278218896}
+  - {fileID: -7431300777268489327}
+  - {fileID: -9129819960001947802}
+  - {fileID: 8766779581953527684}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -5275,7 +5645,9 @@ MonoBehaviour:
   - {fileID: 114319916392884810}
   - {fileID: 114524009692174438}
   - {fileID: 114530156292981288}
-  - {fileID: 114514402278218896}
+  - {fileID: -7431300777268489327}
+  - {fileID: -9129819960001947802}
+  - {fileID: 8766779581953527684}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -5356,7 +5728,9 @@ MonoBehaviour:
   - {fileID: 114319916392884810}
   - {fileID: 114524009692174438}
   - {fileID: 114530156292981288}
-  - {fileID: 114514402278218896}
+  - {fileID: -7431300777268489327}
+  - {fileID: -9129819960001947802}
+  - {fileID: 8766779581953527684}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -5539,7 +5913,9 @@ MonoBehaviour:
   - {fileID: 114319916392884810}
   - {fileID: 114524009692174438}
   - {fileID: 114530156292981288}
-  - {fileID: 114514402278218896}
+  - {fileID: -7431300777268489327}
+  - {fileID: -9129819960001947802}
+  - {fileID: 8766779581953527684}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -5788,12 +6164,14 @@ MonoBehaviour:
   - {fileID: 114319916392884810}
   - {fileID: 114524009692174438}
   - {fileID: 114530156292981288}
-  - {fileID: 114514402278218896}
+  - {fileID: -7431300777268489327}
+  - {fileID: -9129819960001947802}
+  - {fileID: 8766779581953527684}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114688455128416100}
+  - {fileID: -7723447419983214167}
   MinDistance: 0
   MaxDistance: 0
   Length: 13503
@@ -5947,12 +6325,14 @@ MonoBehaviour:
   - {fileID: 114319916392884810}
   - {fileID: 114524009692174438}
   - {fileID: 114530156292981288}
-  - {fileID: 114514402278218896}
+  - {fileID: -7431300777268489327}
+  - {fileID: -9129819960001947802}
+  - {fileID: 8766779581953527684}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 114873534635758406}
+  - {fileID: -1062501734136440594}
   MinDistance: 0
   MaxDistance: 0
   Length: 3435
@@ -6350,7 +6730,9 @@ MonoBehaviour:
   - {fileID: 114319916392884810}
   - {fileID: 114524009692174438}
   - {fileID: 114530156292981288}
-  - {fileID: 114514402278218896}
+  - {fileID: -7431300777268489327}
+  - {fileID: -9129819960001947802}
+  - {fileID: 8766779581953527684}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -6431,7 +6813,9 @@ MonoBehaviour:
   - {fileID: 114319916392884810}
   - {fileID: 114524009692174438}
   - {fileID: 114530156292981288}
-  - {fileID: 114514402278218896}
+  - {fileID: -7431300777268489327}
+  - {fileID: -9129819960001947802}
+  - {fileID: 8766779581953527684}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -6665,7 +7049,7 @@ MonoBehaviour:
   Min: 0
   Max: 4
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &114937057251049598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6893,3 +7277,199 @@ MonoBehaviour:
   Max: 4
   Default: 0
   Exists: 1
+--- !u!114 &1134969486519027903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/music_v2/game_phase
+  m_EditorClassIdentifier: 
+  Name: game_phase
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
+--- !u!114 &1577757777583296387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/overview/evolve_state
+  m_EditorClassIdentifier: 
+  Name: evolve_state
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &1814650937504650391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/base_damage_v2/base_lifepoints
+  m_EditorClassIdentifier: 
+  Name: base_lifepoints
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 0
+--- !u!114 &4245300608263408481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/music/game_phase
+  m_EditorClassIdentifier: 
+  Name: game_phase
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &4598405076746436294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: "C:/Users/Cl\xE9ment Roth/Documents/CardJousting/Assets/Build/Desktop/Master.strings.bank"
+  SubDir: 
+  lastModified: 637075531872712454
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 2050
+  Exists: 1
+--- !u!114 &4866428685726763320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: game_status
+  m_EditorClassIdentifier: 
+  Name: game_status
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 1
+--- !u!114 &4939238346226441613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/music/game_phase
+  m_EditorClassIdentifier: 
+  Name: game_phase
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &5246944479968212022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: "C:/Users/Cl\xE9ment Roth/Documents/CardJousting/Assets/Build/Desktop/Master.strings.bank"
+  SubDir: 
+  lastModified: 637075531872712454
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 2050
+  Exists: 1
+--- !u!114 &6175928105288730144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/evolve_v2/evolve_state
+  m_EditorClassIdentifier: 
+  Name: evolve_state
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &8766779581953527684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: "C:/Users/Cl\xE9ment Roth/Documents/CardJousting/Assets/Build/Desktop/Master.bank"
+  SubDir: 
+  lastModified: 637075531872682469
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 2247488
+  Exists: 1
+--- !u!114 &9122279364222554904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/overview/game_phase
+  m_EditorClassIdentifier: 
+  Name: game_phase
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
