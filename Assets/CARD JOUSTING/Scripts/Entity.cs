@@ -162,7 +162,7 @@ namespace LibLabGames.NewGame
                 {
                     isWalk = false;
 
-                    if (nextEntity.currentSpeed < currentSpeed)
+                    if (nextEntity != null && nextEntity.currentSpeed < currentSpeed)
                         currentSpeed = nextEntity.currentSpeed;
                     else
                         currentSpeed = speed;
