@@ -28,6 +28,7 @@ namespace LibLabGames.NewGame
         {
             public int maxLife;
             public int currentLife;
+            public Transform lifeParent;
             public Slider lifeSlider;
             public List<bool> canSpawnOnWay;
             public List<Image> spawnCooldownFadeImage;
@@ -65,9 +66,9 @@ namespace LibLabGames.NewGame
         public KeyCode[] debugKeyCodeEvolution;
         public int debugValue;
 
-        [HideInInspector] public  float cooldownSpawnValue;
-        [HideInInspector] public  int gamePhaseTimer;
-        [HideInInspector] public  int drawPhaseTimer;
+        [HideInInspector] public float cooldownSpawnValue;
+        [HideInInspector] public int gamePhaseTimer;
+        [HideInInspector] public int drawPhaseTimer;
         [HideInInspector] public float globalEntitySpeed;
 
         public override void GetSettingGameValues()
@@ -173,7 +174,6 @@ namespace LibLabGames.NewGame
             for (int i = 0; i < playerInfos.Length; ++i)
             {
                 playerInfos[i].gamePhaseTimerText.text = phaseTimer.ToString("00");
-                playerInfos[i].lifeSlider.value = (float) playerInfos[i].currentLife / (float) playerInfos[i].maxLife;
 
                 // DEBUG Sélection de carte
                 for (int j = 0; j < playerInfos[i].DEBUG_cardOnHand.Length; ++j)
@@ -494,6 +494,14 @@ namespace LibLabGames.NewGame
         {
             playerInfos[player].currentLife -= value;
 
+            playerInfos[player].lifeParent.DOKill();
+            playerInfos[player].lifeParent.localPosition = Vector3.zero;
+            playerInfos[player].lifeParent.DOShakePosition(0.2f, 5);
+            
+            playerInfos[player].lifeSlider.DOKill();
+            playerInfos[player].lifeSlider.DOValue((float) playerInfos[player].currentLife / (float) playerInfos[player].maxLife, 0.3f);
+            //playerInfos[player].lifeSlider.value = (float) playerInfos[player].currentLife / (float) playerInfos[player].maxLife;
+
             SoundManager.instance.BaseDamage();
 
             if (playerInfos[player].currentLife <= 0)
@@ -528,7 +536,7 @@ namespace LibLabGames.NewGame
         {
             if (playerInfos[playerID].cardsOnGraveyard.Find(x => x.Contains(cardID)) != null)
                 return;
-                
+
             if (checkEvolutionActiveCoco[playerID] != null)
                 StopCoroutine(checkEvolutionActiveCoco[playerID]);
 
