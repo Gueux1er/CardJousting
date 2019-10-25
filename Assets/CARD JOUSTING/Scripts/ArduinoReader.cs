@@ -134,4 +134,22 @@ public class ArduinoReader : MonoBehaviour
             catch (System.Exception) { }
         }
     }
+
+    private void OnDestroy()
+    {
+        if (serial_00.IsOpen && serial_01.IsOpen)
+        {
+            serial_00.Close();
+            serial_01.Close();
+        }
+    }
+
+    private void OnApplicationQuit()
+    {
+        if (serial_00.IsOpen && serial_01.IsOpen)
+        {
+            serial_00.Close();
+            serial_01.Close();
+        }
+    }
 }
