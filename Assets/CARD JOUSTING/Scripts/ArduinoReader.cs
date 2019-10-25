@@ -78,7 +78,7 @@ public class ArduinoReader : MonoBehaviour
 
                 switch (serial.PortName)
                 {
-                case "COM3":
+                case "COM4":
                     if (msg.Length == 9)
                     {
                         if (captorID == "0")
@@ -89,12 +89,12 @@ public class ArduinoReader : MonoBehaviour
                         else if (captorID == "1")
                         {
                             // Line Right P0
-                            GameManager.instance.ReadCardNFC_GameBoard(cardID, 0, 2);
+                            GameManager.instance.ReadCardNFC_GameBoard(cardID, 0, 0);
                         }
                         else if (captorID == "2")
                         {
                             // Line Left P0
-                            GameManager.instance.ReadCardNFC_GameBoard(cardID, 0, 0);
+                            GameManager.instance.ReadCardNFC_GameBoard(cardID, 0, 2);
                         }
                     }
                     if (captorID == "3")
@@ -104,18 +104,18 @@ public class ArduinoReader : MonoBehaviour
                     }
                     break;
 
-                case "COM4":
+                case "COM3":
                     if (msg.Length == 9)
                     {
                         if (captorID == "0")
                         {
                             // Line Right P1
-                            GameManager.instance.ReadCardNFC_GameBoard(cardID, 1, 0);
+                            GameManager.instance.ReadCardNFC_GameBoard(cardID, 1, 1);
                         }
                         else if (captorID == "1")
                         {
                             // Line Middle P1
-                            GameManager.instance.ReadCardNFC_GameBoard(cardID, 1, 1);
+                            GameManager.instance.ReadCardNFC_GameBoard(cardID, 1, 0);
                         }
                         else if (captorID == "2")
                         {

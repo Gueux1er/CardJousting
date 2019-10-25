@@ -301,7 +301,7 @@ namespace LibLabGames.NewGame
             }
             if (entityGo == null)
             {
-                LLLog.LogE("Spawn Entity", "No found gameObject to spawn!");
+                LLLog.LogE("Spawn Entity", string.Format("No found gameObject to spawn! CardID : {0}, Way : {1}", cardID, way));
             }
 
             //print(go.name);
