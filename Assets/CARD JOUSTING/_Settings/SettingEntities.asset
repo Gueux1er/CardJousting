@@ -90,8 +90,8 @@ MonoBehaviour:
     evolveTimes:
     - 18
     entityPrefabs:
-    - {fileID: 958956705904844607, guid: c0412dc941faa59489d7c34e72c49c4f, type: 3}
-    - {fileID: 958956705904844607, guid: 175c1a2c2978dd64dbcf3dd3cf5f5813, type: 3}
+    - {fileID: 27783866211646363, guid: c0412dc941faa59489d7c34e72c49c4f, type: 3}
+    - {fileID: 27783866211646363, guid: 175c1a2c2978dd64dbcf3dd3cf5f5813, type: 3}
     entitySprites:
     - {fileID: 21300000, guid: 1c59157888829504f95ffd9916138a5e, type: 3}
     - {fileID: 21300000, guid: adbfc7eb5007f9c44b2187db2e508914, type: 3}

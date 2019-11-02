@@ -5942,6 +5942,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242755401608364675, guid: eec4ba884a7403f4484acbc0e92d1a4a,
         type: 3}
+      propertyPath: playerInfos.Array.data[1].DEBUG_cardOnHand.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242755401608364675, guid: eec4ba884a7403f4484acbc0e92d1a4a,
+        type: 3}
+      propertyPath: playerInfos.Array.data[0].DEBUG_cardOnHand.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242755401608364675, guid: eec4ba884a7403f4484acbc0e92d1a4a,
+        type: 3}
       propertyPath: playerInfos.Array.data[0].lifeSlider
       value: 
       objectReference: {fileID: 245581199}
@@ -6135,5 +6145,45 @@ PrefabInstance:
       propertyPath: playerInfos.Array.data[1].backgroundLifeImage
       value: 
       objectReference: {fileID: 830429642}
+    - target: {fileID: 1242755401608364675, guid: eec4ba884a7403f4484acbc0e92d1a4a,
+        type: 3}
+      propertyPath: playerInfos.Array.data[0].DEBUG_cardOnHand.Array.data[2]
+      value: 83FEA524
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242755401608364675, guid: eec4ba884a7403f4484acbc0e92d1a4a,
+        type: 3}
+      propertyPath: playerInfos.Array.data[1].DEBUG_cardOnHand.Array.data[2]
+      value: 83FEA524
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242755401608364675, guid: eec4ba884a7403f4484acbc0e92d1a4a,
+        type: 3}
+      propertyPath: playerInfos.Array.data[1].DEBUG_cardOnHand.Array.data[3]
+      value: 4B58AF1C
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242755401608364675, guid: eec4ba884a7403f4484acbc0e92d1a4a,
+        type: 3}
+      propertyPath: playerInfos.Array.data[0].DEBUG_cardOnHand.Array.data[3]
+      value: 4B58AF1C
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242755401608364675, guid: eec4ba884a7403f4484acbc0e92d1a4a,
+        type: 3}
+      propertyPath: playerInfos.Array.data[1].DEBUG_cardOnHand.Array.data[4]
+      value: 8804F92E
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242755401608364675, guid: eec4ba884a7403f4484acbc0e92d1a4a,
+        type: 3}
+      propertyPath: playerInfos.Array.data[1].DEBUG_cardOnHand.Array.data[5]
+      value: 8804F940
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242755401608364675, guid: eec4ba884a7403f4484acbc0e92d1a4a,
+        type: 3}
+      propertyPath: playerInfos.Array.data[0].DEBUG_cardOnHand.Array.data[4]
+      value: 8804F92E
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242755401608364675, guid: eec4ba884a7403f4484acbc0e92d1a4a,
+        type: 3}
+      propertyPath: playerInfos.Array.data[0].DEBUG_cardOnHand.Array.data[5]
+      value: 8804F940
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eec4ba884a7403f4484acbc0e92d1a4a, type: 3}
