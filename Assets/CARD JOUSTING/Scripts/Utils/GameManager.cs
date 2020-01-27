@@ -449,12 +449,12 @@ namespace LibLabGames.NewGame
 
             playerInfos[player].spawnCooldownFadeImage[way].DOKill();
             playerInfos[player].spawnCooldownFadeImage[way].color = new Color(1f, 0, 0, 1f);
-            playerInfos[player].spawnCooldownFadeImage[way].DOColor(new Color(1f, 0, 0, 0.5f), cooldownSpawnValue)
+            playerInfos[player].spawnCooldownFadeImage[way].DOColor(new Color(1f, 0, 0, 0.6f), cooldownSpawnValue)
                 .OnComplete(() =>
                 {
                     playerInfos[player].canSpawnOnWay[way] = true;
-                    playerInfos[player].spawnCooldownFadeImage[way].color = new Color(1f, 0.7f, 0, 0.5f);
-                    playerInfos[player].spawnCooldownFadeImage[way].DOColor(new Color(1f, 0.7f, 0, 0f), 0.3f)
+                    playerInfos[player].spawnCooldownFadeImage[way].color = new Color(1f, 0.7f, 0, 0.7f);
+                    playerInfos[player].spawnCooldownFadeImage[way].DOColor(new Color(1f, 0.7f, 0, 0f), 0.5f)
                         .SetLoops(2, LoopType.Yoyo).OnComplete(() =>
                         {
                             playerInfos[player].spawnCooldownFadeImage[way].gameObject.SetActive(false);
