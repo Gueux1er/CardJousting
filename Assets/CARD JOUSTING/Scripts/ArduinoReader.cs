@@ -81,23 +81,23 @@ public class ArduinoReader : MonoBehaviour
                 case "COM4":
                     if (msg.Length == 9)
                     {
-                        if (captorID == "0")
+                        if (captorID == "1")
                         {
                             // Line Middle P0
-                            GameManager.instance.ReadCardNFC_GameBoard(cardID, 0, 1);
-                        }
-                        else if (captorID == "1")
-                        {
-                            // Line Right P0
-                            GameManager.instance.ReadCardNFC_GameBoard(cardID, 0, 0);
-                        }
-                        else if (captorID == "2")
-                        {
-                            // Line Left P0
                             GameManager.instance.ReadCardNFC_GameBoard(cardID, 0, 2);
                         }
+                        else if (captorID == "0")
+                        {
+                            // Line Right P0
+                            GameManager.instance.ReadCardNFC_GameBoard(cardID, 0, 1);
+                        }
+                        else if (captorID == "3")
+                        {
+                            // Line Left P0
+                            GameManager.instance.ReadCardNFC_GameBoard(cardID, 0, 0);
+                        }
                     }
-                    if (captorID == "3")
+                    if (captorID == "2")
                     {
                         // Evolution P0
                         GameManager.instance.ReadCardNFC_Training(cardID, 0);
@@ -110,17 +110,17 @@ public class ArduinoReader : MonoBehaviour
                         if (captorID == "0")
                         {
                             // Line Right P1
-                            GameManager.instance.ReadCardNFC_GameBoard(cardID, 1, 1);
+                            GameManager.instance.ReadCardNFC_GameBoard(cardID, 1, 2);
                         }
                         else if (captorID == "1")
                         {
                             // Line Middle P1
-                            GameManager.instance.ReadCardNFC_GameBoard(cardID, 1, 0);
+                            GameManager.instance.ReadCardNFC_GameBoard(cardID, 1, 1);
                         }
                         else if (captorID == "2")
                         {
                             // Line Left P1
-                            GameManager.instance.ReadCardNFC_GameBoard(cardID, 1, 2);
+                            GameManager.instance.ReadCardNFC_GameBoard(cardID, 1, 0);
                         }
                     }
                     if (captorID == "3")
