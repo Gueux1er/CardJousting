@@ -233,10 +233,7 @@ namespace LibLabGames.NewGame
             if (!isReady)
                 return;
 
-            GameObject vfxAttack00 = Instantiate(vfx_attackPrefab, transform.position + transform.right*0.7f + transform.forward*1.5f, Quaternion.identity);
-            GameObject vfxAttack01 = Instantiate(vfx_attackPrefab, transform.position - transform.right * 0.7f + transform.forward*1.5f, Quaternion.identity);
-            vfxAttack00.transform.DOMove(transform.position - transform.right * 0.7f - transform.forward*0.3f, 0.2f).OnComplete(() => Destroy(vfxAttack00));
-            vfxAttack01.transform.DOMove(transform.position + transform.right * 0.7f - transform.forward*0.3f, 0.2f).OnComplete(() => Destroy(vfxAttack01));
+            LunchVfxAttack();
 
             isReady = false;
 
@@ -244,6 +241,14 @@ namespace LibLabGames.NewGame
                 behindEntity.CheckCanWalk();
 
             Destroy(gameObject);
+        }
+
+        private void LunchVfxAttack()
+        {
+            GameObject vfxAttack00 = Instantiate(vfx_attackPrefab, transform.position + transform.right * 0.7f + transform.forward * 1.5f, Quaternion.identity);
+            GameObject vfxAttack01 = Instantiate(vfx_attackPrefab, transform.position - transform.right * 0.7f + transform.forward * 1.5f, Quaternion.identity);
+            vfxAttack00.transform.DOMove(transform.position - transform.right * 0.7f - transform.forward * 0.3f, 0.2f).OnComplete(() => Destroy(vfxAttack00));
+            vfxAttack01.transform.DOMove(transform.position + transform.right * 0.7f - transform.forward * 0.3f, 0.2f).OnComplete(() => Destroy(vfxAttack01));
         }
     }
 }
