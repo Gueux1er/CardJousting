@@ -144,7 +144,11 @@ namespace LibLabGames.NewGame
 
             phaseTimer = gamePhaseTimer;
             DOTween.To(() => phaseTimer, x => phaseTimer = x, 0, gamePhaseTimer).SetEase(Ease.Linear)
-                .OnComplete(() => EnableDrawPhase());
+                .OnComplete(() =>
+                {
+                    if (gameIsReady)
+                        EnableDrawPhase();
+                });
         }
 
         private void EnableDrawPhase()
@@ -173,7 +177,6 @@ namespace LibLabGames.NewGame
                 });
         }
 
-        private int currentPlayer;
         private Entity entitySpwaned;
         private void Update()
         {
@@ -448,14 +451,14 @@ namespace LibLabGames.NewGame
             playerInfos[player].spawnCooldownFadeImage[way].gameObject.SetActive(true);
 
             playerInfos[player].spawnCooldownFadeImage[way].DOKill();
-            playerInfos[player].spawnCooldownFadeImage[way].color = new Color(1f, 0, 0, 1f);
-            playerInfos[player].spawnCooldownFadeImage[way].DOColor(new Color(1f, 0, 0, 0.6f), cooldownSpawnValue)
+            playerInfos[player].spawnCooldownFadeImage[way].color = new Color(0.7f, 0, 0, 1f);
+            playerInfos[player].spawnCooldownFadeImage[way].DOColor(new Color(0.7f, 0, 0, 0.6f), cooldownSpawnValue)
                 .OnComplete(() =>
                 {
                     playerInfos[player].canSpawnOnWay[way] = true;
-                    playerInfos[player].spawnCooldownFadeImage[way].color = new Color(1f, 0.7f, 0, 0.7f);
-                    playerInfos[player].spawnCooldownFadeImage[way].DOColor(new Color(1f, 0.7f, 0, 0f), 0.5f)
-                        .SetLoops(2, LoopType.Yoyo).OnComplete(() =>
+                    playerInfos[player].spawnCooldownFadeImage[way].color = new Color(0.85f, 0f, 0, 0.9f);
+                    playerInfos[player].spawnCooldownFadeImage[way].DOColor(new Color(0.85f, 0, 0, 0f), 0.5f)
+                        .OnComplete(() =>
                         {
                             playerInfos[player].spawnCooldownFadeImage[way].gameObject.SetActive(false);
                         });
@@ -534,6 +537,7 @@ namespace LibLabGames.NewGame
                 OnGameOver(player);
         }
 
+
         public void OnGameOver(int loserPlayer)
         {
             gameIsReady = false;
@@ -549,7 +553,7 @@ namespace LibLabGames.NewGame
             }
         }
 
-        GameObject entityToSpawn;
+
         public void ReadCardNFC_GameBoard(string cardID, int playerID, int wayID)
         {
             if (isDrawPhase || !gameIsReady || !playerInfos[playerID].canSpawnOnWay[wayID])
