@@ -304,7 +304,8 @@ namespace LibLabGames.NewGame
             // Rencontre avec un attribut
             if (colItem != null)
             {
-                if (colItem.playerID == playerID || (colItem.onTheSide && colItem.typeItem != eTypeItem.defence))
+                if (colItem.playerID == playerID || (colItem.onTheSide && colItem.typeItem != eTypeItem.defence)
+                    || colItem.onTheSide && colItem.entity.wayID == entity.wayID)
                 {
                     return;
                 }
