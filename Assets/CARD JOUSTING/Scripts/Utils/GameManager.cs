@@ -37,9 +37,13 @@ namespace LibLabGames.NewGame
             public Entity[] lastEntitiesOnGameBoard;
             public List<Entity> entitiesOnGameBoard;
             public TextMeshProUGUI gamePhaseTimerText;
-            public Image evolutionBackgroundCurrentImage;
-            public Image evolutionBackgroundNextImage;
-            public Image evolutionProgressionImage;
+            public RectTransform evolutionTransformParent;
+            public RectTransform evolutionDisableTarget;
+            public RectTransform evolutionActiveTarget;
+            public RectTransform evolutionNextStatTransformParent;
+            public RectTransform evolutionNextStatDisableTarget;
+            public RectTransform evolutionNextStatActiveTarget;
+            public Slider evolutionProgressionSlider;
             public Image evolutionCurrentStatImage;
             public Image evolutionNextStatImage;
             public string entityOnTraining;
@@ -54,6 +58,8 @@ namespace LibLabGames.NewGame
             public int DEBUG_entityIDOn;
         }
         public PlayerInfo[] playerInfos;
+
+        public Color baseGreyColor;
 
         public bool isDrawPhase;
         public CanvasGroup drawPhaseDisplay;
@@ -106,6 +112,8 @@ namespace LibLabGames.NewGame
                     playerInfos[i].currentLife = playerInfos[i].maxLife;
                     playerInfos[i].canSpawnOnWay.Add(true);
                     playerInfos[i].spawnCooldownFadeImage[j].gameObject.SetActive(false);
+                    playerInfos[i].evolutionTransformParent.position = playerInfos[i].evolutionDisableTarget.position;
+                    playerInfos[i].evolutionNextStatTransformParent.position = playerInfos[i].evolutionDisableTarget.position;
                 }
             }
 
@@ -414,7 +422,7 @@ namespace LibLabGames.NewGame
                             yield return null;
 
                         t += Time.deltaTime / duration;
-                        playerInfos[player].evolutionProgressionImage.fillAmount = Mathf.Lerp(0, 1, t);
+                        playerInfos[player].evolutionProgressionSlider.value = Mathf.Lerp(0, 1, t);
 
                         yield return null;
                     }
@@ -426,7 +434,7 @@ namespace LibLabGames.NewGame
                     else
                         LLLog.LogE("GameManager", string.Format("Entity {0} try to evolve higher than level 3.", cardID));
 
-                    playerInfos[player].evolutionProgressionImage.fillAmount = 0;
+                    playerInfos[player].evolutionProgressionSlider.value = 0;
 
                     yield return new WaitForSeconds(1f);
                 }
@@ -458,10 +466,15 @@ namespace LibLabGames.NewGame
         {
             playerInfos[player].evolutionCurrentStatImage.gameObject.SetActive(true);
             playerInfos[player].evolutionNextStatImage.gameObject.SetActive(true);
-            playerInfos[player].evolutionProgressionImage.fillAmount = 0;
+            playerInfos[player].evolutionProgressionSlider.value = 0;
 
-            playerInfos[player].evolutionBackgroundCurrentImage.color = Color.white;
-            playerInfos[player].evolutionBackgroundNextImage.color = Color.white;
+            playerInfos[player].evolutionTransformParent.DOKill();
+            playerInfos[player].evolutionTransformParent.DOMove(playerInfos[player].evolutionActiveTarget.position, 0.5f);
+
+            playerInfos[player].evolutionNextStatTransformParent.DOKill();
+            playerInfos[player].evolutionNextStatTransformParent.DOMove(playerInfos[player].evolutionNextStatActiveTarget.position, 0.7f);
+
+            //playerInfos[player].evolutionBackgroundNextImage.color = Color.white;
         }
 
         private void DisableEvolution(int player)
@@ -475,20 +488,28 @@ namespace LibLabGames.NewGame
         {
             playerInfos[player].evolutionCurrentStatImage.gameObject.SetActive(false);
             playerInfos[player].evolutionNextStatImage.gameObject.SetActive(false);
-            playerInfos[player].evolutionProgressionImage.fillAmount = 0;
+            playerInfos[player].evolutionProgressionSlider.value = 0;
 
-            playerInfos[player].evolutionBackgroundCurrentImage.color = Color.grey;
-            playerInfos[player].evolutionBackgroundNextImage.color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
+            playerInfos[player].evolutionTransformParent.DOKill();
+            playerInfos[player].evolutionTransformParent.DOMove(playerInfos[player].evolutionDisableTarget.position, 0.5f);
+
+            playerInfos[player].evolutionNextStatTransformParent.DOKill();
+            playerInfos[player].evolutionNextStatTransformParent.DOMove(playerInfos[player].evolutionNextStatDisableTarget.position, 0.7f);
+
+            //playerInfos[player].evolutionBackgroundNextImage.color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
         }
 
         private void CannotMoreEvolve(int player)
         {
             playerInfos[player].evolutionCurrentStatImage.gameObject.SetActive(true);
             playerInfos[player].evolutionNextStatImage.gameObject.SetActive(false);
-            playerInfos[player].evolutionProgressionImage.fillAmount = 0;
+            playerInfos[player].evolutionProgressionSlider.value = 0;
 
-            playerInfos[player].evolutionBackgroundCurrentImage.color = Color.white;
-            playerInfos[player].evolutionBackgroundNextImage.color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
+            playerInfos[player].evolutionNextStatTransformParent.DOKill();
+            playerInfos[player].evolutionNextStatTransformParent.DOMove(playerInfos[player].evolutionNextStatDisableTarget.position, 0.7f);
+
+            //playerInfos[player].evolutionBackgroundCurrentImage.color = Color.white;
+            //playerInfos[player].evolutionBackgroundNextImage.color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
         }
 
         public void HurtPlayer(int player, int value)
@@ -500,7 +521,7 @@ namespace LibLabGames.NewGame
             playerInfos[player].lifeParent.DOShakePosition(0.2f, 5);
 
             playerInfos[player].backgroundLifeImage.DOKill();
-            playerInfos[player].backgroundLifeImage.color = new Color (1,0,0,0);
+            playerInfos[player].backgroundLifeImage.color = baseGreyColor;
             playerInfos[player].backgroundLifeImage.DOColor(Color.red, 0.25f).From().SetEase(Ease.InCirc);
             
             playerInfos[player].lifeSlider.DOKill();
