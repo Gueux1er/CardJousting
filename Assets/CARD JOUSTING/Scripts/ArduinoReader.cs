@@ -60,13 +60,17 @@ public class ArduinoReader : MonoBehaviour
         ReadSerial(serial_01);
     }
 
+    string msg = "";
+    string cardID = "";
+    string captorID = "";
     void ReadSerial(SerialPort serial)
     {
         if (serial.IsOpen)
         {
-            string msg = "";
-            string cardID = "";
-            string captorID = "";
+            msg = "";
+            cardID = "";
+            captorID = "";
+
             try
             {
                 msg = serial.ReadLine();
@@ -75,6 +79,12 @@ public class ArduinoReader : MonoBehaviour
 
                 cardID = msg.Substring(0, msg.Length - 1);
                 captorID = msg.Substring(msg.Length - 1);
+
+                if (msg == "88048C1A")
+                {
+                    LLUtils.ReloadCurrentScene();
+                    return;
+                }
 
                 switch (serial.PortName)
                 {

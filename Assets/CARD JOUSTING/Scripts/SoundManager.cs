@@ -49,8 +49,8 @@ public class SoundManager : MonoBehaviour
 
     private EventInstance evolveP1;
     private EventInstance evolveP2;
-    private Coroutine p1EvolveRoutine;
-    private Coroutine p2EvolveRoutine;
+    private IEnumerator p1EvolveRoutine;
+    private IEnumerator p2EvolveRoutine;
 
     public enum Player { P1, P2 }
 
@@ -110,19 +110,37 @@ public class SoundManager : MonoBehaviour
         case Player.P1:
             evolveP1.setParameterByName("evolve_state", 0.0f);
             evolveP1.start();
+
             if (p1EvolveRoutine != null)
                 StopCoroutine(p1EvolveRoutine);
-            p1EvolveRoutine = StartCoroutine(EvolveTimer(Player.P1, duration));
+            
+            p1EvolveRoutine = EvolveTimer(Player.P1, duration);
+            StartCoroutine(p1EvolveRoutine);
             break;
 
         case Player.P2:
             evolveP2.setParameterByName("evolve_state", 0.0f);
             evolveP2.start();
+
             if (p2EvolveRoutine != null)
                 StopCoroutine(p2EvolveRoutine);
-            p2EvolveRoutine = StartCoroutine(EvolveTimer(Player.P2, duration));
+
+            p2EvolveRoutine = EvolveTimer(Player.P2, duration);
+            StartCoroutine(p2EvolveRoutine);
             break;
         }
+    }
+
+    public void ResetSound()
+    {
+        if (p1EvolveRoutine != null)
+            StopCoroutine(p1EvolveRoutine);
+
+        if (p2EvolveRoutine != null)
+            StopCoroutine(p2EvolveRoutine);
+
+        evolveP1.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        evolveP2.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
     }
 
     public void CancelEvolve(Player player)
@@ -132,14 +150,14 @@ public class SoundManager : MonoBehaviour
         case Player.P1:
             StopCoroutine(p1EvolveRoutine);
             evolveP1.setParameterByName("evolve_state", 0.0f);
-            StopAfterTimer(evolveP1, 1.0f);
-            break;
+            StartCoroutine(StopAfterTimer(evolveP1, 1.0f));
+                break;
 
         case Player.P2:
             StopCoroutine(p2EvolveRoutine);
             evolveP2.setParameterByName("evolve_state", 0.0f);
-            StopAfterTimer(evolveP2, 1.0f);
-            break;
+            StartCoroutine(StopAfterTimer(evolveP2, 1.0f));
+                break;
         }
     }
 

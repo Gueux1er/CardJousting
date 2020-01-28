@@ -97,6 +97,8 @@ namespace LibLabGames.NewGame
         {
             base.DOStart();
 
+            SoundManager.instance.ResetSound();
+
             GetSettingGameValues();
 
             for (int i = 0; i < playerInfos.Length; ++i)
@@ -562,9 +564,9 @@ namespace LibLabGames.NewGame
 
             for (int i = 0; i < 2; ++i)
             {
-                playerGameOverTexts[i].text = (i == loserPlayer) ? "Loser!" : "Winner!";
+                playerGameOverTexts[i].text = (i == loserPlayer) ? "" : "Winner!";
                 playerGameOverTexts[i].color = Color.clear;
-                playerGameOverTexts[i].DOColor((i == loserPlayer) ? Color.red : Color.yellow, 0.5f);
+                playerGameOverTexts[i].DOColor((i == loserPlayer) ? Color.red : Color.red, 0.5f);
             }
         }
 
