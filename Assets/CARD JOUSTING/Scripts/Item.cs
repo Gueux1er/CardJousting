@@ -116,7 +116,7 @@ namespace LibLabGames.NewGame
 
             if (colItem != null)
             {
-                if (colItem.playerID == playerID || !colItem.onTheSide)
+                if (colItem.playerID == playerID || !colItem.onTheSide || colItem.entity.wayID == entity.wayID)
                     return;
 
                 // I am an ATTACK

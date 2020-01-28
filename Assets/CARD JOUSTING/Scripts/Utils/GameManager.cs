@@ -368,7 +368,7 @@ namespace LibLabGames.NewGame
                     {
                         if (entity.tagList[tg] == cardID)
                         {
-                            if (playerInfos[player].entitiesLevelTwo.Find(x => x.Contains(cardID)) != null)
+                            if (playerInfos[player].entitiesLevelTwo.Find(x => x.Contains(cardID)) != null && playerInfos[player].entitiesLevelThree.Find(x => x.Contains(cardID)) == null)
                                 currentLevel = 1;
                             else if (playerInfos[player].entitiesLevelThree.Find(x => x.Contains(cardID)) != null)
                                 currentLevel = 2;
@@ -431,15 +431,30 @@ namespace LibLabGames.NewGame
                     }
 
                     if (playerInfos[player].entitiesLevelTwo.Find(x => x.Contains(cardID)) == null)
+                    {
                         playerInfos[player].entitiesLevelTwo.Add(cardID);
+                        currentLevel = 1;
+                    }
                     else if (playerInfos[player].entitiesLevelThree.Find(x => x.Contains(cardID)) == null)
+                    {
                         playerInfos[player].entitiesLevelThree.Add(cardID);
+                        currentLevel = 2;
+                    }
                     else
                         LLLog.LogE("GameManager", string.Format("Entity {0} try to evolve higher than level 3.", cardID));
 
                     playerInfos[player].evolutionProgressionSlider.value = 0;
 
-                    yield return new WaitForSeconds(1f);
+                    playerInfos[player].evolutionCurrentStatImage.sprite = statSprites[currentLevel];
+                    if (currentLevel + 1 != statSprites.Length)
+                    {
+                        playerInfos[player].evolutionNextStatImage.sprite = statSprites[currentLevel + 1];
+                        playerInfos[player].evolutionNextStatImage.transform.DOScale(1.1f, 0.2f).SetLoops(2, LoopType.Yoyo);
+                    }
+
+                    playerInfos[player].evolutionCurrentStatImage.transform.DOScale(1.1f, 0.2f).SetLoops(2, LoopType.Yoyo);
+
+                    yield return new WaitForSeconds(0.3f);
                 }
             }
         }
