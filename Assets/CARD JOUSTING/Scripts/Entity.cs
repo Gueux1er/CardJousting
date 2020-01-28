@@ -217,6 +217,7 @@ namespace LibLabGames.NewGame
                 else if (!isOvertake)
                 {
                     currentSpeed = colEntity.currentSpeed;
+
                     isWalk = false;
                 }
             }

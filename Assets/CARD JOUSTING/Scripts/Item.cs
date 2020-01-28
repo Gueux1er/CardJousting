@@ -286,7 +286,7 @@ namespace LibLabGames.NewGame
                             entity.isOvertake = true;
                         }
                     }
-                    else
+                    else if (!entity.isOvertake)
                     {
                         entity.currentSpeed = colEntity.currentSpeed;
 
