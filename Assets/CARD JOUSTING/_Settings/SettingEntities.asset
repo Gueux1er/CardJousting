@@ -47,7 +47,7 @@ MonoBehaviour:
     - 83FEA524
     - 88042D98
     - 88043A23
-    - 88047835
+    - 8804A422
     evolveTimes:
     - 12
     entityPrefabs:
@@ -61,7 +61,7 @@ MonoBehaviour:
     - 4B58AF1C
     - 7932BB55
     - 8804132C
-    - 8804A422
+    - 88047835
     evolveTimes: []
     entityPrefabs:
     - {fileID: 958956705904844607, guid: d10ad10ec8e23fd44a812fc7aa5ee423, type: 3}
