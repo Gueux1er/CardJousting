@@ -56,7 +56,7 @@ namespace LibLabGames.NewGame
         {
             if (col.CompareTag(string.Format("GoalPlayer{0}", playerID)))
             {
-                DODestroy();
+                //DODestroy();
 
                 return;
             }

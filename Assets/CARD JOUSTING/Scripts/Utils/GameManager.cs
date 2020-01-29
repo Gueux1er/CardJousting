@@ -47,6 +47,7 @@ namespace LibLabGames.NewGame
             public Image evolutionCurrentStatImage;
             public Image evolutionNextStatImage;
             public string entityOnTraining;
+            public string lastEntityOnTraining;
             public List<string> entitiesLevelTwo; // tag des cartes NFC
             public List<string> entitiesLevelThree;
             public List<string> cardsOnGraveyard;
@@ -426,8 +427,15 @@ namespace LibLabGames.NewGame
                         while (isDrawPhase)
                             yield return null;
 
+                        if (playerInfos[player].lastEntityOnTraining != playerInfos[player].entityOnTraining)
+                        {
+                            DisableEvolution(player);
+                        }
+
                         t += Time.deltaTime / duration;
                         playerInfos[player].evolutionProgressionSlider.value = Mathf.Lerp(0, 1, t);
+
+                        playerInfos[player].lastEntityOnTraining = playerInfos[player].entityOnTraining;
 
                         yield return null;
                     }
@@ -609,6 +617,9 @@ namespace LibLabGames.NewGame
         private IEnumerator checkEvolutionActive(int playerID)
         {
             yield return new WaitForSeconds(1.5f);
+
+            if (isDrawPhase)
+                yield break;
 
             playerInfos[playerID].entityOnTraining = string.Empty;
 
