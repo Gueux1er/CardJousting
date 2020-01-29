@@ -80,7 +80,7 @@ public class ArduinoReader : MonoBehaviour
                 cardID = msg.Substring(0, msg.Length - 1);
                 captorID = msg.Substring(msg.Length - 1);
 
-                if (msg == "88048C1A")
+                if (msg.Contains("88048C1A"))
                 {
                     LLUtils.ReloadCurrentScene();
                     return;
