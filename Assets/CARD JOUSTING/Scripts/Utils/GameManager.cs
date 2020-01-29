@@ -47,7 +47,7 @@ namespace LibLabGames.NewGame
             public Image evolutionCurrentStatImage;
             public Image evolutionNextStatImage;
             public string entityOnTraining;
-            public string lastEntityOnTraining;
+            public string currentEntityOnTrainingID;
             public List<string> entitiesLevelTwo; // tag des cartes NFC
             public List<string> entitiesLevelThree;
             public List<string> cardsOnGraveyard;
@@ -413,6 +413,15 @@ namespace LibLabGames.NewGame
 
                     while (true)
                     {
+                        if (playerInfos[player].currentEntityOnTrainingID != playerInfos[player].entityOnTraining)
+                        {
+                            playerInfos[player].entityOnTraining = playerInfos[player].currentEntityOnTrainingID;
+                            
+                            ChangeTrainingCard(player);
+                        }
+                    
+                        playerInfos[player].evolutionProgressionSlider.value = 0;
+
                         yield return null;
                     }
                 }
@@ -427,15 +436,15 @@ namespace LibLabGames.NewGame
                         while (isDrawPhase)
                             yield return null;
 
-                        if (playerInfos[player].lastEntityOnTraining != playerInfos[player].entityOnTraining)
+                        if (playerInfos[player].currentEntityOnTrainingID != playerInfos[player].entityOnTraining)
                         {
-                            DisableEvolution(player);
+                            playerInfos[player].entityOnTraining = playerInfos[player].currentEntityOnTrainingID;
+                            
+                            ChangeTrainingCard(player);
                         }
 
                         t += Time.deltaTime / duration;
                         playerInfos[player].evolutionProgressionSlider.value = Mathf.Lerp(0, 1, t);
-
-                        playerInfos[player].lastEntityOnTraining = playerInfos[player].entityOnTraining;
 
                         yield return null;
                     }
@@ -467,6 +476,18 @@ namespace LibLabGames.NewGame
                     yield return new WaitForSeconds(0.3f);
                 }
             }
+        }
+
+        private void ChangeTrainingCard(int player)
+        {
+            NFC_Activate(player);
+                ActiveEvolution(player);
+
+                if (evolutionCoco[player] != null)
+                    StopCoroutine(evolutionCoco[player]);
+
+                evolutionCoco[player] = EvolutionEnum(player, playerInfos[player].entityOnTraining);
+                StartCoroutine(evolutionCoco[player]);
         }
 
         private void CooldownSpawn(int player, int way)
@@ -591,6 +612,9 @@ namespace LibLabGames.NewGame
         {
             if (isDrawPhase || !gameIsReady || playerInfos[playerID].cardsOnGraveyard.Find(x => x.Contains(cardID)) != null)
                 return;
+
+            if (cardID != string.Empty)
+                playerInfos[playerID].currentEntityOnTrainingID = cardID;
 
             if (checkEvolutionActiveCoco[playerID] != null)
                 StopCoroutine(checkEvolutionActiveCoco[playerID]);
