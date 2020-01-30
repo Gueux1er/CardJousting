@@ -87,7 +87,7 @@ public class SoundManager : MonoBehaviour
     /// </summary>
     public void StartGame()
     {
-        musicInstance.setParameterByName("game_phase", 0.0f);
+        musicInstance.setParameterByName("game_phase", 0.75f);
         musicInstance.start();
         gameStartInstance.start();
     }

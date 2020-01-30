@@ -468,8 +468,7 @@ MonoBehaviour:
   m_text: Draw Phase!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5d3476923401d6d498750c356bbc1a37, type: 2}
-  m_sharedMaterial: {fileID: 21728413545750408, guid: 5d3476923401d6d498750c356bbc1a37,
-    type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: f0b4952e65d74b1478b4e52fa04921dd, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4154,8 +4153,7 @@ MonoBehaviour:
   m_text: Draw Phase!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5d3476923401d6d498750c356bbc1a37, type: 2}
-  m_sharedMaterial: {fileID: 21728413545750408, guid: 5d3476923401d6d498750c356bbc1a37,
-    type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: f0b4952e65d74b1478b4e52fa04921dd, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7783,6 +7781,26 @@ PrefabInstance:
     - target: {fileID: 1242755401608364675, guid: eec4ba884a7403f4484acbc0e92d1a4a,
         type: 3}
       propertyPath: baseGreyColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242755401608364675, guid: eec4ba884a7403f4484acbc0e92d1a4a,
+        type: 3}
+      propertyPath: baseRedColor.r
+      value: 0.57254905
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242755401608364675, guid: eec4ba884a7403f4484acbc0e92d1a4a,
+        type: 3}
+      propertyPath: baseRedColor.g
+      value: 0.09411766
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242755401608364675, guid: eec4ba884a7403f4484acbc0e92d1a4a,
+        type: 3}
+      propertyPath: baseRedColor.b
+      value: 0.09411766
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242755401608364675, guid: eec4ba884a7403f4484acbc0e92d1a4a,
+        type: 3}
+      propertyPath: baseRedColor.a
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1389238401261577926, guid: eec4ba884a7403f4484acbc0e92d1a4a,

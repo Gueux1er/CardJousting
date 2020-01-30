@@ -61,6 +61,7 @@ namespace LibLabGames.NewGame
         public PlayerInfo[] playerInfos;
 
         public Color baseGreyColor;
+        public Color baseRedColor;
 
         public bool isDrawPhase;
         public CanvasGroup drawPhaseDisplay;
@@ -137,7 +138,7 @@ namespace LibLabGames.NewGame
 
             SoundManager.instance.StartGame();
 
-            EnableGamePhase();
+            EnableDrawPhase();
         }
 
         int phaseTimer;
@@ -413,7 +414,7 @@ namespace LibLabGames.NewGame
 
                     while (true)
                     {
-                        if (playerInfos[player].currentEntityOnTrainingID != playerInfos[player].entityOnTraining)
+                        if (playerInfos[player].currentEntityOnTrainingID != playerInfos[player].entityOnTraining && playerInfos[player].currentEntityOnTrainingID != string.Empty)
                         {
                             playerInfos[player].entityOnTraining = playerInfos[player].currentEntityOnTrainingID;
                             
@@ -436,7 +437,7 @@ namespace LibLabGames.NewGame
                         while (isDrawPhase)
                             yield return null;
 
-                        if (playerInfos[player].currentEntityOnTrainingID != playerInfos[player].entityOnTraining)
+                        if (playerInfos[player].currentEntityOnTrainingID != playerInfos[player].entityOnTraining && playerInfos[player].currentEntityOnTrainingID != string.Empty)
                         {
                             playerInfos[player].entityOnTraining = playerInfos[player].currentEntityOnTrainingID;
                             
@@ -595,7 +596,7 @@ namespace LibLabGames.NewGame
             {
                 playerGameOverTexts[i].text = (i == loserPlayer) ? "" : "Winner!";
                 playerGameOverTexts[i].color = Color.clear;
-                playerGameOverTexts[i].DOColor((i == loserPlayer) ? Color.red : Color.red, 0.5f);
+                playerGameOverTexts[i].DOColor((i == loserPlayer) ? baseRedColor : baseRedColor, 0.5f);
             }
         }
 
